@@ -56,7 +56,7 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-4 lg:flex">
-          <a
+          {/* <a
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
@@ -64,7 +64,7 @@ export function Header() {
             className="text-[12.5px] text-ink/75 transition-colors duration-300 hover:text-accent"
           >
             {t('header.resume')}
-          </a>
+          </a> */}
           <a
             href="#contact"
             className="rounded-full border border-ink/30 px-[18px] py-2 text-[12.5px] text-ink transition-colors duration-300 hover:border-accent hover:text-accent"
@@ -108,7 +108,7 @@ export function Header() {
               >
                 {t('header.contactCta')}
               </a>
-              <a
+              {/* <a
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -116,7 +116,7 @@ export function Header() {
                 className="text-sm text-ink/75 underline underline-offset-4"
               >
                 {t('header.resume')}
-              </a>
+              </a> */}
               <LanguageSwitcher />
             </div>
           </Container>

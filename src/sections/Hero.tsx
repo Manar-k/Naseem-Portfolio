@@ -5,6 +5,7 @@ import { Reveal } from '../components/Reveal'
 import { profile } from '../data/profile'
 import { useLang } from '../hooks/useLang'
 import { useReducedMotion } from '../hooks/useReducedMotion'
+import { RoleCycler } from '../components/RoleCycler'
 
 function splitClauses(tagline: string): string[] {
   return tagline
@@ -26,10 +27,16 @@ export function Hero() {
       <div className="grid flex-1 grid-cols-1 items-center gap-10 py-14 lg:grid-cols-[7fr_5fr] lg:gap-16">
         <div>
           <Reveal>
+  <RoleCycler
+    roles={content.meta.roles}
+    className="mb-5 text-[15px] font-light text-ink/75 sm:text-lg"
+  />
+</Reveal>
+          {/* <Reveal>
             <p className="mb-5 text-[15px] font-light text-ink/75 sm:text-lg">
-              {content.meta.roles.join(' · ')}
+              {content.meta.roles.join(' . ')}
             </p>
-          </Reveal>
+          </Reveal> */}
 
           <h1 className="m-0 max-w-[16ch] font-display text-[clamp(36px,7vw,96px)] font-black leading-[1.15] text-ink">
             {clauses.map((clause, index) => {

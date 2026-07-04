@@ -2,6 +2,7 @@ import { IconBrandLinkedin, IconMapPin } from '@tabler/icons-react'
 import { profile } from '../data/profile'
 import { useLang } from '../hooks/useLang'
 import { Reveal } from '../components/Reveal'
+import { RoleCycler } from '../components/RoleCycler'
 
 const PHONE_HREF = '+966509145682'
 const EMAIL = 'Naseemfilfilan@gmail.com'
@@ -22,13 +23,20 @@ export function Contact() {
           </h2>
         </Reveal>
 
-        <Reveal delay={0.06}>
+                  <Reveal>
+  <RoleCycler
+    roles={content.meta.roles}
+    className="mb-5 text-[15px] font-light text-ink/75 sm:text-lg"
+  />
+</Reveal>
+
+        {/* <Reveal delay={0.06}>
           <div className="mb-14 flex flex-col gap-1.5 text-[clamp(14px,1.2vw,17px)] font-light leading-[1.9] text-ink/85 sm:mb-16">
             {content.meta.roles.map((role) => (
               <span key={role}>{role}</span>
             ))}
           </div>
-        </Reveal>
+        </Reveal> */}
 
         <Reveal delay={0.12}>
           <div className="flex flex-wrap gap-4">

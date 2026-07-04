@@ -270,7 +270,7 @@ export const profile: Record<Lang, LocaleContent> = {
     contact: {
       title: 'لنتحدث',
       heading: ['الفكرة عندك،', 'الفرصة عندي.'],
-      cta: 'فرصة، شراكة، أو فكرة تحتاج من يقرأها صح. ابدأ من هنا.',
+      cta: 'تواصل معي',
       emailLabel: 'البريد الإلكتروني',
       linkedinLabel: 'لينكدإن',
       phoneLabel: 'الجوال',
@@ -452,7 +452,7 @@ export const profile: Record<Lang, LocaleContent> = {
     contact: {
       title: 'Let’s talk',
       heading: ['The idea is yours,', 'the opportunity is mine.'],
-      cta: 'An opportunity, a partnership, or an idea that needs someone to read it right. Start here.',
+      cta: 'Get in touch',
       emailLabel: 'Email',
       linkedinLabel: 'LinkedIn',
       phoneLabel: 'Phone',
