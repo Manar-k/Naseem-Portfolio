@@ -2,13 +2,15 @@
   "nav": {
     "about": "About",
     "professional": "Professional",
-    "business": "Business",
-    "stats": "Track Record",
+    "commercial": "Business",
+    "numbers": "Track Record",
     "projects": "Projects",
-    "contact": "Contact"
+    "why": "Why Naseem",
+    "summary": "Summary"
   },
   "header": {
-    "resume": "Résumé"
+    "resume": "Résumé",
+    "contactCta": "Get in touch"
   },
   "lang": {
     "switchTo": "العربية",
@@ -22,5 +24,10 @@
     "openResume": "Open résumé in a new tab",
     "toggleMenu": "Open menu",
     "closeMenu": "Close menu"
+  },
+  "common": {
+    "inShort": "In short:",
+    "whatSetsHimApart": "What sets him apart professionally",
+    "mostNotable": "Among the most notable of what he's worked on:"
   }
 }

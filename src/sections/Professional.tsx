@@ -1,59 +1,79 @@
-import { HiMiniArrowLongUp } from 'react-icons/hi2'
+import { useTranslation } from 'react-i18next'
 import { Container } from '../components/Container'
+import { Eyebrow } from '../components/Eyebrow'
 import { Reveal } from '../components/Reveal'
-import { SectionHeading } from '../components/SectionHeading'
 import { profile } from '../data/profile'
 import { useLang } from '../hooks/useLang'
+import { sectionNumber } from '../utils/numerals'
 
 export function Professional() {
   const { lang } = useLang()
+  const { t } = useTranslation()
   const content = profile[lang]
 
   return (
-    <section id="professional" className="border-t border-border/60 py-24 sm:py-32">
-      <Container className="flex flex-col gap-16">
-        <SectionHeading title={content.professional.title} intro={content.professional.intro} />
-
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[0.42fr_0.58fr] lg:gap-16">
-          <Reveal>
-            <ul className="flex flex-col gap-5 rounded-2xl border border-border bg-surface p-8 sm:p-10">
-              {content.professional.questions.map((question) => (
-                <li key={question} className="flex items-start gap-4">
-                  <HiMiniArrowLongUp className="mt-1.5 h-4 w-4 shrink-0 -rotate-90 text-accent rtl:rotate-90" aria-hidden />
-                  <span className="text-lg leading-relaxed text-ink">{question}</span>
-                </li>
-              ))}
-            </ul>
-          </Reveal>
-
-          <div className="flex flex-col gap-6">
-            {content.professional.body.map((paragraph, index) => (
-              <Reveal key={paragraph} delay={index * 0.04}>
-                <p className="max-w-prose text-pretty text-lg leading-relaxed text-muted">{paragraph}</p>
-              </Reveal>
-            ))}
+    <section id="professional" className="px-6 py-24 sm:px-10 sm:py-32 lg:px-[72px]">
+      <Container className="p-0">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[5fr_7fr] lg:gap-20">
+          <div>
+            <Eyebrow index={2} label={t('nav.professional')} />
+            <h2 className="m-0 mb-6 font-display text-[clamp(30px,3.6vw,54px)] font-black leading-[1.5] text-ink">
+              {content.professional.title}
+            </h2>
+            <p className="m-0 text-[clamp(15px,1.25vw,18px)] font-light leading-[2.1] text-ink/90">
+              {content.professional.intro}
+            </p>
           </div>
-        </div>
 
-        <div className="flex flex-col gap-8">
-          <Reveal>
-            <p className="font-display text-2xl text-ink">{content.professional.traitsTitle}</p>
-          </Reveal>
-          <div className="grid grid-cols-1 gap-x-10 gap-y-5 sm:grid-cols-2">
-            {content.professional.traits.map((trait, index) => (
-              <Reveal key={trait} delay={index * 0.03}>
-                <div className="flex items-start gap-4 border-t border-border/60 pt-5">
-                  <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden />
-                  <span className="text-base leading-relaxed text-ink/90">{trait}</span>
+          <div className="flex flex-col">
+            {content.professional.questions.map((question, index) => (
+              <Reveal key={question} delay={index * 0.04}>
+                <div className="flex items-baseline gap-5 border-b border-ink/15 py-6 first:pt-0">
+                  <span className="font-display text-sm font-extrabold text-accent">
+                    {sectionNumber(index + 1, lang)}
+                  </span>
+                  <span className="font-display text-[clamp(19px,1.8vw,26px)] font-bold text-ink">{question}</span>
                 </div>
               </Reveal>
             ))}
           </div>
         </div>
 
-        <Reveal>
-          <p className="max-w-prose text-pretty text-lg leading-relaxed text-ink">{content.professional.closing}</p>
-        </Reveal>
+        <div className="mx-auto mt-14 grid max-w-[1280px] grid-cols-1 gap-10 lg:mt-20 lg:grid-cols-[7fr_5fr] lg:gap-20">
+          <div className="flex flex-col gap-7 text-[clamp(15px,1.25vw,18px)] font-light leading-[2.1]">
+            {content.professional.body.map((paragraph, index) => (
+              <Reveal key={paragraph} delay={index * 0.04}>
+                <p className="m-0">{paragraph}</p>
+              </Reveal>
+            ))}
+            <Reveal>
+              <p className="m-0 text-ink/70">
+                {t('common.inShort')} {content.professional.closing}
+              </p>
+            </Reveal>
+          </div>
+
+          <Reveal>
+            <div className="border border-ink/20 p-6 sm:p-9">
+              <div className="mb-5 font-display text-xl font-extrabold text-accent">
+                {t('common.whatSetsHimApart')}
+              </div>
+              <div className="flex flex-col text-[15.5px] leading-[1.9]">
+                {content.professional.traits.map((trait, index) => (
+                  <div
+                    key={trait}
+                    className={`flex gap-3 py-3 ${
+                      index < content.professional.traits.length - 1 ? 'border-b border-ink/10' : ''
+                    }`}
+                  >
+                    <span className="text-accent">›</span>
+                    <span>{trait}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+        </div>
       </Container>
     </section>
   )

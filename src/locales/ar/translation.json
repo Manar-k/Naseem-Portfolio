@@ -1,14 +1,16 @@
 {
   "nav": {
-    "about": "التعريف",
+    "about": "نبذة عني",
     "professional": "الجانب المهني",
-    "business": "الجانب التجاري",
-    "stats": "الأرقام",
+    "commercial": "الجانب التجاري",
+    "numbers": "الأرقام",
     "projects": "المشاريع",
-    "contact": "تواصل"
+    "why": "لماذا نسيم؟",
+    "summary": "الخلاصة"
   },
   "header": {
-    "resume": "السيرة الذاتية"
+    "resume": "السيرة الذاتية",
+    "contactCta": "تواصل معي"
   },
   "lang": {
     "switchTo": "English",
@@ -22,5 +24,10 @@
     "openResume": "فتح السيرة الذاتية في نافذة جديدة",
     "toggleMenu": "فتح القائمة",
     "closeMenu": "إغلاق القائمة"
+  },
+  "common": {
+    "inShort": "باختصار:",
+    "whatSetsHimApart": "ما الذي يميزه مهنيًا؟",
+    "mostNotable": "من أبرز ما اشتغل عليه:"
   }
 }

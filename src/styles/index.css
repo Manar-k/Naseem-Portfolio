@@ -2,14 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Heavy geometric display face for headlines, paired with a lighter body
+   face for running text; parallel pairings per script. */
 :root[data-lang='ar'] {
-  --font-display: 'Amiri', 'Fraunces', serif;
-  --font-body: 'IBM Plex Sans Arabic', 'Inter', sans-serif;
+  --font-display: 'Noto Kufi Arabic', sans-serif;
+  --font-body: 'IBM Plex Sans Arabic', sans-serif;
 }
 
 :root[data-lang='en'] {
-  --font-display: 'Fraunces', 'Amiri', serif;
-  --font-body: 'Inter', 'IBM Plex Sans Arabic', sans-serif;
+  --font-display: 'Poppins', sans-serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
 }
 
 html {
@@ -54,7 +56,7 @@ p {
 
 /* Accessible, visible focus ring that respects the keyboard-only convention */
 :focus-visible {
-  outline: 2px solid oklch(0.74 0.13 75);
+  outline: 2px solid #2563eb;
   outline-offset: 3px;
   border-radius: 2px;
 }

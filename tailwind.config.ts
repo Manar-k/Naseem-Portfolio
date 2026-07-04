@@ -6,22 +6,20 @@ export default {
   theme: {
     extend: {
       colors: {
-        // The <alpha-value> placeholder lets Tailwind inject opacity
-        // modifiers (e.g. bg-accent/30) into these custom oklch colors.
-        bg: 'oklch(0.16 0.012 250 / <alpha-value>)',
-        surface: 'oklch(0.205 0.014 250 / <alpha-value>)',
-        'surface-2': 'oklch(0.25 0.016 250 / <alpha-value>)',
-        ink: 'oklch(0.96 0.006 250 / <alpha-value>)',
-        muted: 'oklch(0.68 0.02 250 / <alpha-value>)',
-        border: 'oklch(0.32 0.016 250 / <alpha-value>)',
+        bg: '#0D0D0B',
+        surface: '#15140F',
+        'surface-2': '#080807',
+        ink: '#EDE6D6',
+        muted: '#EDE6D6',
+        border: '#EDE6D6',
         accent: {
-          DEFAULT: 'oklch(0.74 0.13 75 / <alpha-value>)',
-          dim: 'oklch(0.55 0.10 75 / <alpha-value>)',
-          bright: 'oklch(0.82 0.13 88 / <alpha-value>)',
+          DEFAULT: '#2563EB',
+          dim: '#1D4ED8',
+          bright: '#3B82F6',
         },
       },
       fontFamily: {
-        display: ['var(--font-display)', 'serif'],
+        display: ['var(--font-display)', 'sans-serif'],
         body: ['var(--font-body)', 'sans-serif'],
       },
       maxWidth: {
@@ -37,6 +35,30 @@ export default {
       zIndex: {
         header: '40',
         overlay: '50',
+      },
+      keyframes: {
+        marquee: {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-50%)' },
+        },
+        pulseDot: {
+          '0%, 100%': { transform: 'scale(1)', opacity: '1' },
+          '50%': { transform: 'scale(1.6)', opacity: '.5' },
+        },
+        heroFloat: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-14px)' },
+        },
+        frameShift: {
+          '0%, 100%': { transform: 'translate(0, 0)' },
+          '50%': { transform: 'translate(-8px, 8px)' },
+        },
+      },
+      animation: {
+        marquee: 'marquee 28s linear infinite',
+        pulseDot: 'pulseDot 2.4s ease-in-out infinite',
+        heroFloat: 'heroFloat 6s ease-in-out infinite',
+        frameShift: 'frameShift 6s ease-in-out infinite',
       },
     },
   },

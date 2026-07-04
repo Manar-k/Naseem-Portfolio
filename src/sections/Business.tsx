@@ -1,66 +1,86 @@
-import { HiMiniArrowLongLeft, HiMiniArrowLongRight } from 'react-icons/hi2'
+import { useTranslation } from 'react-i18next'
 import { Container } from '../components/Container'
-import { PullQuote } from '../components/PullQuote'
 import { Reveal } from '../components/Reveal'
-import { SectionHeading } from '../components/SectionHeading'
 import { profile } from '../data/profile'
 import { useLang } from '../hooks/useLang'
+import { sectionNumber } from '../utils/numerals'
 
 export function Business() {
   const { lang } = useLang()
+  const { t } = useTranslation()
   const content = profile[lang]
-  const ArrowIcon = lang === 'ar' ? HiMiniArrowLongLeft : HiMiniArrowLongRight
+  const lastContrast = content.business.contrasts[content.business.contrasts.length - 1]
 
   return (
-    <section id="business" className="border-t border-border/60 py-24 sm:py-32">
-      <Container className="flex flex-col gap-16">
-        <SectionHeading title={content.business.title} intro={content.business.intro} size="md" />
-
+    <section id="commercial" className="bg-accent px-6 py-24 text-white sm:px-10 sm:py-32 lg:px-[72px]">
+      <Container className="max-w-[1200px] p-0">
         <Reveal>
-          <ul className="grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
-            {content.business.askList.map((item) => (
-              <li key={item} className="text-lg leading-relaxed text-ink/90">
-                {item}
-              </li>
-            ))}
-          </ul>
+          <p className={`mb-4 text-[13px] font-bold ${lang === 'en' ? 'tracking-[0.18em]' : ''}`}>
+            {sectionNumber(3, lang)} — {t('nav.commercial')}
+          </p>
+        </Reveal>
+        <Reveal>
+          <p className="m-0 mb-6 max-w-[60ch] text-[clamp(16px,1.4vw,20px)] font-medium leading-[2]">
+            {content.business.intro}
+          </p>
+        </Reveal>
+        <Reveal>
+          <h2 className="m-0 mb-10 font-display text-[clamp(34px,5.5vw,84px)] font-black leading-[1.4]">
+            {lastContrast.less}
+            <br />
+            {lastContrast.more.split(' ').slice(0, -1).join(' ')}{' '}
+            <span className="inline-block rounded-[0.15em] bg-bg px-[0.25em] text-ink">
+              {lastContrast.more.split(' ').slice(-1)}
+            </span>
+          </h2>
         </Reveal>
 
-        <Reveal>
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-4 rounded-2xl border border-border bg-surface px-6 py-8 sm:px-10">
-            {content.business.chain.map((step, index) => (
-              <span key={step} className="flex items-center gap-3">
-                {index > 0 ? <ArrowIcon className="h-5 w-5 shrink-0 text-accent" aria-hidden /> : null}
-                <span className="font-display text-lg text-ink sm:text-xl">{step}</span>
-              </span>
-            ))}
-          </div>
-        </Reveal>
+        <div className="grid grid-cols-1 gap-px border border-white/35 bg-white/35 sm:grid-cols-2 lg:grid-cols-3">
+          <Reveal>
+            <div className="h-full bg-accent p-7 text-[16px] font-medium leading-[1.9]">{content.business.chain[0]} {content.business.chain.slice(1).join(' ')}.</div>
+          </Reveal>
+          <Reveal delay={0.05}>
+            <div className="h-full bg-accent p-7 text-[16px] font-medium leading-[1.9]">
+              {content.business.closing[0]}
+            </div>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <div className="h-full bg-accent p-7 text-[16px] font-medium leading-[1.9]">{content.business.pullQuote}</div>
+          </Reveal>
+        </div>
 
-        <div className="flex flex-col gap-6">
-          {content.business.contrasts.map((pair, index) => (
-            <Reveal key={pair.more} delay={index * 0.05}>
-              <div className="grid grid-cols-1 gap-2 border-t border-border/60 pt-6 sm:grid-cols-[1fr_1fr] sm:gap-8">
-                <p className="text-base text-muted">{pair.less}</p>
-                <p className="text-lg font-medium text-ink">{pair.more}</p>
+        <div className="mt-14 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:gap-16">
+          <Reveal>
+            <div>
+              <div className="flex flex-col text-[16.5px] font-medium leading-[1.9]">
+                {content.business.askList.map((item, index) => (
+                  <div
+                    key={item}
+                    className={`flex gap-3 py-3 ${
+                      index < content.business.askList.length - 1 ? 'border-b border-white/40' : ''
+                    }`}
+                  >
+                    <span className="font-extrabold">{sectionNumber(index + 1, lang)}</span>
+                    <span>{item}</span>
+                  </div>
+                ))}
               </div>
-            </Reveal>
-          ))}
-        </div>
+              <p className="m-0 mt-6 text-[16px] font-medium leading-[2]">{content.business.closing[1]}</p>
+            </div>
+          </Reveal>
 
-        <div className="flex flex-col gap-4">
-          {content.business.closing.map((paragraph, index) => (
-            <Reveal key={paragraph} delay={index * 0.04}>
-              <p className="max-w-prose text-pretty text-lg leading-relaxed text-muted">{paragraph}</p>
-            </Reveal>
-          ))}
+          <Reveal>
+            <div className="flex flex-col gap-5 text-[16.5px] font-medium leading-[1.9]">
+              {content.business.contrasts.slice(0, -1).map((pair) => (
+                <div key={pair.more} className="border-e-[3px] border-white pe-4.5">
+                  {pair.less}
+                  <br />
+                  <strong className="font-extrabold">{pair.more}</strong>
+                </div>
+              ))}
+            </div>
+          </Reveal>
         </div>
-
-        <Reveal>
-          <PullQuote className="max-w-2xl text-pretty text-2xl leading-snug sm:text-3xl">
-            {content.business.pullQuote}
-          </PullQuote>
-        </Reveal>
       </Container>
     </section>
   )

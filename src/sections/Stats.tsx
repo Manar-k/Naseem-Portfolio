@@ -1,39 +1,59 @@
+import { useTranslation } from 'react-i18next'
 import { Container } from '../components/Container'
-import { PullQuote } from '../components/PullQuote'
+import { CountUp } from '../components/CountUp'
+import { Eyebrow } from '../components/Eyebrow'
 import { Reveal } from '../components/Reveal'
-import { SectionHeading } from '../components/SectionHeading'
 import { profile } from '../data/profile'
 import { useLang } from '../hooks/useLang'
 
 export function Stats() {
   const { lang } = useLang()
+  const { t } = useTranslation()
   const content = profile[lang]
 
   return (
-    <section id="stats" className="border-t border-border/60 bg-surface/40 py-24 sm:py-32">
-      <Container className="flex flex-col gap-16">
-        <SectionHeading title={content.stats.title} intro={content.stats.intro} />
+    <section id="numbers" className="px-6 py-24 sm:px-10 sm:py-32 lg:px-[72px]">
+      <Container className="p-0">
+        <div className="mb-14 text-center sm:mb-20">
+          <div className="flex justify-center">
+            <Eyebrow index={4} label={t('nav.numbers')} />
+          </div>
+          <h2 className="m-0 font-display text-[clamp(30px,4vw,60px)] font-black leading-[1.5] text-ink">
+            {content.stats.title}
+          </h2>
+          <p className="mx-auto mt-6 max-w-[58ch] text-[clamp(15px,1.3vw,18px)] font-light leading-[2] text-ink/85">
+            {content.stats.intro}
+          </p>
+        </div>
 
-        <div className="grid grid-cols-2 gap-x-10 gap-y-12 sm:grid-cols-3 lg:grid-cols-4">
+        <div className="mx-auto grid max-w-[1280px] grid-cols-2 gap-px border border-ink/15 bg-ink/15 sm:grid-cols-3 lg:grid-cols-4">
           {content.stats.items.map((item, index) => (
             <Reveal key={item.label} delay={(index % 4) * 0.05}>
-              <div className="flex flex-col gap-2">
-                <span className="font-display text-4xl text-ink sm:text-5xl">{item.value}</span>
-                <span className="text-sm leading-snug text-muted">{item.label}</span>
+              <div className="h-full bg-bg p-7">
+                <CountUp value={item.value} className="font-display text-[clamp(40px,4.5vw,64px)] font-black text-accent" dir="ltr" />
+                <div className="mt-2 text-[15px] leading-[1.8] text-ink/85">{item.label}</div>
               </div>
             </Reveal>
           ))}
         </div>
 
-        <div className="flex flex-col gap-8 border-t border-border/60 pt-12 sm:flex-row sm:items-end sm:justify-between">
-          <div className="flex flex-col gap-2">
-            {content.stats.closing.map((paragraph) => (
-              <p key={paragraph} className="max-w-md text-pretty text-base leading-relaxed text-muted">
-                {paragraph}
+        <div className="mx-auto mt-12 grid max-w-[1280px] grid-cols-1 gap-10 sm:mt-16 lg:grid-cols-2 lg:gap-16">
+          <Reveal>
+            <div className="flex flex-col gap-4 text-[clamp(15px,1.25vw,17.5px)] font-light leading-[2.1]">
+              {content.stats.closing.map((paragraph) => (
+                <p key={paragraph} className="m-0">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </Reveal>
+          <Reveal>
+            <div className="border border-ink/20 p-6 text-[clamp(15px,1.25vw,17.5px)] font-light leading-[2.1] sm:p-9">
+              <p className="m-0 font-display text-[clamp(22px,2.2vw,32px)] font-black leading-[1.8] text-accent">
+                {content.stats.pullQuote}
               </p>
-            ))}
-          </div>
-          <PullQuote className="text-pretty text-xl sm:text-2xl">{content.stats.pullQuote}</PullQuote>
+            </div>
+          </Reveal>
         </div>
       </Container>
     </section>

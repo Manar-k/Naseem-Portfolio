@@ -86,6 +86,7 @@ export interface LocaleContent {
   }
   contact: {
     title: string
+    heading: [string, string]
     cta: string
     emailLabel: string
     linkedinLabel: string
@@ -213,7 +214,7 @@ export const profile: Record<Lang, LocaleContent> = {
       items: [
         {
           name: 'أبو ميس للحلول المتكاملة',
-          kind: 'متجر إلكتروني — منصة سلة',
+          kind: 'متجر إلكتروني عبر منصة سلة',
           tagline: 'نسيم يبيع الحل.',
           description:
             'ليس متجرًا تقليديًا يعرض منتجات تقليدية. هو فكرة قائمة على اختصار الطريق على العميل: فهم الحاجة، ترتيب الخيارات، وربط الشخص بالحل المناسب دون لف ودوران.',
@@ -268,7 +269,8 @@ export const profile: Record<Lang, LocaleContent> = {
     },
     contact: {
       title: 'لنتحدث',
-      cta: 'فرصة، شراكة، أو فكرة تحتاج من يقرأها صح — ابدأ من هنا.',
+      heading: ['الفكرة عندك،', 'الفرصة عندي.'],
+      cta: 'فرصة، شراكة، أو فكرة تحتاج من يقرأها صح. ابدأ من هنا.',
       emailLabel: 'البريد الإلكتروني',
       linkedinLabel: 'لينكدإن',
       phoneLabel: 'الجوال',
@@ -290,7 +292,7 @@ export const profile: Record<Lang, LocaleContent> = {
     hero: {
       kicker: 'Naseem Filfilan',
       tagline: 'A professional mind. A trader’s instinct. A tongue that knows where opportunity is won.',
-      lede: 'Naseem isn’t just a great employee, and he isn’t just a sharp trader. He’s both — and that’s the difference.',
+      lede: 'Naseem isn’t just a great employee, and he isn’t just a sharp trader. He’s both, and that’s the difference.',
       ctaPrimary: 'Get in touch',
       ctaSecondary: 'Résumé',
     },
@@ -298,7 +300,7 @@ export const profile: Record<Lang, LocaleContent> = {
       title: 'Who is Naseem Filfilan?',
       intro: [
         'Some people thrive inside an organization, but get lost the moment they step into the open market.',
-        'Others read the market well, but stumble the moment they enter a large professional environment — buried in systems, meetings, and reports.',
+        'Others read the market well, but stumble the moment they enter a large professional environment, buried in systems, meetings, and reports.',
         'Naseem Filfilan is neither.',
       ],
       pullQuote: 'He’s the rare kind who knows how to move fluently in both directions.',
@@ -315,7 +317,7 @@ export const profile: Record<Lang, LocaleContent> = {
         'He knows how to approach a client through the right door. He reads hesitation before it turns into rejection. And he knows how to turn ordinary conversation into value worth paying for.',
       ],
       summary:
-        'A man who took discipline from employment, momentum from trade, and from words — the power to open doors.',
+        'A man who took discipline from employment, momentum from trade, and from words: the power to open doors.',
     },
     professional: {
       title: 'The professional side',
@@ -328,10 +330,10 @@ export const profile: Record<Lang, LocaleContent> = {
         'And which number in the report tells the truth no one else is saying?',
       ],
       body: [
-        'His background in industrial engineering built a practical mindset in him; he doesn’t see work as a set of tasks, but as a complete system. And a system, in his view, is either clear — or it needs rearranging.',
+        'His background in industrial engineering built a practical mindset in him; he doesn’t see work as a set of tasks, but as a complete system. And a system, in his view, is either clear, or it needs rearranging.',
         'Throughout his career, he has worked across operational and analytical environments, building experience in customer experience, data analysis, dashboard design, report automation, and leading continuous-improvement initiatives.',
         'At Bupa Arabia, he was part of a numbers-driven environment focused on satisfaction indicators and customer experience. He designed and maintained NPS dashboards, handled hundreds of thousands of customer responses, and helped turn raw data into decisions and improvement initiatives.',
-        'Today, he works as a quality engineer at the Ministry of Human Resources — a career step that reflects his natural progression into institutional quality, where it isn’t enough to simply work; you have to know how to measure the work, control it, and improve it.',
+        'Today, he works as a quality engineer at the Ministry of Human Resources, a career step that reflects his natural progression into institutional quality, where it isn’t enough to simply work; you have to know how to measure the work, control it, and improve it.',
       ],
       traitsTitle: 'What sets him apart professionally',
       traits: [
@@ -348,7 +350,7 @@ export const profile: Record<Lang, LocaleContent> = {
     business: {
       title: 'The business side',
       intro:
-        'The clearest side of Naseem — the one impossible to ignore — is his business instinct. And this isn’t about someone who "tried selling once." This is someone with a born seller’s instinct; the type who can sit with you for five minutes and already know, roughly:',
+        'The clearest side of Naseem, the one impossible to ignore, is his business instinct. And this isn’t about someone who "tried selling once." This is someone with a born seller’s instinct; the type who can sit with you for five minutes and already know, roughly:',
       askList: [
         'What you need.',
         'What’s stopping you.',
@@ -373,7 +375,7 @@ export const profile: Record<Lang, LocaleContent> = {
     stats: {
       title: 'Numbers that don’t flatter',
       intro:
-        'Words are nice, but the market doesn’t respect words alone. The numbers here say Naseem isn’t selling an image of himself — he has real track record behind it.',
+        'Words are nice, but the market doesn’t respect words alone. The numbers here say Naseem isn’t selling an image of himself, he has a real track record behind it.',
       items: [
         { value: '300+', label: 'shaving machines sold ("Al-Jazzaza")' },
         { value: '300+', label: 'resume-writing services delivered' },
@@ -394,10 +396,10 @@ export const profile: Record<Lang, LocaleContent> = {
       items: [
         {
           name: 'Abu Mais Integrated Solutions',
-          kind: 'E-commerce — Salla platform',
+          kind: 'E-commerce, on the Salla platform',
           tagline: 'Naseem sells the solution.',
           description:
-            'Not a traditional store selling traditional products. It’s an idea built on shortening the customer’s path: understanding the need, structuring the options, and connecting the person to the right solution — no runaround.',
+            'Not a traditional store selling traditional products. It’s an idea built on shortening the customer’s path: understanding the need, structuring the options, and connecting the person to the right solution, no runaround.',
         },
         {
           name: 'Safar Podcast',
@@ -419,7 +421,7 @@ export const profile: Record<Lang, LocaleContent> = {
         'And some execute well.. but don’t know how to sell what they do.',
       ],
       unifier:
-        'Naseem Filfilan is different because he combines more than one side into a single character: professionalism that knows the system, business that knows the market, a tongue that knows the client, and a mind that knows value isn’t just spoken — it’s built, presented, and sold.',
+        'Naseem Filfilan is different because he combines more than one side into a single character: professionalism that knows the system, business that knows the market, a tongue that knows the client, and a mind that knows value isn’t just spoken: it’s built, presented, and sold.',
       capabilities: [
         'Understanding systems',
         'Reading the market',
@@ -449,7 +451,8 @@ export const profile: Record<Lang, LocaleContent> = {
     },
     contact: {
       title: 'Let’s talk',
-      cta: 'An opportunity, a partnership, or an idea that needs someone to read it right — start here.',
+      heading: ['The idea is yours,', 'the opportunity is mine.'],
+      cta: 'An opportunity, a partnership, or an idea that needs someone to read it right. Start here.',
       emailLabel: 'Email',
       linkedinLabel: 'LinkedIn',
       phoneLabel: 'Phone',
