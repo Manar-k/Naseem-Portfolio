@@ -1,0 +1,26 @@
+{
+  "nav": {
+    "about": "التعريف",
+    "professional": "الجانب المهني",
+    "business": "الجانب التجاري",
+    "stats": "الأرقام",
+    "projects": "المشاريع",
+    "contact": "تواصل"
+  },
+  "header": {
+    "resume": "السيرة الذاتية"
+  },
+  "lang": {
+    "switchTo": "English",
+    "current": "العربية"
+  },
+  "footer": {
+    "rights": "جميع الحقوق محفوظة",
+    "backToTop": "العودة للأعلى"
+  },
+  "a11y": {
+    "openResume": "فتح السيرة الذاتية في نافذة جديدة",
+    "toggleMenu": "فتح القائمة",
+    "closeMenu": "إغلاق القائمة"
+  }
+}

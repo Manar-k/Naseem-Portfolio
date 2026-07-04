@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root[data-lang='ar'] {
+  --font-display: 'Amiri', 'Fraunces', serif;
+  --font-body: 'IBM Plex Sans Arabic', 'Inter', sans-serif;
+}
+
+:root[data-lang='en'] {
+  --font-display: 'Fraunces', 'Amiri', serif;
+  --font-body: 'Inter', 'IBM Plex Sans Arabic', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+/* Arabic is a connected script: any tracking (letter-spacing) breaks the
+   cursive joins between letters, and italics have no true Arabic form in
+   these typefaces (the browser just skews the glyphs). Neutralize both
+   globally whenever the active language is Arabic, rather than trying to
+   remember a language check on every tracking-* / italic class. */
+:root[data-lang='ar'] * {
+  letter-spacing: normal !important;
+  font-style: normal !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  @apply bg-bg text-ink font-body antialiased;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+::selection {
+  @apply bg-accent/30 text-ink;
+}
+
+/* Accessible, visible focus ring that respects the keyboard-only convention */
+:focus-visible {
+  outline: 2px solid oklch(0.74 0.13 75);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.balance {
+  text-wrap: balance;
+}

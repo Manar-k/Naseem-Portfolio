@@ -1,0 +1,26 @@
+{
+  "nav": {
+    "about": "About",
+    "professional": "Professional",
+    "business": "Business",
+    "stats": "Track Record",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "header": {
+    "resume": "Résumé"
+  },
+  "lang": {
+    "switchTo": "العربية",
+    "current": "English"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "backToTop": "Back to top"
+  },
+  "a11y": {
+    "openResume": "Open résumé in a new tab",
+    "toggleMenu": "Open menu",
+    "closeMenu": "Close menu"
+  }
+}
