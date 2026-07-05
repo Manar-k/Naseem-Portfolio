@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { Container } from '../components/Container'
-import { Eyebrow } from '../components/Eyebrow'
 import { Reveal } from '../components/Reveal'
+import { SectionTitle } from '../components/SectionTitle'
 import { profile } from '../data/profile'
 import { useLang } from '../hooks/useLang'
 
@@ -20,8 +20,8 @@ export function Why() {
   return (
     <section id="why" className="mx-auto max-w-[1100px] px-6 py-24 sm:px-10 sm:py-32 lg:px-[72px]">
       <Container className="p-0">
-        <Eyebrow index={6} label={t('nav.why')} />
-        <h2 className="m-0 mb-10 font-display text-[clamp(30px,3.6vw,54px)] font-black leading-[1.5] text-ink">
+        <SectionTitle title={t('nav.why')} className="mb-14 sm:mb-20" />
+        <h2 className="m-0 mb-10 text-center font-display text-[clamp(24px,3vw,44px)] font-black leading-[1.5] text-ink">
           {content.why.title}
         </h2>
 

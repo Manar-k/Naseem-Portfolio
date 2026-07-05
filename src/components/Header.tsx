@@ -29,60 +29,66 @@ export function Header() {
     setMenuOpen(false)
   }, [lang])
 
+  const nameNode = (
+    <a href="#top" className="flex items-center gap-2.5" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+      <span className="h-[7px] w-[7px] shrink-0 animate-pulseDot rounded-full bg-accent" aria-hidden />
+      <span className="font-display text-sm font-bold text-ink">
+        {lang === 'ar' ? 'نسيم فلفلان' : 'Naseem Filfilan'}
+      </span>
+    </a>
+  )
+
+  const contactNode = (
+    <a
+      href="#contact"
+      className="rounded-full border border-ink/30 px-[18px] py-2 text-[12.5px] text-ink transition-colors duration-300 hover:border-accent hover:text-accent"
+    >
+      {t('header.contactCta')}
+    </a>
+  )
+
   return (
     <header
       className={`sticky top-0 z-header transition-[background-color,backdrop-filter,padding] duration-300 ${
         scrolled ? 'bg-bg/85 py-3.5 backdrop-blur-xl' : 'bg-transparent py-5'
       }`}
     >
-      <Container className="flex items-center justify-between gap-6">
-        <a href="#top" className="flex items-center gap-2.5">
-          <span className="h-[7px] w-[7px] shrink-0 animate-pulseDot rounded-full bg-accent" aria-hidden />
-          <span className="font-display text-sm font-bold text-ink">
-            {lang === 'ar' ? 'نسيم فلفلان' : 'Naseem Filfilan'}
-          </span>
-        </a>
+      <Container>
+        {/* Slot order (contact / nav+lang / name) is fixed left-to-right regardless of
+            page language; only the text runs inside each slot follow the active dir. */}
+        <div className="hidden grid-cols-[1fr_auto_1fr] items-center gap-4 lg:grid" style={{ direction: 'ltr' }}>
+          <div className="justify-self-start">{contactNode}</div>
 
-        <nav className="hidden flex-wrap items-center justify-center gap-x-5 gap-y-2 lg:flex" aria-label="Primary">
-          {NAV_ITEMS.map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              className="text-[12.5px] text-ink/75 transition-colors duration-300 hover:text-accent"
-            >
-              {t(`nav.${item.key}`)}
-            </a>
-          ))}
-        </nav>
+          <div className="flex items-center justify-center gap-x-5 gap-y-2" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+            <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2" aria-label="Primary">
+              {NAV_ITEMS.map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className="text-[12.5px] text-ink/75 transition-colors duration-300 hover:text-accent"
+                >
+                  {t(`nav.${item.key}`)}
+                </a>
+              ))}
+            </nav>
+            <LanguageSwitcher />
+          </div>
 
-        <div className="hidden items-center gap-4 lg:flex">
-          {/* <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={t('a11y.openResume')}
-            className="text-[12.5px] text-ink/75 transition-colors duration-300 hover:text-accent"
-          >
-            {t('header.resume')}
-          </a> */}
-          <a
-            href="#contact"
-            className="rounded-full border border-ink/30 px-[18px] py-2 text-[12.5px] text-ink transition-colors duration-300 hover:border-accent hover:text-accent"
-          >
-            {t('header.contactCta')}
-          </a>
-          <LanguageSwitcher />
+          <div className="justify-self-end">{nameNode}</div>
         </div>
 
-        <button
-          type="button"
-          className="grid h-9 w-9 place-items-center rounded-full border border-ink/30 text-ink lg:hidden"
-          onClick={() => setMenuOpen((open) => !open)}
-          aria-expanded={menuOpen}
-          aria-label={menuOpen ? t('a11y.closeMenu') : t('a11y.toggleMenu')}
-        >
-          {menuOpen ? <IconX className="h-5 w-5" stroke={1.75} /> : <IconMenu2 className="h-5 w-5" stroke={1.75} />}
-        </button>
+        <div className="flex items-center justify-between lg:hidden">
+          {nameNode}
+          <button
+            type="button"
+            className="grid h-9 w-9 place-items-center rounded-full border border-ink/30 text-ink"
+            onClick={() => setMenuOpen((open) => !open)}
+            aria-expanded={menuOpen}
+            aria-label={menuOpen ? t('a11y.closeMenu') : t('a11y.toggleMenu')}
+          >
+            {menuOpen ? <IconX className="h-5 w-5" stroke={1.75} /> : <IconMenu2 className="h-5 w-5" stroke={1.75} />}
+          </button>
+        </div>
       </Container>
 
       {menuOpen ? (
@@ -101,22 +107,7 @@ export function Header() {
               ))}
             </nav>
             <div className="flex flex-wrap items-center gap-3 pt-2">
-              <a
-                href="#contact"
-                className="rounded-full border border-ink/30 px-5 py-2.5 text-sm text-ink"
-                onClick={() => setMenuOpen(false)}
-              >
-                {t('header.contactCta')}
-              </a>
-              {/* <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={t('a11y.openResume')}
-                className="text-sm text-ink/75 underline underline-offset-4"
-              >
-                {t('header.resume')}
-              </a> */}
+              {contactNode}
               <LanguageSwitcher />
             </div>
           </Container>

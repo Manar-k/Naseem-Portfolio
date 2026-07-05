@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { Container } from '../components/Container'
-import { Eyebrow } from '../components/Eyebrow'
 import { Reveal } from '../components/Reveal'
+import { SectionTitle } from '../components/SectionTitle'
 import { profile } from '../data/profile'
 import { useLang } from '../hooks/useLang'
 
@@ -13,11 +13,11 @@ export function Projects() {
   return (
     <section id="projects" className="border-y border-ink/10 bg-surface px-6 py-24 sm:px-10 sm:py-32 lg:px-[72px]">
       <Container className="max-w-[1280px] p-0">
-        <Eyebrow index={5} label={t('nav.projects')} />
-        <h2 className="m-0 mb-6 font-display text-[clamp(30px,3.6vw,54px)] font-black leading-[1.5] text-ink">
+        <SectionTitle title={t('nav.projects')} className="mb-14 sm:mb-20" />
+        <h2 className="m-0 mb-6 text-center font-display text-[clamp(24px,3vw,44px)] font-black leading-[1.5] text-ink">
           {content.projects.title}
         </h2>
-        <p className="m-0 mb-14 max-w-[60ch] text-[clamp(15px,1.3vw,18px)] font-light leading-[2] text-ink/85 sm:mb-16">
+        <p className="mx-auto m-0 mb-14 max-w-[60ch] text-center text-[clamp(15px,1.3vw,18px)] font-light leading-[2] text-ink/85 sm:mb-16">
           {content.projects.intro}
         </p>
 

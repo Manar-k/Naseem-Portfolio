@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { Container } from '../components/Container'
-import { Eyebrow } from '../components/Eyebrow'
 import { Reveal } from '../components/Reveal'
+import { SectionTitle } from '../components/SectionTitle'
 import { profile } from '../data/profile'
 import { useLang } from '../hooks/useLang'
 import { sectionNumber } from '../utils/numerals'
@@ -14,10 +14,11 @@ export function Professional() {
   return (
     <section id="professional" className="px-6 py-24 sm:px-10 sm:py-32 lg:px-[72px]">
       <Container className="p-0">
+        <SectionTitle title={t('nav.professional')} className="mb-14 sm:mb-20" />
+
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[5fr_7fr] lg:gap-20">
           <div>
-            <Eyebrow index={2} label={t('nav.professional')} />
-            <h2 className="m-0 mb-6 font-display text-[clamp(30px,3.6vw,54px)] font-black leading-[1.5] text-ink">
+            <h2 className="m-0 mb-6 font-display text-[clamp(26px,3.2vw,46px)] font-black leading-[1.5] text-ink">
               {content.professional.title}
             </h2>
             <p className="m-0 text-[clamp(15px,1.25vw,18px)] font-light leading-[2.1] text-ink/90">
@@ -46,11 +47,6 @@ export function Professional() {
                 <p className="m-0">{paragraph}</p>
               </Reveal>
             ))}
-            <Reveal>
-              <p className="m-0 text-ink/70">
-                {t('common.inShort')} {content.professional.closing}
-              </p>
-            </Reveal>
           </div>
 
           <Reveal>
@@ -74,6 +70,20 @@ export function Professional() {
             </div>
           </Reveal>
         </div>
+
+        <Reveal>
+          <p className="mx-auto mt-16 max-w-[26ch] text-center font-display text-2xl font-black text-accent sm:mt-20 sm:text-3xl">
+            {t('common.inShort')}
+          </p>
+        </Reveal>
+
+        <Reveal>
+          <div className="mx-auto mt-8 max-w-[64ch] border border-ink/20 bg-surface p-7 text-center sm:p-10">
+            <p className="m-0 font-display text-lg leading-[1.9] text-ink sm:text-xl">
+              {content.professional.closing}
+            </p>
+          </div>
+        </Reveal>
       </Container>
     </section>
   )

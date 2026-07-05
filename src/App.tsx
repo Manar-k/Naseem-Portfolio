@@ -9,6 +9,7 @@ import { Stats } from './sections/Stats'
 import { Projects } from './sections/Projects'
 import { Why } from './sections/Why'
 import { Finale } from './sections/Finale'
+import { Certificates } from './sections/Certificates'
 import { Contact } from './sections/Contact'
 import { useLang } from './hooks/useLang'
 import { profile } from './data/profile'
@@ -31,6 +32,7 @@ function App() {
         <Projects />
         <Why />
         <Finale />
+        <Certificates />
         <Contact />
       </main>
     </div>

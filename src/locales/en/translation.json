@@ -13,7 +13,8 @@
     "contactCta": "Get in touch"
   },
   "lang": {
-    "switchTo": "العربية",
+    "switchTo": "AR",
+    "switchToFull": "العربية",
     "current": "English"
   },
   "footer": {

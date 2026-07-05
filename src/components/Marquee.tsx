@@ -29,12 +29,11 @@ export function Marquee({ items }: MarqueeProps) {
     </div>
   )
 
+  const animationClass = reducedMotion ? '' : lang === 'ar' ? 'animate-marquee-reverse' : 'animate-marquee'
+
   return (
     <div className="overflow-hidden bg-accent py-4">
-      <div
-        className={`flex w-max ${reducedMotion ? '' : 'animate-marquee'}`}
-        style={{ direction: 'ltr' }}
-      >
+      <div className={`flex w-max ${animationClass}`} style={{ direction: 'ltr' }}>
         {track}
         {track}
       </div>

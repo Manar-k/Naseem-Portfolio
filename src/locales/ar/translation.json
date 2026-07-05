@@ -13,7 +13,8 @@
     "contactCta": "تواصل معي"
   },
   "lang": {
-    "switchTo": "English",
+    "switchTo": "EN",
+    "switchToFull": "English",
     "current": "العربية"
   },
   "footer": {

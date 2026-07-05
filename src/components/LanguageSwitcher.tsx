@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import { GrLanguage } from 'react-icons/gr'
 import { useLang } from '../hooks/useLang'
 
 export function LanguageSwitcher({ className = '' }: { className?: string }) {
@@ -9,9 +10,10 @@ export function LanguageSwitcher({ className = '' }: { className?: string }) {
     <button
       type="button"
       onClick={toggleLang}
-      className={`rounded-full border border-border px-4 py-2 text-sm font-medium text-ink/90 transition-colors duration-300 ease-out-quart hover:border-accent/60 hover:text-accent ${className}`}
-      aria-label={t('lang.switchTo')}
+      className={`flex items-center gap-1.5 rounded-full border border-ink/30 px-4 py-2 text-sm font-medium text-ink/90 transition-colors duration-300 hover:border-accent hover:text-accent ${className}`}
+      aria-label={t('lang.switchToFull')}
     >
+      <GrLanguage className="h-3.5 w-3.5" />
       {t('lang.switchTo')}
     </button>
   )

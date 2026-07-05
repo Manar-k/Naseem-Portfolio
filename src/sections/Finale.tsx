@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next'
 import { Container } from '../components/Container'
-import { Eyebrow } from '../components/Eyebrow'
 import { Reveal } from '../components/Reveal'
-import { WordReveal } from '../components/WordReveal'
+import { SectionTitle } from '../components/SectionTitle'
+import { TiltShineCard } from '../components/TiltShineCard'
 import { profile } from '../data/profile'
 import { useLang } from '../hooks/useLang'
 
@@ -26,25 +26,29 @@ export function Finale() {
 
   const [firstSentence, ...restSentences] = content.finale.body[0].split('. ')
   const { lead, pairs } = splitLeadAndPairs(firstSentence, restSentences)
-  const lastWord = content.finale.signature.trim().split(' ').slice(-1)[0]
 
   return (
     <section id="summary" className="border-y border-ink/10 bg-surface px-6 py-24 sm:px-10 sm:py-32 lg:px-[72px]">
       <Container className="max-w-[1100px] p-0">
-        <Eyebrow index={7} label={t('nav.summary')} />
-        <h2 className="m-0 mb-8 font-display text-[clamp(30px,3.6vw,54px)] font-black leading-[1.5] text-ink">
+        <SectionTitle title={t('nav.summary')} className="mb-14 sm:mb-20" />
+
+        <h2 className="m-0 mb-8 text-center font-display text-[clamp(26px,3.2vw,46px)] font-black leading-[1.5] text-ink">
           {name} {content.finale.negations.slice(0, -1).join(' ')}{' '}
           <span className="text-accent">{content.finale.negations[content.finale.negations.length - 1]}</span>
         </h2>
 
-        {lead ? <p className="m-0 mb-12 font-display text-[clamp(18px,1.8vw,26px)] font-extrabold text-ink">{lead}:</p> : null}
+        {lead ? (
+          <p className="m-0 mb-12 text-center font-display text-[clamp(18px,1.8vw,26px)] font-extrabold text-ink">
+            {lead}
+          </p>
+        ) : null}
 
         <div className="mb-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
-          {pairs.map((pair) => (
-            <Reveal key={pair}>
-              <div className="border border-ink/20 p-6 text-center font-display text-[clamp(17px,1.6vw,22px)] font-extrabold leading-[1.8] text-ink">
+          {pairs.map((pair, index) => (
+            <Reveal key={pair} delay={index * 0.1}>
+              <TiltShineCard className="rounded-xl border border-ink/20 bg-bg p-6 text-center font-display text-[clamp(17px,1.6vw,22px)] font-extrabold leading-[1.8] text-ink">
                 {pair}
-              </div>
+              </TiltShineCard>
             </Reveal>
           ))}
         </div>
@@ -53,28 +57,21 @@ export function Finale() {
           <Reveal>
             <p className="m-0">{content.finale.body[1]}</p>
           </Reveal>
-          <Reveal>
-            <p className="m-0">
-              <strong className="font-bold text-accent">{t('common.inShort')}</strong>{' '}
-              {content.finale.principles.join(' ')}
-            </p>
-          </Reveal>
         </div>
 
         <Reveal>
-          <div className="mt-14 text-center font-display text-[clamp(16px,1.5vw,20px)] font-extrabold tracking-[0.3em] text-accent sm:mt-20">
-            {name.split(' ')[0]}
-          </div>
+          <p className="mx-auto mt-16 max-w-[26ch] text-center font-display text-2xl font-black text-accent sm:mt-20 sm:text-3xl">
+            {t('common.inShort')}
+          </p>
         </Reveal>
 
-        <WordReveal
-          as="p"
-          text={content.finale.signature}
-          className="mx-auto mt-4 block max-w-[28ch] text-center font-display text-[clamp(24px,3.4vw,48px)] font-black leading-[1.8] text-ink"
-          wordClassName="text-ink"
-          highlightWord={(word) => word.replace(/\.$/, '') === lastWord.replace(/\.$/, '')}
-          stagger={0.05}
-        />
+        <Reveal>
+          <div className="mx-auto mt-8 max-w-[64ch] border border-ink/20 bg-bg p-7 text-center sm:p-10">
+            <p className="m-0 font-display text-lg leading-[1.9] text-ink sm:text-xl">
+              {content.finale.principles.join(' ')}
+            </p>
+          </div>
+        </Reveal>
       </Container>
     </section>
   )

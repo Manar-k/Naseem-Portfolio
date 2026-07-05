@@ -41,6 +41,10 @@ export default {
           from: { transform: 'translateX(0)' },
           to: { transform: 'translateX(-50%)' },
         },
+        'marquee-reverse': {
+          from: { transform: 'translateX(-50%)' },
+          to: { transform: 'translateX(0)' },
+        },
         pulseDot: {
           '0%, 100%': { transform: 'scale(1)', opacity: '1' },
           '50%': { transform: 'scale(1.6)', opacity: '.5' },
@@ -56,6 +60,7 @@ export default {
       },
       animation: {
         marquee: 'marquee 28s linear infinite',
+        'marquee-reverse': 'marquee-reverse 28s linear infinite',
         pulseDot: 'pulseDot 2.4s ease-in-out infinite',
         heroFloat: 'heroFloat 6s ease-in-out infinite',
         frameShift: 'frameShift 6s ease-in-out infinite',

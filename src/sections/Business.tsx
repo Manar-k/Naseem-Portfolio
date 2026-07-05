@@ -1,6 +1,8 @@
 import { useTranslation } from 'react-i18next'
 import { Container } from '../components/Container'
 import { Reveal } from '../components/Reveal'
+import { SectionTitle } from '../components/SectionTitle'
+import { TiltShineCard } from '../components/TiltShineCard'
 import { profile } from '../data/profile'
 import { useLang } from '../hooks/useLang'
 import { sectionNumber } from '../utils/numerals'
@@ -11,14 +13,17 @@ export function Business() {
   const content = profile[lang]
   const lastContrast = content.business.contrasts[content.business.contrasts.length - 1]
 
+  const quoteCards = [
+    `${content.business.chain[0]} ${content.business.chain.slice(1).join(' ')}.`,
+    content.business.closing[0],
+    content.business.pullQuote,
+  ]
+
   return (
     <section id="commercial" className="bg-accent px-6 py-24 text-white sm:px-10 sm:py-32 lg:px-[72px]">
       <Container className="max-w-[1200px] p-0">
-        <Reveal>
-          <p className={`mb-4 text-[13px] font-bold ${lang === 'en' ? 'tracking-[0.18em]' : ''}`}>
-            {sectionNumber(3, lang)} — {t('nav.commercial')}
-          </p>
-        </Reveal>
+        <SectionTitle title={t('nav.commercial')} className="mb-14 [&_h2]:text-white [&_span]:bg-white/25 sm:mb-20" />
+
         <Reveal>
           <p className="m-0 mb-6 max-w-[60ch] text-[clamp(16px,1.4vw,20px)] font-medium leading-[2]">
             {content.business.intro}
@@ -35,18 +40,14 @@ export function Business() {
           </h2>
         </Reveal>
 
-        <div className="grid grid-cols-1 gap-px border border-white/35 bg-white/35 sm:grid-cols-2 lg:grid-cols-3">
-          <Reveal>
-            <div className="h-full bg-accent p-7 text-[16px] font-medium leading-[1.9]">{content.business.chain[0]} {content.business.chain.slice(1).join(' ')}.</div>
-          </Reveal>
-          <Reveal delay={0.05}>
-            <div className="h-full bg-accent p-7 text-[16px] font-medium leading-[1.9]">
-              {content.business.closing[0]}
-            </div>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <div className="h-full bg-accent p-7 text-[16px] font-medium leading-[1.9]">{content.business.pullQuote}</div>
-          </Reveal>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {quoteCards.map((text, index) => (
+            <Reveal key={text} delay={index * 0.12}>
+              <TiltShineCard className="h-full rounded-xl border border-white/30 bg-accent p-7 text-[16px] font-medium leading-[1.9]">
+                {text}
+              </TiltShineCard>
+            </Reveal>
+          ))}
         </div>
 
         <div className="mt-14 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:gap-16">

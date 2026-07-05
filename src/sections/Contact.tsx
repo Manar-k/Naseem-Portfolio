@@ -3,6 +3,7 @@ import { profile } from '../data/profile'
 import { useLang } from '../hooks/useLang'
 import { Reveal } from '../components/Reveal'
 import { RoleCycler } from '../components/RoleCycler'
+import { WordReveal } from '../components/WordReveal'
 
 const PHONE_HREF = '+966509145682'
 const EMAIL = 'Naseemfilfilan@gmail.com'
@@ -11,17 +12,20 @@ const LINKEDIN = 'linkedin.com/in/naseem-filfilan'
 export function Contact() {
   const { lang } = useLang()
   const content = profile[lang]
+  const lastWord = content.finale.signature.trim().split(' ').slice(-1)[0].replace(/\.$/, '')
 
   return (
     <footer id="contact" className="bg-surface-2 px-6 pb-10 pt-24 sm:px-10 sm:pt-32 lg:px-[72px]">
       <div className="mx-auto max-w-[1280px]">
-        <Reveal>
-          <h2 className="m-0 mb-6 font-display text-[clamp(40px,7vw,110px)] font-black leading-[1.35] text-accent">
-            {content.contact.heading[0]}
-            <br />
-            <span className="text-ink">{content.contact.heading[1]}</span>
-          </h2>
-        </Reveal>
+        <WordReveal
+          as="h2"
+          text={content.finale.signature}
+          className="m-0 mb-6 block font-display text-[clamp(32px,5.2vw,80px)] font-black leading-[1.35] text-ink"
+          wordClassName="text-ink"
+          highlightWord={(word) => word.replace(/\.$/, '') === lastWord}
+          highlightClassName="text-accent"
+          stagger={0.05}
+        />
 
                   <Reveal>
   <RoleCycler
