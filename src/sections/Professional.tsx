@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { Container } from '../components/Container'
 import { Reveal } from '../components/Reveal'
-import { SectionTitle } from '../components/SectionTitle'
+// import { SectionTitle } from '../components/SectionTitle'
 import { profile } from '../data/profile'
 import { useLang } from '../hooks/useLang'
 import { sectionNumber } from '../utils/numerals'
@@ -14,16 +14,37 @@ export function Professional() {
   return (
     <section id="professional" className="px-6 py-24 sm:px-10 sm:py-32 lg:px-[72px]">
       <Container className="p-0">
-        <SectionTitle title={t('nav.professional')} className="mb-14 sm:mb-20" />
+        {/* <SectionTitle title={t('nav.professional')} className="mb-14 sm:mb-20" /> */}
 
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[5fr_7fr] lg:gap-20">
           <div>
             <h2 className="m-0 mb-6 font-display text-[clamp(26px,3.2vw,46px)] font-black leading-[1.5] text-ink">
               {content.professional.title}
             </h2>
-            <p className="m-0 text-[clamp(15px,1.25vw,18px)] font-light leading-[2.1] text-ink/90">
+            {/* <p className="m-0 text-[clamp(15px,1.25vw,18px)] font-light leading-[2.1] text-ink/90">
               {content.professional.intro}
-            </p>
+            </p> */}
+            <p className="m-0 text-[clamp(15px,1.25vw,18px)] leading-[2.1]">
+  {content.professional.intro.map((paragraph, index) => (
+    <span
+      key={index}
+      className={
+        index === content.professional.intro.length - 1
+          ? "font-bold text-ink/90"
+          : "font-light text-ink/90"
+      }
+    >
+      {paragraph}
+      {index < content.professional.intro.length - 1 && " "}
+    </span>
+  ))}
+</p>
+            {/* {content.professional.intro.map((paragraph, index) => (
+            <p className={`m-0 text-[clamp(15px,1.25vw,18px)]  leading-[2.1] ${
+        index === content.professional.intro.length - 1
+          ? 'text-ink/90 font-bold'
+          : 'text-ink/90 font-light'
+      }`}>{paragraph}</p>))} */}
           </div>
 
           <div className="flex flex-col">
@@ -33,7 +54,7 @@ export function Professional() {
                   <span className="font-display text-sm font-extrabold text-accent">
                     {sectionNumber(index + 1, lang)}
                   </span>
-                  <span className="font-display text-[clamp(19px,1.8vw,26px)] font-bold text-ink">{question}</span>
+                  <span className="font-display mt-2 text-[clamp(8px,1.8vw,15px)] font-bold text-ink">{question}</span>
                 </div>
               </Reveal>
             ))}
@@ -42,11 +63,42 @@ export function Professional() {
 
         <div className="mx-auto mt-14 grid max-w-[1280px] grid-cols-1 gap-10 lg:mt-20 lg:grid-cols-[7fr_5fr] lg:gap-20">
           <div className="flex flex-col gap-7 text-[clamp(15px,1.25vw,18px)] font-light leading-[2.1]">
-            {content.professional.body.map((paragraph, index) => (
+            {/* {content.professional.body.map((paragraph, index) => (
               <Reveal key={paragraph} delay={index * 0.04}>
+                <div className="border-r-2 border-accent pr-6">
+                  
                 <p className="m-0">{paragraph}</p>
+                </div>
               </Reveal>
-            ))}
+            ))} */}
+            {content.professional.body.map((paragraph, index) => {
+  const isLast = index === content.professional.body.length - 1;
+  const isbeforeLast = index === content.professional.body.length - 2;
+  const [firstWord, ...rest] = paragraph.split(' ');
+  const words = paragraph.split(' ');
+  const firstThreeWords = words.slice(0, 3).join(' ');
+  const rest2 = words.slice(3).join(' ');
+
+  return (
+    <Reveal key={index} delay={index * 0.04}>
+      <div className="border-r-2 border-accent pr-6">
+        <p className="m-0">
+          {isLast ? (
+            <>
+              <span className="m-0 text-ink font-bold">{firstWord}</span> {rest.join(' ')}
+            </>
+          ) : isbeforeLast ? (
+            <>
+              <span className="m-0 text-ink font-bold">{firstThreeWords}</span> {rest2}
+            </>
+          ) : (
+            paragraph
+          )}
+        </p>
+      </div>
+    </Reveal>
+  );
+})}
           </div>
 
           <Reveal>
