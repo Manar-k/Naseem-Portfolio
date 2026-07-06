@@ -5,7 +5,7 @@
     "commercial": "Business",
     "numbers": "Track Record",
     "projects": "Projects",
-    "why": "Why Naseem",
+    "why": "Why Naseem?",
     "summary": "Summary"
   },
   "header": {
@@ -27,8 +27,8 @@
     "closeMenu": "Close menu"
   },
   "common": {
-    "inShort": "In short:",
-    "whatSetsHimApart": "What sets him apart professionally",
+    "inShort": "In short",
+    "whatSetsHimApart": "What sets him apart professionally?",
     "mostNotable": "Among the most notable of what he's worked on:"
   }
 }

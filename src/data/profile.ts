@@ -21,7 +21,7 @@ export interface LocaleContent {
   hero: {
     kicker: string
     tagline: string
-    lede: string
+    lede: string[]
     ctaPrimary: string
     ctaSecondary: string
   }
@@ -40,7 +40,7 @@ export interface LocaleContent {
   }
   professional: {
     title: string
-    intro: string
+    intro: string[]
     questions: string[]
     body: string[]
     traitsTitle: string
@@ -110,8 +110,8 @@ export const profile: Record<Lang, LocaleContent> = {
     },
     hero: {
       kicker: 'نسيم فلفلان',
-      tagline: 'عقل مهني. نفس تجاري. ولسان يعرف من أين تُؤكل الفـــــــــــــــــــــــرص.',
-      lede: 'نسيم مو موظف ممتاز وبس، ومو تاجر شاطر وبس. هو الاثنين.. وهذا هو الفرق.',
+      tagline: 'عقل مهــــــــــــني. نفس تجــــــــــــاري. ولسان يعرف من أين تُؤكل الفـــــــــــــــــــــــرص.',
+      lede: ['نسيم مو موظف ممتاز وبس، ومو تاجر شاطر وبس.', 'هو الاثنين.. وهذا هو الفرق.'],
       ctaPrimary: 'تواصل معي',
       ctaSecondary: 'السيرة الذاتية',
     },
@@ -122,7 +122,7 @@ export const profile: Record<Lang, LocaleContent> = {
         'وفيه ناس يعرفون السوق، لكن إذا دخلوا بيئة مهنية كبيرة ارتبكوا بين الأنظمة والاجتماعات والتقارير.',
         'نسيم فلفلان مو من هؤلاء ولا هؤلاء.',
       ],
-      pullQuote: 'هو من النوع النادر الذي يعرف كيف يتحرك في الجهتين.',
+      pullQuote: 'هو من النوع النادر الذي يعرف كيف يتحرك في الجهتـــــــــــــــــــين.',
       dual: {
         insideTitle: 'داخل المؤسسة',
         insideText:
@@ -133,14 +133,14 @@ export const profile: Record<Lang, LocaleContent> = {
       },
       body: [
         'نسيم ما يتكلم كثيرًا. هو شخص يعرف أي جملة تُقال، ومتى تُقال، ولمن تُقال.',
-        'يعرف يدخل على العميل من الباب الصحيح. يعرف يقرأ التردد قبل أن يتحول إلى رفض. ويعرف يحوّل الكلام العادي إلى قيمة تُشترى.',
+        'يعرف يدخل على العميل من الباب الصحيح. يعرف يقرأ التردد قبل أن يتحول إلى رفض. ويعرف يحوّل الكلام العادي إلى قيمة تُشترى. ',
       ],
-      summary: 'رجل أخذ من الوظيفة انضباطها، ومن التجارة حركتها، ومن الكلام قدرته على فتح الأبواب.',
+      summary: 'رجل أخذ من الوظــــــــــــــيفة انضباطها، ومن التجــــــــــارة حركتها، ومن الكلام قدرته على فتح الأبـــــــــــــــــــــــــــواب.',
     },
     professional: {
       title: 'الجانب المهني',
       intro:
-        'نسيم في الجانب المهني مو من النوع الذي يداوم وينتظر نهاية اليوم. هو من النوع الذي إذا دخل أي منظومة، يبدأ يسأل الأسئلة التي لا يسألها الجميع:',
+        ['نسيم في الجانب المهني مو من النوع الذي يداوم وينتظر نهاية اليوم. هو من النوع الذي إذا دخل أي منظومة،',' يبدأ يسأل الأسئلة التي لا يسألها الجميع:'],
       questions: [
         'ليش فيه تعطّل؟',
         'ليش تتكرر المشكلة؟',
@@ -292,7 +292,10 @@ export const profile: Record<Lang, LocaleContent> = {
     hero: {
       kicker: 'Naseem Filfilan',
       tagline: 'A professional mind. A trader’s instinct. A tongue that knows where opportunity is won.',
-      lede: 'Naseem isn’t just a great employee, and he isn’t just a sharp trader. He’s both, and that’s the difference.',
+      lede: [
+        'Naseem isn’t just a great employee, and he isn’t just a sharp trader. ',
+        'He’s both, and that’s the difference.',
+      ],
       ctaPrimary: 'Get in touch',
       ctaSecondary: 'Résumé',
     },
@@ -322,7 +325,7 @@ export const profile: Record<Lang, LocaleContent> = {
     professional: {
       title: 'The professional side',
       intro:
-        'On the professional side, Naseem isn’t the type who clocks in and waits for the day to end. He’s the type who, once inside any system, starts asking the questions no one else asks:',
+        ['On the professional side, Naseem isn’t the type who clocks in and waits for the day to end. He’s the type who, once inside any system, ','starts asking the questions no one else asks:'],
       questions: [
         'Why is there a bottleneck?',
         'Why does the problem keep repeating?',
