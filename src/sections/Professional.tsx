@@ -18,12 +18,15 @@ export function Professional() {
 
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[5fr_7fr] lg:gap-20">
           <div>
+            <Reveal>
             <h2 className="m-0 mb-6 font-display text-[clamp(26px,3.2vw,46px)] font-black leading-[1.5] text-ink">
               {content.professional.title}
             </h2>
+            </Reveal>
             {/* <p className="m-0 text-[clamp(15px,1.25vw,18px)] font-light leading-[2.1] text-ink/90">
               {content.professional.intro}
             </p> */}
+            <Reveal>
             <p className="m-0 text-[clamp(15px,1.25vw,18px)] leading-[2.1]">
   {content.professional.intro.map((paragraph, index) => (
     <span
@@ -39,6 +42,7 @@ export function Professional() {
     </span>
   ))}
 </p>
+</Reveal>
             {/* {content.professional.intro.map((paragraph, index) => (
             <p className={`m-0 text-[clamp(15px,1.25vw,18px)]  leading-[2.1] ${
         index === content.professional.intro.length - 1
@@ -123,19 +127,33 @@ export function Professional() {
           </Reveal>
         </div>
 
-        <Reveal>
+        {/* <Reveal>
           <p className="mx-auto mt-16 max-w-[26ch] text-center font-display text-2xl font-black text-accent sm:mt-20 sm:text-3xl">
             {t('common.inShort')}
           </p>
-        </Reveal>
+        </Reveal> */}
 
         <Reveal>
-          <div className="mx-auto mt-8 max-w-[64ch] border border-ink/20 bg-surface p-7 text-center sm:p-10">
+      <div className={`flex items-center justify-center gap-4 sm:gap-6 mt-16`}>
+        <span className="h-px w-8 shrink-0 bg-accent/30 sm:w-12" aria-hidden />
+          <h2 className="m-0 shrink-0 text-[15px] font-black leading-[1.3] text-accent sm:text-lg">
+            {content.professional.closing[0]} <br />
+            {content.professional.closing[1]}
+          </h2>
+        <span className="h-px w-8 shrink-0 bg-accent/30 sm:w-12" aria-hidden />
+      </div>
+    </Reveal>
+
+        {/* <Reveal>
+          <div className="mx-auto mt-8 max-w-[64ch] border border-ink/20 bg-transparent p-7 text-center sm:p-10">
             <p className="m-0 font-display text-lg leading-[1.9] text-ink sm:text-xl">
-              {content.professional.closing}
+              {content.professional.closing[0]}
+            </p>
+            <p className="m-0 font-display text-lg leading-[1.9] text-ink sm:text-xl">
+              {content.professional.closing[1]}
             </p>
           </div>
-        </Reveal>
+        </Reveal> */}
       </Container>
     </section>
   )

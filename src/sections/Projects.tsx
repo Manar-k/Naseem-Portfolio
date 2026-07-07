@@ -1,19 +1,19 @@
-import { useTranslation } from 'react-i18next'
+// import { useTranslation } from 'react-i18next'
 import { Container } from '../components/Container'
 import { Reveal } from '../components/Reveal'
-import { SectionTitle } from '../components/SectionTitle'
+// import { SectionTitle } from '../components/SectionTitle'
 import { profile } from '../data/profile'
 import { useLang } from '../hooks/useLang'
 
 export function Projects() {
   const { lang } = useLang()
-  const { t } = useTranslation()
+  // const { t } = useTranslation()
   const content = profile[lang]
 
   return (
     <section id="projects" className="border-y border-ink/10 bg-surface px-6 py-24 sm:px-10 sm:py-32 lg:px-[72px]">
       <Container className="max-w-[1280px] p-0">
-        <SectionTitle title={t('nav.projects')} className="mb-14 sm:mb-20" />
+        {/* <SectionTitle title={t('nav.projects')} className="mb-14 sm:mb-20" /> */}
         <h2 className="m-0 mb-6 text-center font-display text-[clamp(24px,3vw,44px)] font-black leading-[1.5] text-ink">
           {content.projects.title}
         </h2>

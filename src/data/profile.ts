@@ -45,23 +45,29 @@ export interface LocaleContent {
     body: string[]
     traitsTitle: string
     traits: string[]
-    closing: string
+    closing: string[]
   }
   business: {
     title: string
-    intro: string
+    intro: string[]
     askList: string[]
     chain: string[]
+    mytext: string[]
+    mytext2: string[]
+    mywords: string[]
     contrasts: { less: string; more: string }[]
+    mytext3: string[]
     closing: string[]
-    pullQuote: string
+    pullQuote: string[]
   }
   stats: {
     title: string
-    intro: string
+    intro: string[]
     items: StatItem[]
+    statstext: string[]
+    statstext2: string[]
     closing: string[]
-    pullQuote: string
+    pullQuote: string[]
   }
   projects: {
     title: string
@@ -110,7 +116,7 @@ export const profile: Record<Lang, LocaleContent> = {
     },
     hero: {
       kicker: 'نسيم فلفلان',
-      tagline: 'عقل مهــــــــــــني. نفس تجــــــــــــاري. ولسان يعرف من أين تُؤكل الفـــــــــــــــــــــــرص.',
+      tagline: 'عقل مهـــــــــــــني. نفس تجــــــــــــاري. ولسان يعرف من أين تُؤكل الفـــــــــــــــــــــــرص.',
       lede: ['نسيم مو موظف ممتاز وبس، ومو تاجر شاطر وبس.', 'هو الاثنين.. وهذا هو الفرق.'],
       ctaPrimary: 'تواصل معي',
       ctaSecondary: 'السيرة الذاتية',
@@ -132,7 +138,7 @@ export const profile: Record<Lang, LocaleContent> = {
           'يتحرك بنفس تاجر: يلتقط الفرصة، يفهم حاجة العميل، يعرف كيف يصيغ العرض، ويبيع الفكرة قبل المنتج.',
       },
       body: [
-        'نسيم ما يتكلم كثيرًا. هو شخص يعرف أي جملة تُقال، ومتى تُقال، ولمن تُقال.',
+        'وهنا شخصية نسيم تظهر بوضوح. نسيم ما يتكلم كثيرًا. هو شخص يعرف أي جملة تُقال، ومتى تُقال، ولمن تُقال. ',
         'يعرف يدخل على العميل من الباب الصحيح. يعرف يقرأ التردد قبل أن يتحول إلى رفض. ويعرف يحوّل الكلام العادي إلى قيمة تُشترى. ',
       ],
       summary: 'رجل أخذ من الوظــــــــــــــيفة انضباطها، ومن التجــــــــــارة حركتها، ومن الكلام قدرته على فتح الأبـــــــــــــــــــــــــــواب.',
@@ -140,20 +146,20 @@ export const profile: Record<Lang, LocaleContent> = {
     professional: {
       title: 'الجانب المهني',
       intro:
-        ['نسيم في الجانب المهني مو من النوع الذي يداوم وينتظر نهاية اليوم. هو من النوع الذي إذا دخل أي منظومة،',' يبدأ يسأل الأسئلة التي لا يسألها الجميع:'],
+        ['نسيم في الجانب المهني مو من النوع الي يداوم وينتظر نهاية اليوم. هو من النوع الي إذا دخل أي منظومة،',' يبدأ يسأل الأسئلة التي لا يسألها الجميع:'],
       questions: [
         'ليش فيه تعطّل؟',
         'ليش تتكرر المشكلة؟',
         'من أين يهرب الوقت؟',
-        'وأي رقم في التقرير يقول الحقيقة التي ما يقولها أحد؟',
+        'وأي رقم في التقرير يقول الحقيقة الي ما يقولها أحد؟',
       ],
       body: [
         'خلفيته في الهندسة الصناعية كوّنت فيه عقلية عملية؛ لا يرى العمل كمجموعة مهام، بل كنظام كامل. والنظام، في نظره، إما أن يكون واضحًا.. أو يحتاج إلى إعادة ترتيب.',
         'خلال مسيرته، عمل في بيئات تشغيلية وتحليلية، وراكم خبرة في تجربة العملاء، تحليل البيانات، بناء لوحات المؤشرات، أتمتة التقارير، وقيادة مبادرات التحسين المستمر.',
-        'في بوبا العربية، كان جزءًا من بيئة تعتمد على الأرقام ومؤشرات الرضا. صمم وتابع لوحات NPS، تعامل مع مئات الآلاف من استجابات العملاء، وساهم في تحويل البيانات إلى قرارات ومبادرات تطويرية.',
+        'في بوبا العربية، كان جزءًا من بيئة تعتمد على الأرقام ومؤشرات الرضا، وتحسين تجربة العميل. صمم وتابع لوحات NPS، تعامل مع مئات الآلاف من استجابات العملاء،  وساهم في تحويل البيانات إلى قرارات ومبادرات تطويرية.',
         'واليوم، يعمل مهندس جودة في وزارة الموارد البشرية، في خطوة مهنية تعكس انتقاله الطبيعي إلى مساحة الجودة المؤسسية؛ حيث لا يكفي أن تعمل، بل يجب أن تعرف كيف تقيس العمل، تضبطه، وتطوره.',
       ],
-      traitsTitle: 'ما الذي يميّزه مهنيًا',
+      traitsTitle: 'ما الذي يميّزه مهنيًا؟',
       traits: [
         'عقلية تحليلية لا تنخدع بالكلام العام.',
         'فهم تشغيلي يعرف أين تختنق المنظومات.',
@@ -163,12 +169,12 @@ export const profile: Record<Lang, LocaleContent> = {
         'قدرة على الربط بين الجودة، العميل والنتيجة النهائية.',
       ],
       closing:
-        'نسيم ليس نوع الموظفين الذين ينفذون المطلوب فقط. هو شخص يدخل المنظومة.. ثم يبدأ بفهم اللعبة من الداخل.',
+        ['نســــــــــــــــــــــــــــــيم ليس نوع الموظفين الي ينفذون المطلوب فقط.',' هو شخص يدخل المنظومة.. ثم يبدأ بفهم اللعبة من الداخل.'],
     },
     business: {
       title: 'الجانب التجاري',
       intro:
-        'الجانب الأوضح في نسيم، والذي لا يمكن تجاهله، هو حسّه التجاري. وهنا لا نتكلم عن شخص "جرّب يبيع"، بل عن شخص يملك حسّ البيّاع بالفطرة؛ من النوع الذي يقدر أن يجلس معك خمس دقائق، ثم يعرف تقريبًا:',
+        ['لكن الجانب الأوضح في نسيـم، والذي لا يمكن تجاهله، هو حسّه التجاري. وهنا لا نتكلم عن شخص "جرّب يبيع"،',' بل عن شخص يملك حــــــــــــــــــــــــسّ البيّاع بالفطرة؛ من النوع الذي يقدر أن يجلس معك خمس دقائق، ثـــــــــــم يعرف تقريبًا:'],
       askList: [
         'ما الذي تحتاجه.',
         'ما الذي يوقفك.',
@@ -176,6 +182,9 @@ export const profile: Record<Lang, LocaleContent> = {
         'وما الجملة التي تحتاج تسمعها حتى تتخذ القرار.',
       ],
       chain: ['الكلام إذا صيغ صح', 'يتحول إلى ثقة', 'والثقة تتحول إلى قرار', 'والقرار يتحول إلى بيع'],
+      mytext:['نسيم يعرف يــــــــــــــبيع الكــــــــــــــــــلام.',' لكن مو في معناه التقليدي الفارغ.'],
+      mywords:['كلام', 'ثقة', 'قرار', 'بيع'],
+      mytext2:['يعرف يبيع الكلام لأنه يعرف أن الكلام، إذا صيغ صح:','الكلام يتحول إلى ثقة','والثقة تتحول إلى قرار ','والقرار يتحول إلى بيع',' هذي مو موهبة بسيطة'],
       contrasts: [
         { less: 'كثير يعرف يشرح المنتج.', more: 'قليل يعرف يخليك تشعر أن المنتج جاء في وقته.' },
         {
@@ -184,16 +193,13 @@ export const profile: Record<Lang, LocaleContent> = {
         },
         { less: 'كثير يبيعون بالسعر.', more: 'نسيم يبيع بالقيمة.' },
       ],
-      closing: [
-        'تجارته ليست مجرد بيع وشراء. هي قراءة ناس. قراءة سوق. قراءة لحظة.',
-        'يعرف متى يضغط، ومتى يخفف. متى يمزح، ومتى يكون جادًا. متى يفتح الموضوع، ومتى يقفل الصفقة.',
-      ],
-      pullQuote: 'نسيم ما يطارد العميل. نسيم يخلي العميل يقتنع أنه جاء للمكان الصح.',
+      mytext3:['لذلك، تجارته ليست مجرد بيع وشراء. هي: ',' قراءة ناس',' قراءة سوق',' قراءة لحظة'],
+      closing: ['يعرف متى يضـــــــــــغط، ومتى يخــــــــــــــــــــــفف.',' متى يمـــــــــــزح، ومتى يكون جـــــــــــــــــــــــــــــــــــادًا.',' متى يفتح الموضوع، ومتى يقفل الصفقة. ','وهنا قــــــــــــــــــــوته:'],
+      pullQuote: ['نسيم ما يطارد العميل.',' نسيم يخلي العميل يقتنع أنه جاء للمكان الصح.'],
     },
     stats: {
       title: 'أرقام لا تجامل',
-      intro:
-        'الكلام جميل، لكن السوق لا يحترم الكلام وحده. الأرقام هنا تقول إن نسيم ما يبيع صورة عن نفسه، بل يملك تجارب فعلية خلف هذه الصورة.',
+      intro:['الكلام جميل، لكن السوق لا يحترم الكلام وحده. ','الأرقام هنا تقول إن نسيـم ما يبيع صورة عن نفسه، بل يملك تجارب فعلية خلف هذه الصورة.',' من أبرز ما حققه واشتغل عليه:'],
       items: [
         { value: '+300', label: 'مكينة حلاقة (الجزازة) تم بيعها' },
         { value: '+300', label: 'خدمة كتابة سيرة ذاتية' },
@@ -203,9 +209,14 @@ export const profile: Record<Lang, LocaleContent> = {
         { value: '+300', label: 'مبادرة كايزن للتحسين المستمر' },
         { value: '75', label: 'درجة NPS تحققت في قسم الطب عن بُعد' },
         { value: '4', label: 'أعضاء فريق مبيعات بناه وأداره' },
+        { value: 'Ꝏ', label: 'أسس وأدار متجرًا إلكترونيًا عبر منصة سلة' },
+        { value: 'Ꝏ', label: 'عمل في تطوير الأعمال واستقطاب العملاء كمدير لتطوير الأعمال لدى يونيك مارك للتسويق' },
+        { value: 'Ꝏ', label: 'أعد تقارير تحليلية وعروضًا تنفيذية لدعم القرار' },
       ],
-      closing: ['نسيم لا يعتمد على الحدس وحده. ولا على الكلام وحده. ولا على الشهادة وحدها.', 'هو يجمع بين الثلاثة: حس التاجر. لغة البيع. وعقلية المهندس.'],
-      pullQuote: 'الأرقام عنده مو للزينة. الأرقام عنده ذخيرة.',
+      statstext:['هذه الأرقام تكشف الخلطة الحقيقية:',' نسيم لا يعتمد على الحدس وحده ','ولا على الكلام وحده',' ولا على الشهادة وحدها'],
+      statstext2:['هو يجمع بين الثلاثة:',' حس التاجر ','لغة البيع',' وعقلية المهندس'],
+      closing: ['وهذه خلطة صعبة. ','لأن البائع العادي قد يعرف كيف يقنـــــــــعك. ','والمحلل العادي قد يعرف كيف يقرأ الرقم.',' لكن نسيـم يعرف كيف يقرأ الرقم، ثم يحوله إلى كلام مفهوم، ثم يحوله إلى عرض قابل للبيع.',' وهنا الفـــــــــــــــــــــــــــرق.'],
+      pullQuote: ['الأرقام عنده مو للــــــــــــــــــــــــــــــــــــزينة.', 'الأرقام عنده ذخـــــــــــــــــــــــــــــــــــــــــــــــيرة.'],
     },
     projects: {
       title: 'مشاريع تحمل شخصيته',
@@ -348,12 +359,12 @@ export const profile: Record<Lang, LocaleContent> = {
         'The ability to connect quality, the customer, and the final outcome.',
       ],
       closing:
-        'Naseem isn’t the kind of employee who just executes what’s asked. He’s someone who enters the system.. then starts understanding the game from the inside.',
+        ['Naseem isn’t the kind of employee who just executes what’s asked.',' He’s someone who enters the system.. then starts understanding the game from the inside.'],
     },
     business: {
       title: 'The business side',
       intro:
-        'The clearest side of Naseem, the one impossible to ignore, is his business instinct. And this isn’t about someone who "tried selling once." This is someone with a born seller’s instinct; the type who can sit with you for five minutes and already know, roughly:',
+        ['The clearest side of Naseem, the one impossible to ignore, is his business instinct. And this isn’t about someone who "tried selling once." This is someone with a born seller’s instinct; ','the type who can sit with you for five minutes and already know, roughly:'],
       askList: [
         'What you need.',
         'What’s stopping you.',
@@ -361,6 +372,9 @@ export const profile: Record<Lang, LocaleContent> = {
         'And the exact sentence you need to hear before you decide.',
       ],
       chain: ['Words, framed right', 'turn into trust', 'trust turns into a decision', 'and a decision turns into a sale'],
+      mytext:['نسيم يعرف يبيع الكلام.',' لكن مو في معناه التقليدي الفارغ.'],
+      mywords:['كلام', 'ثقة', 'قرار', 'بيع'],
+      mytext2:['يعرف يبيع الكلام لأنه يعرف أن الكلام، إذا صيغ صح،',' يتحول إلى ثقة.','والثقة تتحول إلى قرار. ','والقرار يتحول إلى بيع.',' هذي مو موهبة بسيطة.'],
       contrasts: [
         { less: 'Many know how to explain a product.', more: 'Few know how to make you feel it arrived at the right time.' },
         {
@@ -369,16 +383,16 @@ export const profile: Record<Lang, LocaleContent> = {
         },
         { less: 'Many sell on price.', more: 'Naseem sells on value.' },
       ],
+      mytext3:['لذلك، تجارته ليست مجرد بيع وشراء. ','هي قراءة ناس.',' قراءة سوق.',' قراءة لحظة.'],
       closing: [
         'His trade was never just buying and selling. It’s reading people. Reading the market. Reading the moment.',
         'He knows when to push and when to ease off. When to joke and when to be serious. When to open a topic and when to close the deal.',
       ],
-      pullQuote: 'Naseem doesn’t chase the client. Naseem lets the client feel he arrived at exactly the right place.',
+      pullQuote: ['Naseem doesn’t chase the client.',' Naseem lets the client feel he arrived at exactly the right place.'],
     },
     stats: {
       title: 'Numbers that don’t flatter',
-      intro:
-        'Words are nice, but the market doesn’t respect words alone. The numbers here say Naseem isn’t selling an image of himself, he has a real track record behind it.',
+      intro:['الكلام جميل، لكن السوق لا يحترم الكلام وحده. ','الأرقام هنا تقول إن نسيـم ما يبيع صورة عن نفسه، بل يملك تجارب فعلية خلف هذه الصورة.',' من أبرز ما حققه واشتغل عليه:'],
       items: [
         { value: '300+', label: 'shaving machines sold ("Al-Jazzaza")' },
         { value: '300+', label: 'resume-writing services delivered' },
@@ -389,8 +403,10 @@ export const profile: Record<Lang, LocaleContent> = {
         { value: '75', label: 'NPS score achieved in the telehealth department' },
         { value: '4', label: 'sales coordinators on a team he built and ran' },
       ],
+      statstext:['هذه الأرقام تكشف الخلطة الحقيقية:',' نسيم لا يعتمد على الحدس وحده. ','ولا على الكلام وحده.',' ولا على الشهادة وحدها.'],
+      statstext2:['هو يجمع بين الثلاثة:',' حس التاجر','لغة البيع',' وعقلية المهندس'],
       closing: ['Naseem doesn’t rely on instinct alone. Not on words alone. Not on credentials alone.', 'He combines all three: a trader’s instinct, the language of sales, and an engineer’s mindset.'],
-      pullQuote: 'The numbers aren’t decoration. The numbers are ammunition.',
+      pullQuote: ['The numbers aren’t decoration.', 'The numbers are ammunition.'],
     },
     projects: {
       title: 'Projects that carry his signature',
