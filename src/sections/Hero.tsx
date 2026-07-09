@@ -1,8 +1,6 @@
-// import { IconArrowDown } from '@tabler/icons-react'
 import { WordReveal } from '../components/WordReveal'
 import { Reveal } from '../components/Reveal'
 import { HeroBackground } from '../components/HeroBackground'
-import { RoleCycler } from '../components/RoleCycler'
 import { profile } from '../data/profile'
 import { useLang } from '../hooks/useLang'
 
@@ -39,23 +37,11 @@ export function Hero() {
   />
 </Reveal>
         <Reveal>
-          <RoleCycler roles={content.meta.roles} className="text-[15px] font-light  text-ink/75 sm:text-lg" />
+          <p className="text-[15px] font-display text-ink/75 sm:text-lg">{content.meta.roles[0]} </p>
         </Reveal>
 
         <div className="relative flow-root">
-          {/* <div
-            className="relative z-0 float-end mb-3 ms-6 aspect-[4/5] w-[46%] max-w-[280px] overflow-hidden rounded-2xl sm:max-w-[340px] lg:max-w-[400px]"
-            aria-hidden={false}
-          >
-            <img
-              src="/images/naseem-filfilan.png"
-              alt={content.meta.name}
-              width={420}
-              height={525}
-              loading="eager"
-              className="h-full w-full object-cover"
-            />
-          </div> */}
+
 
           <h1 className="relative z-10 m-0 mt-10 gap-36 font-display text-[clamp(26px,4.6vw,35px)] font-black leading-[1.18] text-ink sm:mt-14">
             {clauses.map((clause, index) => {
@@ -78,11 +64,7 @@ export function Hero() {
             })}
           </h1>
           <br/>
-          <Reveal delay={1.1}>
-            <p className="m-0 max-w-[42ch] text-[15px] font-normal leading-[2] text-ink/90 sm:text-lg">
-              {/* {content.hero.lede} */}
-            </p>
-          </Reveal>
+   
           {content.hero.lede.map((paragraph, index) => (
             <Reveal key={paragraph} delay={index * 0.05}>
               <p className={`m-0 ${
@@ -94,25 +76,24 @@ export function Hero() {
           ))}
         </div>
 
-        {/* <div className="mt-6 flex flex-wrap items-end justify-between gap-6"> */}
-          {/* <Reveal delay={1.1}>
-            <p className="m-0 max-w-[42ch] text-[15px] font-normal leading-[2] text-ink/90 sm:text-lg">
-              {content.hero.lede}
-            </p>
-          </Reveal> */}
-          {/* <Reveal delay={1.2}>
-            <a
-              href="#about"
-              className="group inline-flex items-center gap-2 rounded-full border border-ink/35 px-7 py-3.5 text-sm tracking-[0.12em] text-ink transition-all duration-300 hover:border-accent hover:bg-accent hover:text-white"
-            >
-              {content.hero.ctaPrimary}
-              <IconArrowDown
-                className="h-4 w-4 -rotate-90 transition-transform group-hover:translate-x-0.5 rtl:rotate-90 rtl:group-hover:-translate-x-0.5"
-                stroke={1.75}
-              />
-            </a>
-          </Reveal> */}
-        {/* </div> */}
+        <Reveal>
+          <div className="mt-8 flex flex-wrap gap-3">
+            {content.meta.roles.map((text, index) => {
+              const isEmphasized = index >= content.meta.roles.length - 3
+              return (
+                <span
+                  key={text}
+                  className={` border px-[22px] py-2.5 font-display text-[clamp(15px,1.25vw,18px)] duration-300 hover:border-accent hover:text-accent ${
+                    isEmphasized ? 'border-ink text-ink': 'border-ink text-ink'
+                  }`}
+                >
+                  {text}
+                </span>
+              )
+            })}
+          </div>
+        </Reveal>
+ 
       </div>
     </section>
   )

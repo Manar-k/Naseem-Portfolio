@@ -90,7 +90,7 @@ export interface LocaleContent {
     negations: string[]
     body: string[]
     principles: string[]
-    signature: string
+    signature: string[]
   }
   contact: {
     title: string
@@ -108,7 +108,7 @@ export const profile: Record<Lang, LocaleContent> = {
     meta: {
       name: 'نسيم فلفلان',
       roles: [
-        'مهندس جودة في وزارة الموارد البشرية',
+        'مهندس جودة لدى شركة من شركات وزارة الموارد البشرية',
         'مدير تطوير أعمال في يونيك مارك للتسويق',
         'رائد أعمال',
         'مؤسس متجر أبو ميس للحلول المتكاملة',
@@ -159,7 +159,7 @@ export const profile: Record<Lang, LocaleContent> = {
         'خلفيته في الهندسة الصناعية كوّنت فيه عقلية عملية؛ لا يرى العمل كمجموعة مهام، بل كنظام كامل. والنظام، في نظره، إما أن يكون واضحًا.. أو يحتاج إلى إعادة ترتيب.',
         'خلال مسيرته، عمل في بيئات تشغيلية وتحليلية، وراكم خبرة في تجربة العملاء، تحليل البيانات، بناء لوحات المؤشرات، أتمتة التقارير، وقيادة مبادرات التحسين المستمر.',
         'في بوبا العربية، كان جزءًا من بيئة تعتمد على الأرقام ومؤشرات الرضا، وتحسين تجربة العميل. صمم وتابع لوحات NPS، تعامل مع مئات الآلاف من استجابات العملاء،  وساهم في تحويل البيانات إلى قرارات ومبادرات تطويرية.',
-        'واليوم، يعمل مهندس جودة في وزارة الموارد البشرية، في خطوة مهنية تعكس انتقاله الطبيعي إلى مساحة الجودة المؤسسية؛ حيث لا يكفي أن تعمل، بل يجب أن تعرف كيف تقيس العمل، تضبطه، وتطوره.',
+        'واليوم، يعمل مهندس جودة لدى شركة من شركات وزارة الموارد البشرية، في خطوة مهنية تعكس انتقاله الطبيعي إلى مساحة الجودة المؤسسية؛ حيث لا يكفي أن تعمل، بل يجب أن تعرف كيف تقيس العمل، تضبطه، وتطوره.',
       ],
       traitsTitle: 'ما الذي يميّزه مهنيًا؟',
       traits: [
@@ -231,7 +231,7 @@ export const profile: Record<Lang, LocaleContent> = {
           tagline: 'في أبو ميس، نسيم يبيع الحل.',
           description:
             'أبو ميس للحلول المتكاملة في سلة ليس متجرًا تقليديًا يعرض منتجات تقليدية. هو فكرة قائمة على اختصار الطريق على العميل: فهم الحاجة، ترتيب الخيارات، وربط الشخص بالحل المناسب دون لف ودوران.',
-          image: '/projects/salla.jpeg',
+          image: '/projects/salla.jpg',
         },
         {
           name: 'بودكاست سَفر',
@@ -272,9 +272,10 @@ export const profile: Record<Lang, LocaleContent> = {
       title: 'الخلاصة',
       negations: ['ليس مجرد مهندس جودة.', 'وليس مجرد رائد أعمال.', 'وليس مجرد شخص يملك متجرًا أو بودكاستًا.'],
       body: [
-        'هو شخصية تجمع: بين الانضباط والحركة. بين العقل واللسان. بين الجودة والبيع. بين المؤسسة والسوق.',
+        'هو شخصية تجمع بين: الانضباط والحركة. العقل واللسان. الجودة والبيع. المؤسسة والسوق.',
         'يعرف أن العمل يحتاج نظامًا. ويعرف أن السوق يحتاج سرعة.',
-        'ويعرف أن العميل يحتاج من يفهمه قبل أن يبيعه. وهذه هي قوة نسيم:'
+        'ويعرف أن العميل يحتاج من يفهمه قبل أن يبيعه. ',
+        'وهذه هي قوة نسيم:',
       ],
       principles: [
         'لا يبيع لأنه يرفع صوته.',
@@ -282,7 +283,7 @@ export const profile: Record<Lang, LocaleContent> = {
         'ولا يتحرك لأنه يبحث عن ضجيج.',
         'بل لأنه يعرف كيف يمسك الفرصة من طرفها الصحيح.',
       ],
-      signature: 'عقل مهني. نفس تجاري. ولسان يعرف كيف يحوّل الفكرة إلى فرصة.',
+      signature: ['عقل مهني. نفس تجاري. ',' ولسان يعرف كيف يحوّل الفكرة  إلى  فرصــــــــــــة.'],
     },
     contact: {
       title: 'لنتحدث',
@@ -425,7 +426,7 @@ export const profile: Record<Lang, LocaleContent> = {
           tagline: 'Naseem sells the solution.',
           description:
             'Not a traditional store selling traditional products. It’s an idea built on shortening the customer’s path: understanding the need, structuring the options, and connecting the person to the right solution, no runaround.',
-          image: '/projects/salla.jpeg',
+          image: '/projects/salla.jpg',
         },
         {
           name: 'Safar Podcast',
@@ -475,7 +476,7 @@ export const profile: Record<Lang, LocaleContent> = {
         'He doesn’t move because he’s chasing noise.',
         'He moves because he knows how to grab the opportunity by its right end.',
       ],
-      signature: 'A professional mind. A trader’s instinct. A tongue that knows how to turn an idea into an opportunity.',
+      signature: ['A professional mind. A trader’s instinct.',' A tongue that knows how to turn an idea into an opportunity.'],
     },
     contact: {
       title: 'Let’s talk',

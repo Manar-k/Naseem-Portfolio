@@ -14,8 +14,10 @@ export function About() {
   const checklistItems = checklistSource.split('. ').filter(Boolean)
 
   return (
-    <section id="about" className="px-6 py-12 sm:px-10 sm:py-10 lg:px-[72px]">
-      <SectionTitle title={content.about.title} className="mb-14 sm:mb-20" />
+    <>
+    <span id="about"></span>
+    <section  className="px-6 py-12 sm:px-10 sm:py-10 lg:px-[72px]">
+      <SectionTitle title={content.about.title} className="mb-14 sm:mb-20"/>
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-[5fr_7fr] lg:gap-20">
         <div className="lg:sticky lg:top-12 lg:self-start">
           <p className="m-0 pt-12 font-display text-[clamp(16px,3.2vw,26px)] font-black leading-[1.5] text-ink">
@@ -73,11 +75,21 @@ export function About() {
         </div>
       </div>
 
-      <Reveal>
+      {/* <Reveal>
         <p className="mx-auto mt-16 max-w-[26ch] text-center font-display text-2xl font-black text-accent sm:mt-20 sm:text-3xl">
           {t('common.inShort')}
         </p>
-      </Reveal>
+      </Reveal> */}
+      <Reveal>
+      <div className={`flex items-center justify-center gap-4 sm:gap-6 mt-16`}>
+        <span className="h-px w-8 shrink-0 bg-accent/30 sm:w-12" aria-hidden />
+          <h2 className="m-0 shrink-0 text-[15px] font-black leading-[1.3] text-accent sm:text-lg">
+            {t('common.inShort')}
+          </h2>
+        <span className="h-px w-8 shrink-0 bg-accent/30 sm:w-12" aria-hidden />
+      </div>
+    </Reveal>
     </section>
+    </>
   )
 }

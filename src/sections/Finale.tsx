@@ -7,14 +7,15 @@ import { profile } from '../data/profile'
 import { useLang } from '../hooks/useLang'
 import { IconArrowDownRight } from '@tabler/icons-react'
 
-const PAIR_MARKER = /بين|Between/
+const PAIR_MARKER = /بين:|Between:/
 
 /** Splits "He's a character that combines discipline and momentum. Mind and tongue. ..."
  * into a lead-in clause and a list of "X and Y" pairs for the 4-cell grid. */
 function splitLeadAndPairs(bodyFirstSentence: string, restSentences: string[]): { lead: string; pairs: string[] } {
   const match = bodyFirstSentence.match(PAIR_MARKER)
-  const lead = match ? bodyFirstSentence.slice(0, match.index).trim() : ''
-  const firstPair = match ? bodyFirstSentence.slice(match.index) : bodyFirstSentence
+  const splitEnd = match ? match.index! + match[0].length : 0
+  const lead = match ? bodyFirstSentence.slice(0, splitEnd).trim() : ''
+  const firstPair = match ? bodyFirstSentence.slice(splitEnd).trim() : bodyFirstSentence
   const pairs = [firstPair, ...restSentences].map((sentence) => sentence.replace(/\.$/, '').trim())
   return { lead, pairs }
 }
@@ -29,7 +30,7 @@ export function Finale() {
   const { lead, pairs } = splitLeadAndPairs(firstSentence, restSentences)
 
   return (
-    <section id="summary" className="border-y border-ink/10 bg-surface px-6 py-24 sm:px-10 sm:py-32 lg:px-[72px]">
+    <section id="summary" className="border-y border-ink/10 bg-surface px-6 py-12 sm:px-10 sm:py-10 lg:px-[72px]">
       <Container className="max-w-[1100px] p-0">
         <SectionTitle title={t('nav.summary')} className="mb-14 sm:mb-20" />
 
@@ -41,9 +42,16 @@ export function Finale() {
         </h2>
 
         {lead ? (
-          <p className="m-0 mb-12 font-display text-[clamp(18px,1.8vw,26px)] font-extrabold text-accent">
-            {lead}
-          </p>
+          <Reveal>
+            <div className="flex flex-col gap-3 mb-5 text-[clamp(15px,1.25vw,18px)] font-light leading-[1.9]">
+                <div  className="border-r-[3px] border-accent pr-6 py-2">
+                  <p>{lead}</p>
+                </div>
+            </div>
+          </Reveal>
+          // <p className="m-0 mb-12 font-display text-[clamp(18px,1.8vw,26px)] font-extrabold text-accent">
+          //   {lead}
+          // </p>
         ) : null}
 
         <div className="mb-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -56,9 +64,10 @@ export function Finale() {
           ))}
         </div>
 
-        <div className="mb-5 border-r-2 border-accent pr-6 grid grid-cols-1 gap-10 text-[clamp(15px,1.25vw,17.5px)] leading-[2.1] sm:grid-cols-2 sm:gap-16">
+        <div className="mb-2 border-r-2 border-accent pr-6 grid grid-cols-1 gap-10  leading-[2.1] sm:grid-cols-2 sm:gap-16">
           <Reveal>
-            <p className="m-0">{content.finale.body[1]} <br />{content.finale.body[2]}</p>
+            <p className="text-[clamp(15px,1.25vw,18px)] font-light">{content.finale.body[1]} <br />
+            <span className="text-[clamp(15px,1.25vw,18px)] font-light">{content.finale.body[2]}<span className="text-[clamp(15px,1.25vw,18px)] font-bold">{content.finale.body[3]}</span></span></p>
           </Reveal>
         </div>
 

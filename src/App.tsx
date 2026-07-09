@@ -1,5 +1,4 @@
 import { Header } from './components/Header'
-import { Marquee } from './components/Marquee'
 import { Hero } from './sections/Hero'
 import { About } from './sections/About'
 import { BigStatement } from './sections/BigStatement'
@@ -11,19 +10,18 @@ import { Why } from './sections/Why'
 import { Finale } from './sections/Finale'
 import { Certificates } from './sections/Certificates'
 import { Contact } from './sections/Contact'
-import { useLang } from './hooks/useLang'
-import { profile } from './data/profile'
+// import { useLang } from './hooks/useLang'
+// import { profile } from './data/profile'
 
 function App() {
-  const { lang } = useLang()
-  const content = profile[lang]
+  // const { lang } = useLang()
+  // const content = profile[lang]
 
   return (
     <div className="min-h-screen bg-bg text-ink">
       <Header />
       <main>
         <Hero />
-        <Marquee items={content.meta.roles} />
         <About />
         <BigStatement />
         <Professional />
@@ -31,8 +29,8 @@ function App() {
         <Stats />
         <Projects />
         <Why />
-        <Finale />
         <Certificates />
+        <Finale />
         <Contact />
       </main>
     </div>

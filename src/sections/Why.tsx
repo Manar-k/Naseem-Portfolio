@@ -1,8 +1,10 @@
+import { useTranslation } from 'react-i18next'
 import { Container } from '../components/Container'
 import { Reveal } from '../components/Reveal'
 import { profile } from '../data/profile'
 import { useLang } from '../hooks/useLang'
 import { IconArrowDownRight } from '@tabler/icons-react'
+import { SectionTitle } from '../components/SectionTitle'
 
 function splitContrast(line: string): [string, string] {
   const marker = line.includes('..') ? '..' : '.. '
@@ -13,18 +15,20 @@ function splitContrast(line: string): [string, string] {
 
 export function Why() {
   const { lang } = useLang()
+    const { t } = useTranslation()
   const content = profile[lang]
 
   return (
-    <section id="why" className="mx-auto max-w-[1100px] px-6 py-24 sm:px-10 sm:py-32 lg:px-[72px]">
+    <section id="why" className="mx-auto max-w-[1100px] px-6 py-12 sm:px-10 sm:py-10 lg:px-[72px]">
       <Container className="p-0">
+        <SectionTitle title={t('nav.why')} className="mb-14 sm:mb-20" />
         <h2 className="m-0 mb-6 font-display text-[clamp(24px,3vw,44px)] font-black leading-[1.5] text-ink">
           {content.why.title}
         </h2>
 
         <Reveal>
           <div className="border-r-2 border-accent pr-6">
-            <p className="m-0">
+            <p className="m-0 text-[clamp(15px,1.25vw,18px)] font-light">
               {content.why.intro}
             </p>
           </div>
@@ -98,7 +102,7 @@ export function Why() {
 
         <Reveal>
           <div className="border-r-2 border-accent pr-6">
-            <p className="m-0">
+            <p className="m-0 text-[clamp(15px,1.25vw,18px)] font-light">
               {content.why.explain[0]} <br />
               {content.why.explain[1]}
             </p>
@@ -112,8 +116,8 @@ export function Why() {
               return (
                 <span
                   key={capability}
-                  className={` border px-[22px] py-2.5 font-display text-[15px] font-bold ${
-                    isEmphasized ? 'border-accent text-accent' : 'border-ink/25 text-ink'
+                  className={` border px-[22px] py-2.5 font-display text-[clamp(15px,1.25vw,18px)] ${
+                    isEmphasized ? 'border-accent text-ink' : 'border-accent text-ink'
                   }`}
                 >
                   {capability}
@@ -130,7 +134,7 @@ export function Why() {
         </Reveal> */}
           <Reveal>
           <div className="border-r-2 border-accent pr-6">
-            <p className="mt-12 mb-5">
+            <p className="mt-12 mb-5 text-[clamp(15px,1.25vw,18px)] font-light">
               {content.why.closing[0]}
             </p>
           </div>

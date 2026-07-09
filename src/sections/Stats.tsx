@@ -1,22 +1,22 @@
-// import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import { Container } from '../components/Container'
 import { CountUp } from '../components/CountUp'
 import { Reveal } from '../components/Reveal'
-// import { SectionTitle } from '../components/SectionTitle'
+import { SectionTitle } from '../components/SectionTitle'
 import { TiltShineCard } from '../components/TiltShineCard'
 import { profile } from '../data/profile'
 import { useLang } from '../hooks/useLang'
 import { Fragment } from 'react'
 
 export function Stats() {
-  // const { t } = useTranslation()
+  const { t } = useTranslation()
   const { lang } = useLang()
   const content = profile[lang]
 
   return (
-    <section id="numbers" className="px-6 py-24 sm:px-10 sm:py-32 lg:px-[72px]">
+    <section id="numbers" className="px-6 py-12 sm:px-10 sm:py-10 lg:px-[72px]">
       <Container className="p-0">
-        {/* <SectionTitle title={t('nav.numbers')} className="mb-14 sm:mb-20" /> */}
+        <SectionTitle title={t('nav.numbers')} className="mb-14 sm:mb-20" />
 
         <div className="mb-14 sm:mb-6">
           <Reveal> 
@@ -53,7 +53,7 @@ export function Stats() {
         </div>
 
         <Reveal>
-            <div className="flex flex-col gap-5 text-[16.5px] font-light leading-[1.9] mt-10">
+            <div className="flex flex-col gap-5 text-[clamp(15px,1.25vw,18px)] font-light leading-[1.9] mt-10">
                 <div  className="border-r-[3px] border-accent pr-6 py-3">
                   <p>{content.stats.statstext[0]}</p>
                 </div>
@@ -84,7 +84,7 @@ export function Stats() {
         </Reveal>
 
           <Reveal>
-            <div className="flex flex-col gap-5 text-[16.5px] font-light leading-[1.9] mt-10">
+            <div className="flex flex-col gap-5 text-[clamp(15px,1.25vw,18px)] font-light leading-[1.9] mt-10">
                 <div  className="border-r-[3px] border-accent pr-6 py-3">
                   <p>{content.stats.statstext2[0]}</p>
                 </div>
@@ -116,7 +116,7 @@ export function Stats() {
         </Reveal>
 
     <Reveal>
-            <div className="flex flex-col gap-5 text-[16.5px] font-light leading-[1.9]">
+            <div className="flex flex-col gap-5 text-[clamp(15px,1.25vw,18px)] font-light leading-[1.9]">
                 <div  className="border-r-[3px] border-accent pr-6 py-3">
                   <p>{content.stats.closing[0]} <br />
                   {content.stats.closing[1]} <br />
