@@ -5,6 +5,7 @@ import { SectionTitle } from '../components/SectionTitle'
 import { TiltShineCard } from '../components/TiltShineCard'
 import { profile } from '../data/profile'
 import { useLang } from '../hooks/useLang'
+import { IconArrowDownRight } from '@tabler/icons-react'
 
 const PAIR_MARKER = /بين|Between/
 
@@ -32,13 +33,15 @@ export function Finale() {
       <Container className="max-w-[1100px] p-0">
         <SectionTitle title={t('nav.summary')} className="mb-14 sm:mb-20" />
 
-        <h2 className="m-0 mb-8 text-center font-display text-[clamp(26px,3.2vw,46px)] font-black leading-[1.5] text-ink">
-          {name} {content.finale.negations.slice(0, -1).join(' ')}{' '}
-          <span className="text-accent">{content.finale.negations[content.finale.negations.length - 1]}</span>
+        <h2 className="m-0 mb-8 font-display text-[clamp(16px,3.2vw,26px)] font-black leading-[1.5] text-ink">
+          {name} {content.finale.negations[0]+" "} 
+          {content.finale.negations[1]} <br />
+          {content.finale.negations[2]} <br />
+          {content.finale.negations[3]}
         </h2>
 
         {lead ? (
-          <p className="m-0 mb-12 text-center font-display text-[clamp(18px,1.8vw,26px)] font-extrabold text-ink">
+          <p className="m-0 mb-12 font-display text-[clamp(18px,1.8vw,26px)] font-extrabold text-accent">
             {lead}
           </p>
         ) : null}
@@ -46,32 +49,40 @@ export function Finale() {
         <div className="mb-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
           {pairs.map((pair, index) => (
             <Reveal key={pair} delay={index * 0.1}>
-              <TiltShineCard className="rounded-xl border border-ink/20 bg-bg p-6 text-center font-display text-[clamp(17px,1.6vw,22px)] font-extrabold leading-[1.8] text-ink">
+              <TiltShineCard className="-xl border border-ink/20 bg-surface p-6 text-center font-display text-[clamp(17px,1.6vw,22px)] font-extrabold leading-[1.8] text-ink">
                 {pair}
               </TiltShineCard>
             </Reveal>
           ))}
         </div>
 
-        <div className="grid grid-cols-1 gap-10 text-[clamp(15px,1.25vw,17.5px)] font-light leading-[2.1] sm:grid-cols-2 sm:gap-16">
+        <div className="mb-5 border-r-2 border-accent pr-6 grid grid-cols-1 gap-10 text-[clamp(15px,1.25vw,17.5px)] leading-[2.1] sm:grid-cols-2 sm:gap-16">
           <Reveal>
-            <p className="m-0">{content.finale.body[1]}</p>
+            <p className="m-0">{content.finale.body[1]} <br />{content.finale.body[2]}</p>
           </Reveal>
         </div>
 
-        <Reveal>
-          <p className="mx-auto mt-16 max-w-[26ch] text-center font-display text-2xl font-black text-accent sm:mt-20 sm:text-3xl">
-            {t('common.inShort')}
-          </p>
-        </Reveal>
-
-        <Reveal>
+        {/* <Reveal>
           <div className="mx-auto mt-8 max-w-[64ch] border border-ink/20 bg-bg p-7 text-center sm:p-10">
             <p className="m-0 font-display text-lg leading-[1.9] text-ink sm:text-xl">
               {content.finale.principles.join(' ')}
             </p>
           </div>
-        </Reveal>
+        </Reveal> */}
+
+        <Reveal>
+            <div className="flex flex-col gap-3.5 font-display text-[clamp(12px,1.5vw,15px)] font-bold leading-[1.9]">
+              {content.finale.principles.map((item) => (
+                <div key={item} className="flex items-baseline gap-3.5">
+                  <IconArrowDownRight
+                    className="h-4 w-4 shrink-0 -translate-y-0.5 text-accent rtl:-scale-x-100"
+                    stroke={2.25}
+                  />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </Reveal>
       </Container>
     </section>
   )

@@ -5,12 +5,13 @@
 /* Heavy geometric display face for headlines, paired with a lighter body
    face for running text; parallel pairings per script. */
 :root[data-lang='ar'] {
-  --font-display: 'Noto Kufi Arabic', sans-serif;
+  /* --font-display: 'Noto Kufi Arabic', sans-serif; */
+  --font-display: 'Amiri', sans-serif;
   --font-body: 'IBM Plex Sans Arabic', sans-serif;
 }
 
 :root[data-lang='en'] {
-  --font-display: 'Poppins', sans-serif;
+  --font-display: 'EB Garamond', sans-serif;
   --font-body: 'IBM Plex Sans', sans-serif;
 }
 

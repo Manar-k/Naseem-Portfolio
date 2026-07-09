@@ -33,14 +33,15 @@ export function Business() {
             </Reveal>
             
             <Reveal>
-            <p className="m-0 text-[clamp(11px,1.25vw,14px)] leading-[2.1]">
+              
+            <p className="m-0 text-[clamp(11px,1.25vw,14px)] leading-[2.1] mb-12">
   {content.business.intro.map((paragraph, index) => (
     <span
       key={index}
       className={
         index === content.business.intro.length - 1
-          ? "font-bold text-accent/90"
-          : "font-bold text-surface/90"
+          ? "font-bold text-accent/85"
+          : "font-bold text-surface/70"
       }
     >
       {paragraph}
@@ -58,7 +59,7 @@ export function Business() {
                   <span className="font-display text-sm font-extrabold text-accent">
                     {sectionNumber(index + 1, lang)}
                   </span>
-                  <span className="font-display mt-2 text-[clamp(8px,1.8vw,15px)] font-bold text-surface">{question}</span>
+                  <span className="font-display mt-2 text-[clamp(8px,1.8vw,15px)] font-bold text-surface/85">{question}</span>
                 </div>
               </Reveal>
             ))}
@@ -66,8 +67,8 @@ export function Business() {
         </div>
 {/* ends of professional section */}
           <Reveal>
-            <div className="flex flex-col gap-5 text-[16.5px] font-medium leading-[1.9]">
-                <div  className="border-r-[3px] border-accent pr-6 py-3">
+            <div className="flex flex-col gap-3 text-[clamp(15px,1.25vw,18px)] font-light text-surface/70 leading-[1.9]">
+                <div  className="border-r-[3px] border-accent pr-6 py-2">
                   <p>{content.business.mytext[0]}</p>
                   <p>{content.business.mytext[1]}</p>
                   <p>{content.business.mytext2[0]}</p>
@@ -78,12 +79,15 @@ export function Business() {
   <Reveal>        
           <div
   dir="rtl"
-  className="flex flex-wrap items-center justify-center gap-5 font-display text-[clamp(2rem,5vw,4.5rem)] font-black"
+  className="flex flex-wrap items-center justify-center text-center gap-5 font-display text-[clamp(2rem,5vw,3rem)] font-black"
 >
   {content.business.mywords.map((word, index) => (
     <Fragment key={word}>
       <span className={index === content.business.mywords.length - 1 ? "text-accent" : "text-surface"}>
-        {word} <p className="text-[12px] font-medium leading-[1.9]">{content.business.mytext2[index+1] || ''}</p>
+        {word} 
+        {index !== content.business.mywords.length - 1 && (
+  <p className="text-[12px] font-medium leading-[1.9] text-center justify-center">{content.business.mytext2[index + 1] || ''}</p>
+)}
       </span>
 
       {index < content.business.mywords.length - 1 && (
@@ -95,8 +99,8 @@ export function Business() {
 </Reveal>
 
           <Reveal>
-            <div className="flex flex-col gap-5 text-[16.5px] font-medium leading-[1.9]">
-                <div  className="border-r-[3px] border-accent pr-6 py-6">
+            <div className="flex flex-col gap-4 text-[clamp(15px,1.25vw,18px)] font-light text-surface/70 leading-[1.9]">
+                <div  className="border-r-[3px] border-accent pr-6 py-3">
                   <p>{content.business.mytext2[4]}</p>
                 </div>
             </div>
@@ -131,7 +135,7 @@ export function Business() {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 m-4">
           {content.business.contrasts.map((pair) => (
             <Reveal key={pair.more} delay={0.12}>
-              <TiltShineCard className="h-full -xl border border-surface/30 bg-muted p-7 font-bold text-[12px] text-center font-medium leading-[1.9]">
+              <TiltShineCard className="h-full -xl border border-surface/30 bg-muted p-7 font-bold text-[12px] text-center leading-[1.9] font-display">
                 {pair.less}
                 <br />
                 <strong className="font-extrabold">{pair.more}</strong>
@@ -141,7 +145,7 @@ export function Business() {
         </div>
 
         <Reveal>
-            <div className="flex flex-col gap-5 text-[16.5px] font-medium leading-[1.9]">
+            <div className="flex flex-col gap-4 text-[clamp(15px,1.25vw,18px)] font-light text-surface/70 leading-[1.9]">
                 <div  className="border-r-[3px] border-accent pr-6 py-3">
                   <p>{content.business.mytext3[0]}</p>
                 </div>
@@ -186,7 +190,7 @@ export function Business() {
 
 
           <Reveal>
-            <div className="flex flex-col gap-5 text-[16.5px] font-medium leading-[1.9]">
+            <div className="flex flex-col gap-4 text-[clamp(15px,1.25vw,18px)] font-light text-surface/70 leading-[1.9]">
                 <div  className="border-r-[3px] border-accent pr-6 py-3">
                   <p>{content.business.closing[0]}</p>
                   <p>{content.business.closing[1]}</p>

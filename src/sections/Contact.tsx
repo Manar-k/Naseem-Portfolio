@@ -46,15 +46,15 @@ export function Contact() {
           <div className="flex flex-wrap gap-4">
             <a
               href={`mailto:${EMAIL}`}
-              className="rounded-full bg-accent px-8 py-4 font-display text-[17px] font-extrabold text-white transition-transform duration-300 hover:-translate-y-0.5"
+              className=" bg-accent px-8 py-4 font-display text-[17px] font-extrabold text-white transition-transform duration-300 hover:-translate-y-0.5"
             >
-              {content.contact.cta.split('.')[0]}.
+              {content.contact.emailLabel}
             </a>
             <a
               href={`https://${LINKEDIN}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-full border border-ink/35 px-8 py-4 text-[16px] text-ink transition-colors duration-300 hover:border-accent hover:text-accent"
+              className="flex items-center gap-2  border border-ink/35 px-8 py-4 text-[16px] text-ink transition-colors duration-300 hover:border-accent hover:text-accent"
             >
               <IconBrandLinkedin className="h-4 w-4" stroke={1.75} />
               {content.contact.linkedinLabel}
@@ -62,7 +62,7 @@ export function Contact() {
             <a
               href={`tel:${PHONE_HREF}`}
               dir="ltr"
-              className="rounded-full border border-ink/35 px-8 py-4 text-[16px] text-ink transition-colors duration-300 hover:border-accent hover:text-accent"
+              className=" border border-ink/35 px-8 py-4 text-[16px] text-ink transition-colors duration-300 hover:border-accent hover:text-accent"
             >
               +966 50 914 5682
             </a>

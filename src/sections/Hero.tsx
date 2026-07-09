@@ -32,14 +32,14 @@ export function Hero() {
   <img
     src="/images/naseem-filfilan.png"
     alt={content.meta.name}
-    width={72}
-    height={72}
+    width={100}
+    height={100}
     loading="eager"
-    className="mb-4 h-16 w-16 rounded-full object-cover sm:h-20 sm:w-20"
+    className="mb-4 h-30 w-30 rounded-full object-cover sm:h-30 sm:w-30"
   />
 </Reveal>
         <Reveal>
-          <RoleCycler roles={content.meta.roles} className="text-[15px] font-light text-ink/75 sm:text-lg" />
+          <RoleCycler roles={content.meta.roles} className="text-[15px] font-light  text-ink/75 sm:text-lg" />
         </Reveal>
 
         <div className="relative flow-root">

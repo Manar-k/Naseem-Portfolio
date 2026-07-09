@@ -10,6 +10,7 @@ export interface ProjectItem {
   kind: string
   tagline: string
   description: string
+  image: string
 }
 
 export interface LocaleContent {
@@ -71,17 +72,18 @@ export interface LocaleContent {
   }
   projects: {
     title: string
-    intro: string
+    intro: string[]
     items: ProjectItem[]
-    closing: string
+    closing: string[]
   }
   why: {
     title: string
     intro: string
     contrasts: string[]
-    unifier: string
+    unifier: string[]
+    explain: string[]
     capabilities: string[]
-    closing: string
+    closing: string[]
   }
   finale: {
     title: string
@@ -116,7 +118,7 @@ export const profile: Record<Lang, LocaleContent> = {
     },
     hero: {
       kicker: 'نسيم فلفلان',
-      tagline: 'عقل مهـــــــــــــني. نفس تجــــــــــــاري. ولسان يعرف من أين تُؤكل الفـــــــــــــــــــــــرص.',
+      tagline: 'عقل مهـــــــــــــني. نفس تجــــــــاري. ولسان يعرف من أين تُؤكل الفـــــــــــــــــــــــرص.',
       lede: ['نسيم مو موظف ممتاز وبس، ومو تاجر شاطر وبس.', 'هو الاثنين.. وهذا هو الفرق.'],
       ctaPrimary: 'تواصل معي',
       ctaSecondary: 'السيرة الذاتية',
@@ -130,10 +132,10 @@ export const profile: Record<Lang, LocaleContent> = {
       ],
       pullQuote: 'هو من النوع النادر الذي يعرف كيف يتحرك في الجهتـــــــــــــــــــين.',
       dual: {
-        insideTitle: 'داخل المؤسسة',
+        insideTitle: 'داخل المؤسســــــــــة',
         insideText:
           'يشتغل بعقل مهندس: يفهم المنظومة، يقرأ الخلل، يضبط الجودة، ويحوّل الفوضى إلى مسار واضح.',
-        outsideTitle: 'خارج المؤسسة',
+        outsideTitle: 'خارج المؤسســــــــــة',
         outsideText:
           'يتحرك بنفس تاجر: يلتقط الفرصة، يفهم حاجة العميل، يعرف كيف يصيغ العرض، ويبيع الفكرة قبل المنتج.',
       },
@@ -141,7 +143,7 @@ export const profile: Record<Lang, LocaleContent> = {
         'وهنا شخصية نسيم تظهر بوضوح. نسيم ما يتكلم كثيرًا. هو شخص يعرف أي جملة تُقال، ومتى تُقال، ولمن تُقال. ',
         'يعرف يدخل على العميل من الباب الصحيح. يعرف يقرأ التردد قبل أن يتحول إلى رفض. ويعرف يحوّل الكلام العادي إلى قيمة تُشترى. ',
       ],
-      summary: 'رجل أخذ من الوظــــــــــــــيفة انضباطها، ومن التجــــــــــارة حركتها، ومن الكلام قدرته على فتح الأبـــــــــــــــــــــــــــواب.',
+      summary: 'رجل أخذ من الوظــــــــــــــيفة انضباطها، ومن التجـــــــــــــارة حركتها، ومن الكلام قدرته على فتح الأبــــــــــــــــــــــــــــــواب.',
     },
     professional: {
       title: 'الجانب المهني',
@@ -169,12 +171,12 @@ export const profile: Record<Lang, LocaleContent> = {
         'قدرة على الربط بين الجودة، العميل والنتيجة النهائية.',
       ],
       closing:
-        ['نســــــــــــــــــــــــــــــيم ليس نوع الموظفين الي ينفذون المطلوب فقط.',' هو شخص يدخل المنظومة.. ثم يبدأ بفهم اللعبة من الداخل.'],
+        ['نســــــــــــــــــــــــــــــيم ليس نوع الموظفين الي ينفذون المطلوب فقط.',' هو شخص يدخل المنظومة.. ثم يبدأ بفهم اللعــــــــــــــــــبة من الداخل.'],
     },
     business: {
       title: 'الجانب التجاري',
       intro:
-        ['لكن الجانب الأوضح في نسيـم، والذي لا يمكن تجاهله، هو حسّه التجاري. وهنا لا نتكلم عن شخص "جرّب يبيع"،',' بل عن شخص يملك حــــــــــــــــــــــــسّ البيّاع بالفطرة؛ من النوع الذي يقدر أن يجلس معك خمس دقائق، ثـــــــــــم يعرف تقريبًا:'],
+        ['لكن الجانب الأوضح في نسيـم، والذي لا يمكن تجاهله، هو حسّه التجاري. وهنا لا نتكلم عن شخص "جرّب يبيع"،',' بل عن شخص يملك حــــــــــــــــــسّ البيّاع بالفطرة؛ من النوع الي يقدر أن يجلس معك خمس دقائق، ثـــــــــــم يعرف تقريبًا:'],
       askList: [
         'ما الذي تحتاجه.',
         'ما الذي يوقفك.',
@@ -182,7 +184,7 @@ export const profile: Record<Lang, LocaleContent> = {
         'وما الجملة التي تحتاج تسمعها حتى تتخذ القرار.',
       ],
       chain: ['الكلام إذا صيغ صح', 'يتحول إلى ثقة', 'والثقة تتحول إلى قرار', 'والقرار يتحول إلى بيع'],
-      mytext:['نسيم يعرف يــــــــــــــبيع الكــــــــــــــــــلام.',' لكن مو في معناه التقليدي الفارغ.'],
+      mytext:['نسيم يعرف يـــــــبيع الكــــــــــــــــــلام.',' لكن مو في معناه التقليدي الفارغ.'],
       mywords:['كلام', 'ثقة', 'قرار', 'بيع'],
       mytext2:['يعرف يبيع الكلام لأنه يعرف أن الكلام، إذا صيغ صح:','الكلام يتحول إلى ثقة','والثقة تتحول إلى قرار ','والقرار يتحول إلى بيع',' هذي مو موهبة بسيطة'],
       contrasts: [
@@ -194,8 +196,8 @@ export const profile: Record<Lang, LocaleContent> = {
         { less: 'كثير يبيعون بالسعر.', more: 'نسيم يبيع بالقيمة.' },
       ],
       mytext3:['لذلك، تجارته ليست مجرد بيع وشراء. هي: ',' قراءة ناس',' قراءة سوق',' قراءة لحظة'],
-      closing: ['يعرف متى يضـــــــــــغط، ومتى يخــــــــــــــــــــــفف.',' متى يمـــــــــــزح، ومتى يكون جـــــــــــــــــــــــــــــــــــادًا.',' متى يفتح الموضوع، ومتى يقفل الصفقة. ','وهنا قــــــــــــــــــــوته:'],
-      pullQuote: ['نسيم ما يطارد العميل.',' نسيم يخلي العميل يقتنع أنه جاء للمكان الصح.'],
+      closing: ['يعرف متى يضـــــغط، ومتى يخــــــــــــــــفف.',' متى يمــزح، ومتى يكون جــــــــــــــــــــــــــــــادًا.',' متى يفتح الموضوع، ومتى يقفل الصفقة. ','وهنا قــــــــــــــــــــوته:'],
+      pullQuote: ['نسيم ما يطــــــــــارد العميل.',' نسيم يخلي العميل يقتنع أنه جاء للمكان الصح.'],
     },
     stats: {
       title: 'أرقام لا تجامل',
@@ -215,30 +217,32 @@ export const profile: Record<Lang, LocaleContent> = {
       ],
       statstext:['هذه الأرقام تكشف الخلطة الحقيقية:',' نسيم لا يعتمد على الحدس وحده ','ولا على الكلام وحده',' ولا على الشهادة وحدها'],
       statstext2:['هو يجمع بين الثلاثة:',' حس التاجر ','لغة البيع',' وعقلية المهندس'],
-      closing: ['وهذه خلطة صعبة. ','لأن البائع العادي قد يعرف كيف يقنـــــــــعك. ','والمحلل العادي قد يعرف كيف يقرأ الرقم.',' لكن نسيـم يعرف كيف يقرأ الرقم، ثم يحوله إلى كلام مفهوم، ثم يحوله إلى عرض قابل للبيع.',' وهنا الفـــــــــــــــــــــــــــرق.'],
-      pullQuote: ['الأرقام عنده مو للــــــــــــــــــــــــــــــــــــزينة.', 'الأرقام عنده ذخـــــــــــــــــــــــــــــــــــــــــــــــيرة.'],
+      closing: ['وهذه خلطة صعبة. ','لأن البائع العادي قد يعرف كيف يقنـــــعك. ','والمحلل العادي قد يعرف كيف يقرأ الرقم.',' لكن نسيـم يعرف كيف يقرأ الرقم، ثم يحوله إلى كلام مفهوم، ثم يحوله إلى عرض قابل للبيع.',' وهنا الفـــــــــــــــــــــــــــرق.'],
+      pullQuote: ['الأرقام عنده مو للــــــــــــــــــــــــــــــــــــــــــــزينة.', 'الأرقام عنده ذخـــــــــــــــــــــــــــــــــــــــــــــــيرة.'],
     },
     projects: {
       title: 'مشاريع تحمل شخصيته',
       intro:
-        'مشاريع نسيم لا تبدو كأفكار منفصلة عنه. هي امتداد واضح لشخصيته: رجل يرى الحاجة، يلتقط الفرصة، ثم يحوّلها إلى مشروع له نبرة وقيمة.',
+        ['مشاريع نسيم لا تبدو كأفكار منفصلة عنه. ','هي امتداد واضح لشخصيته: رجل يرى الحاجة، يلتقط الفرصة، ثم يحوّلها إلى مشروع له نبرة وقيمة.'],
       items: [
         {
           name: 'أبو ميس للحلول المتكاملة',
           kind: 'متجر إلكتروني عبر منصة سلة',
-          tagline: 'نسيم يبيع الحل.',
+          tagline: 'في أبو ميس، نسيم يبيع الحل.',
           description:
-            'ليس متجرًا تقليديًا يعرض منتجات تقليدية. هو فكرة قائمة على اختصار الطريق على العميل: فهم الحاجة، ترتيب الخيارات، وربط الشخص بالحل المناسب دون لف ودوران.',
+            'أبو ميس للحلول المتكاملة في سلة ليس متجرًا تقليديًا يعرض منتجات تقليدية. هو فكرة قائمة على اختصار الطريق على العميل: فهم الحاجة، ترتيب الخيارات، وربط الشخص بالحل المناسب دون لف ودوران.',
+          image: '/projects/salla.jpeg',
         },
         {
           name: 'بودكاست سَفر',
           kind: 'حضور صوتي',
           tagline: 'وفي سَفر، يبيع الفكرة.',
           description:
-            'امتداد آخر لنفس الشخصية؛ مساحة للكلام الذي يكشف، يعبر، ويفتح المعنى. ليس محتوى عابرًا، بل حضور صوتي يعكس عقلية نسيم في قراءة الناس، السوق، التجربة، وما خلف التفاصيل.',
+            'بودكاست سَفر، فهو امتداد آخر لنفس الشخصية؛ مساحة للكلام الذي يكشف، يعبر، ويفتح المعنى. سَفر ليس محتوى عابرًا، بل حضور صوتي يعكس عقلية نسيـم في قراءة الناس، السوق، التجربة، وما خلف التفاصيل.',
+          image: '/projects/safar.jpeg',
         },
       ],
-      closing: 'وفي الاثنين، تظهر نفس البصمة: كلمة في مكانها، فكرة لها اتجاه، ومشروع يعرف لماذا وُجد.',
+      closing: ['وفي الاثنين، تظهر نفس البصمة: ','كلمة في مكانها','فكرة لها اتجاه',' ومشروع يعرف لماذا وُجد'],
     },
     why: {
       title: 'لماذا نسيم؟',
@@ -250,7 +254,8 @@ export const profile: Record<Lang, LocaleContent> = {
         'وبعضهم ينفذ جيدًا.. لكن لا يعرف كيف يبيع ما يفعله.',
       ],
       unifier:
-        'نسيم فلفلان مختلف لأنه جمع أكثر من جهة في شخصية واحدة: مهنية تعرف النظام، وتجارة تعرف السوق، ولسان يعرف العميل، وعقل يعرف أن القيمة لا تُقال فقط، بل تُبنى وتُعرض وتُباع.',
+        ['نسيم فلفلان مختلف لأنه جمع أكثر من جهة في شخصية واحدة:',' مهنية تعرف النظام. ','تجارة تعرف السوق. ','لسان يعرف العميل. ','عقل يعرف أن القيمة لا تُقال فقط، بل تُبنى وتُعرض وتُباع.'],
+      explain:['ولهذا، التعامل معه لا يعني التعامل مع شخص عنده “مسار جيد” فقط.',' بل مع شخص عنده قدرة على:'],
       capabilities: [
         'فهم المنظومات',
         'قراءة السوق',
@@ -261,14 +266,15 @@ export const profile: Record<Lang, LocaleContent> = {
         'تحويل القرار إلى نتيجة',
       ],
       closing:
-        'وهنا تحديدًا يظهر نسيم الحقيقي: شخص إذا دخل المؤسسة فهم نظامها، وإذا دخل السوق فهم مزاجه، وإذا جلس مع العميل عرف من أين يبدأ الكلام.',
+        ['وهنا تحديدًا يظهر نسيم الحقيقي: ','شخص إذا دخل المؤسسة فهم نظامها ','وإذا دخل السوق فهم مزاجه','وإذا جلس مع العميل عرف من أين يبدأ الكلام'],
     },
     finale: {
       title: 'الخلاصة',
       negations: ['ليس مجرد مهندس جودة.', 'وليس مجرد رائد أعمال.', 'وليس مجرد شخص يملك متجرًا أو بودكاستًا.'],
       body: [
-        'هو شخصية تجمع بين الانضباط والحركة. بين العقل واللسان. بين الجودة والبيع. بين المؤسسة والسوق.',
-        'يعرف أن العمل يحتاج نظامًا. ويعرف أن السوق يحتاج سرعة. ويعرف أن العميل يحتاج من يفهمه قبل أن يبيعه.',
+        'هو شخصية تجمع: بين الانضباط والحركة. بين العقل واللسان. بين الجودة والبيع. بين المؤسسة والسوق.',
+        'يعرف أن العمل يحتاج نظامًا. ويعرف أن السوق يحتاج سرعة.',
+        'ويعرف أن العميل يحتاج من يفهمه قبل أن يبيعه. وهذه هي قوة نسيم:'
       ],
       principles: [
         'لا يبيع لأنه يرفع صوته.',
@@ -411,7 +417,7 @@ export const profile: Record<Lang, LocaleContent> = {
     projects: {
       title: 'Projects that carry his signature',
       intro:
-        'Naseem’s projects don’t read as ideas separate from him. They’re a clear extension of his character: a man who sees the need, seizes the opportunity, then turns it into a project with a tone and a value of its own.',
+        ['مشاريع نسيم لا تبدو كأفكار منفصلة عنه. ','هي امتداد واضح لشخصيته: رجل يرى الحاجة، يلتقط الفرصة، ثم يحوّلها إلى مشروع له نبرة وقيمة.'],
       items: [
         {
           name: 'Abu Mais Integrated Solutions',
@@ -419,6 +425,7 @@ export const profile: Record<Lang, LocaleContent> = {
           tagline: 'Naseem sells the solution.',
           description:
             'Not a traditional store selling traditional products. It’s an idea built on shortening the customer’s path: understanding the need, structuring the options, and connecting the person to the right solution, no runaround.',
+          image: '/projects/salla.jpeg',
         },
         {
           name: 'Safar Podcast',
@@ -426,9 +433,10 @@ export const profile: Record<Lang, LocaleContent> = {
           tagline: 'And in Safar, he sells the idea.',
           description:
             'Another extension of the same character; a space for talk that reveals, expresses, and opens up meaning. Not passing content, but a voice that reflects Naseem’s way of reading people, the market, experience, and what lies behind the details.',
+          image: '/projects/safar.jpeg',
         },
       ],
-      closing: 'In both, the same fingerprint shows: a word in its place, an idea with direction, a project that knows why it exists.',
+      closing: ['In both, the same fingerprint shows: a word in its place, an idea with direction, a project that knows why it exists.'],
     },
     why: {
       title: 'Why Naseem?',
@@ -440,7 +448,8 @@ export const profile: Record<Lang, LocaleContent> = {
         'And some execute well.. but don’t know how to sell what they do.',
       ],
       unifier:
-        'Naseem Filfilan is different because he combines more than one side into a single character: professionalism that knows the system, business that knows the market, a tongue that knows the client, and a mind that knows value isn’t just spoken: it’s built, presented, and sold.',
+        ['Naseem Filfilan is different because he combines more than one side into a single character:',' professionalism that knows the system, ','business that knows the market, ','a tongue that knows the client, ','and a mind that knows value isn’t just spoken: it’s built, presented, and sold.'],
+      explain:['And this is why dealing with him isn’t just dealing with someone who has a “good track record.”',' It’s dealing with someone who has the ability to:'],
       capabilities: [
         'Understanding systems',
         'Reading the market',
@@ -451,7 +460,7 @@ export const profile: Record<Lang, LocaleContent> = {
         'Turning a decision into a result',
       ],
       closing:
-        'And this is exactly where the real Naseem shows: someone who, entering an organization, understands its system; entering the market, understands its mood; and sitting with a client, knows exactly where to start the conversation.',
+        ['And this is exactly where the real Naseem shows: someone who, entering an organization, understands its system; entering the market, understands its mood; and sitting with a client, knows exactly where to start the conversation.'],
     },
     finale: {
       title: 'The takeaway',
