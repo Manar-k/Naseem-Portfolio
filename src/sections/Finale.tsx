@@ -33,13 +33,14 @@ export function Finale() {
     <section id="summary" className="border-y border-ink/10 bg-surface px-6 py-12 sm:px-10 sm:py-10 lg:px-[72px]">
       <Container className="max-w-[1100px] p-0">
         <SectionTitle title={t('nav.summary')} className="mb-14 sm:mb-20" />
-
+        <Reveal>
         <h2 className="m-0 mb-8 font-display text-[clamp(16px,3.2vw,26px)] font-black leading-[1.5] text-ink">
           {name} {content.finale.negations[0]+" "} 
           {content.finale.negations[1]} <br />
           {content.finale.negations[2]} <br />
           {content.finale.negations[3]}
         </h2>
+        </Reveal>
 
         {lead ? (
           <Reveal>
@@ -49,9 +50,6 @@ export function Finale() {
                 </div>
             </div>
           </Reveal>
-          // <p className="m-0 mb-12 font-display text-[clamp(18px,1.8vw,26px)] font-extrabold text-accent">
-          //   {lead}
-          // </p>
         ) : null}
 
         <div className="mb-12 grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -67,17 +65,9 @@ export function Finale() {
         <div className="mb-2 border-r-2 border-accent pr-6 grid grid-cols-1 gap-10  leading-[2.1] sm:grid-cols-2 sm:gap-16">
           <Reveal>
             <p className="text-[clamp(15px,1.25vw,18px)] font-light">{content.finale.body[1]} <br />
-            <span className="text-[clamp(15px,1.25vw,18px)] font-light">{content.finale.body[2]}<span className="text-[clamp(15px,1.25vw,18px)] font-bold">{content.finale.body[3]}</span></span></p>
+            <span className="text-[clamp(15px,1.25vw,18px)] font-light">{content.finale.body[2]}<span className="text-[clamp(15px,1.25vw,18px)] font-medium">{content.finale.body[3]}</span></span></p>
           </Reveal>
         </div>
-
-        {/* <Reveal>
-          <div className="mx-auto mt-8 max-w-[64ch] border border-ink/20 bg-bg p-7 text-center sm:p-10">
-            <p className="m-0 font-display text-lg leading-[1.9] text-ink sm:text-xl">
-              {content.finale.principles.join(' ')}
-            </p>
-          </div>
-        </Reveal> */}
 
         <Reveal>
             <div className="flex flex-col gap-3.5 font-display text-[clamp(12px,1.5vw,15px)] font-bold leading-[1.9]">

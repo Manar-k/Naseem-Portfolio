@@ -106,7 +106,7 @@ export interface LocaleContent {
 export const profile: Record<Lang, LocaleContent> = {
   ar: {
     meta: {
-      name: 'نسيم فلفلان',
+      name: 'نســــــيم فلفلان',
       roles: [
         'مهندس جودة لدى شركة من شركات وزارة الموارد البشرية',
         'مدير تطوير أعمال في يونيك مارك للتسويق',

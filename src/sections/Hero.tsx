@@ -43,7 +43,7 @@ export function Hero() {
         <div className="relative flow-root">
 
 
-          <h1 className="relative z-10 m-0 mt-10 gap-36 font-display text-[clamp(26px,4.6vw,35px)] font-black leading-[1.18] text-ink sm:mt-14">
+          <h1 className="relative z-10 m-0 mt-10 gap-36 font-display text-[clamp(26px,4.6vw,35px)] font-black leading-[1.18] text-ink sm:mt-8">
             {clauses.map((clause, index) => {
               const delayChildren = 0.3 + wordOffset * 0.07
               const wordCount = clause.split(' ').length
@@ -84,7 +84,7 @@ export function Hero() {
                 <span
                   key={text}
                   className={` border px-[22px] py-2.5 font-display text-[clamp(15px,1.25vw,18px)] duration-300 hover:border-accent hover:text-accent ${
-                    isEmphasized ? 'border-ink text-ink': 'border-ink text-ink'
+                    isEmphasized ? 'border-ink/30 text-ink': 'border-ink/30 text-ink'
                   }`}
                 >
                   {text}

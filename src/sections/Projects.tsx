@@ -15,14 +15,17 @@ export function Projects() {
     <section id="projects" className="border-y border-ink/10 bg-surface px-6 py-12 sm:px-10 sm:py-10 lg:px-[72px]">
       <Container className="max-w-[1280px] p-0">
         <SectionTitle title={t('nav.projects')} className="mb-14 sm:mb-20" />
+        <Reveal>
         <h2 className="m-0 mb-6 font-display text-[clamp(24px,3vw,44px)] font-black leading-[1.5] text-ink">
           {content.projects.title}
         </h2>
+        </Reveal>
+        <Reveal>
         <p className="mx-0 m-0 mb-12 max-w-[60ch] text-[clamp(11px,1.25vw,14px)] font-light leading-[2] text-ink/85 sm:mb-16">
           {content.projects.intro[0]} <br />
           {content.projects.intro[1]}
         </p>
-
+</Reveal>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {content.projects.items.map((project) => (
             <Reveal key={project.name}>

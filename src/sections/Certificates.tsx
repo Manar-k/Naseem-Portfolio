@@ -1,6 +1,7 @@
 import { useReducedMotion } from '../hooks/useReducedMotion'
 import { SectionTitle } from '../components/SectionTitle'
 import { useTranslation } from 'react-i18next'
+import { Reveal } from '../components/Reveal'
 
 const CERT_COUNT = 12
 const certificates = Array.from(
@@ -37,10 +38,12 @@ export function Certificates() {
     <section className="relative border-y border-ink/10 bg-bg px-6 py-12 sm:px-10 sm:py-10 lg:px-[72px]">
       <SectionTitle title={t('nav.Certificates')} className="mb-14 sm:mb-20" id="Certificates" />
       <div className="relative mx-auto max-w-[1100px]">
+        <Reveal>
         <h2 className="mr-12 mb-6 font-display text-[clamp(24px,3vw,44px)] font-black leading-[1.5] text-ink">
           {t('nav.Certificates')}
         </h2>
-
+        </Reveal>
+    
         <div style={{ paddingBottom: `${STACK_GAP * (CERT_COUNT - 1)}px` }}>
           {certificates.map((src, index) => (
             <div

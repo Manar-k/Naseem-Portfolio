@@ -22,9 +22,11 @@ export function Why() {
     <section id="why" className="mx-auto max-w-[1100px] px-6 py-12 sm:px-10 sm:py-10 lg:px-[72px]">
       <Container className="p-0">
         <SectionTitle title={t('nav.why')} className="mb-14 sm:mb-20" />
+        <Reveal>
         <h2 className="m-0 mb-6 font-display text-[clamp(24px,3vw,44px)] font-black leading-[1.5] text-ink">
           {content.why.title}
         </h2>
+        </Reveal>
 
         <Reveal>
           <div className="border-r-2 border-accent pr-6">
@@ -75,33 +77,8 @@ export function Why() {
             </div>
           </Reveal>
         </div>
-
-        {/* <div className="flex flex-col text-[clamp(12px,1.7vw,20px)] font-light leading-[1.9]">
-          {content.why.contrasts.map((line, index) => {
-            const [lead, answer] = splitContrast(line)
-            return (
-              <Reveal key={line} delay={index * 0.04}>
-                <div
-                  className={`flex flex-wrap items-center justify-between gap-4 py-5 ${
-                    index < content.why.contrasts.length - 1 ? 'border-b border-ink/15' : ''
-                  }`}
-                >
-                  <span>{lead}..</span>
-                  <span className="font-medium text-accent">{answer}</span>
-                </div>
-              </Reveal>
-            )
-          })}
-        </div> */}
-
-        {/* <Reveal>
-          <p className="m-0 mt-12 font-display text-[clamp(20px,2.2vw,32px)] font-extrabold leading-[1.8] text-ink">
-            {content.why.unifier}
-          </p>
-        </Reveal> */}
-
         <Reveal>
-          <div className="border-r-2 border-accent pr-6">
+          <div className="border-r-2 border-accent pr-6 mt-12">
             <p className="m-0 text-[clamp(15px,1.25vw,18px)] font-light">
               {content.why.explain[0]} <br />
               {content.why.explain[1]}
@@ -116,8 +93,8 @@ export function Why() {
               return (
                 <span
                   key={capability}
-                  className={` border px-[22px] py-2.5 font-display text-[clamp(15px,1.25vw,18px)] ${
-                    isEmphasized ? 'border-accent text-ink' : 'border-accent text-ink'
+                  className={` border px-[22px] py-2.5 font-display text-[clamp(15px,1.25vw,18px)] duration-300 hover:border-accent hover:text-accent ${
+                    isEmphasized ? 'border-ink/30 text-ink' : 'border-ink/30 text-ink'
                   }`}
                 >
                   {capability}
@@ -127,11 +104,6 @@ export function Why() {
           </div>
         </Reveal>
 
-        {/* <Reveal>
-          <p className="m-0 mt-10 text-[clamp(15px,1.3vw,18px)] font-light leading-[2.1]">
-            <strong className="font-bold text-ink">{content.why.closing}</strong>
-          </p>
-        </Reveal> */}
           <Reveal>
           <div className="border-r-2 border-accent pr-6">
             <p className="mt-12 mb-5 text-[clamp(15px,1.25vw,18px)] font-light">
