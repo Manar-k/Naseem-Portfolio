@@ -1,17 +1,17 @@
 {
   "nav": {
-    "about": "About",
-    "professional": "Professional",
-    "commercial": "Business",
-    "numbers": "Track Record",
+    "about": "About Me",
+    "professional": "Professional Side",
+    "commercial": "Business Side",
+    "numbers": "Numbers",
     "projects": "Projects",
     "why": "Why Naseem?",
-    "summary": "Summary",
-    "Certificates": "Certificates"
+    "Certificates": "Certificates",
+    "summary": "Summary"
   },
   "header": {
     "resume": "Résumé",
-    "contactCta": "Get in touch"
+    "contactCta": "Contact"
   },
   "lang": {
     "switchTo": "AR",
@@ -29,7 +29,7 @@
   },
   "common": {
     "inShort": "In short",
-    "whatSetsHimApart": "What sets him apart professionally?",
+    "whatSetsHimApart": "What distinguishes him professionally?",
     "mostNotable": "Among the most notable of what he's worked on:"
   }
 }
