@@ -28,7 +28,7 @@ export function Hero() {
       <div className="relative z-10 flex flex-1 flex-col justify-end py-10 pt-24">
         <Reveal>
   <img
-    src="/images/naseem-filfilan.png"
+    src={`${import.meta.env.BASE_URL}images/naseem-filfilan.png`}
     alt={content.meta.name}
     width={100}
     height={100}

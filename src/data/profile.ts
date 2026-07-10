@@ -231,7 +231,7 @@ export const profile: Record<Lang, LocaleContent> = {
           tagline: 'في أبو ميس، نسيم يبيع الحل.',
           description:
             'أبو ميس للحلول المتكاملة في سلة ليس متجرًا تقليديًا يعرض منتجات تقليدية. هو فكرة قائمة على اختصار الطريق على العميل: فهم الحاجة، ترتيب الخيارات، وربط الشخص بالحل المناسب دون لف ودوران.',
-          image: '/projects/salla.jpg',
+          image: `${import.meta.env.BASE_URL}projects/salla.jpg`,
         },
         {
           name: 'بودكاست سَفر',
@@ -239,7 +239,7 @@ export const profile: Record<Lang, LocaleContent> = {
           tagline: 'وفي سَفر، يبيع الفكرة.',
           description:
             'بودكاست سَفر، فهو امتداد آخر لنفس الشخصية؛ مساحة للكلام الذي يكشف، يعبر، ويفتح المعنى. سَفر ليس محتوى عابرًا، بل حضور صوتي يعكس عقلية نسيـم في قراءة الناس، السوق، التجربة، وما خلف التفاصيل.',
-          image: '/projects/safar.jpeg',
+          image: `${import.meta.env.BASE_URL}projects/safar.jpeg`,
         },
       ],
       closing: ['وفي الاثنين، تظهر نفس البصمة: ','كلمة في مكانها','فكرة لها اتجاه',' ومشروع يعرف لماذا وُجد'],
@@ -429,7 +429,7 @@ export const profile: Record<Lang, LocaleContent> = {
           tagline: 'Naseem sells the solution.',
           description:
             'Not a traditional store selling traditional products. It’s an idea built on shortening the customer’s path: understanding the need, structuring the options, and connecting the person to the right solution, no runaround.',
-          image: '/projects/salla.jpg',
+          image: `${import.meta.env.BASE_URL}projects/salla.jpg`,
         },
         {
           name: 'Safar Podcast',
@@ -437,7 +437,7 @@ export const profile: Record<Lang, LocaleContent> = {
           tagline: 'And in Safar, he sells the idea.',
           description:
             'Another extension of the same character; a space for talk that reveals, expresses, and opens up meaning. Not passing content, but a voice that reflects Naseem’s way of reading people, the market, experience, and what lies behind the details.',
-          image: '/projects/safar.jpeg',
+          image: `${import.meta.env.BASE_URL}projects/safar.jpeg`,
         },
       ],
       closing: ['In both, the same fingerprint shows: a word in its place, an idea with direction, a project that knows why it exists.'],
