@@ -99,6 +99,7 @@ export interface LocaleContent {
     emailLabel: string
     linkedinLabel: string
     phoneLabel: string
+    whatsappLabel: string
     locationLabel: string
   }
 }
@@ -293,6 +294,7 @@ export const profile: Record<Lang, LocaleContent> = {
       emailLabel: 'البريد الإلكتروني',
       linkedinLabel: 'لينكدإن',
       phoneLabel: 'الجوال',
+      whatsappLabel: 'واتساب',
       locationLabel: 'الموقع',
     },
   },
@@ -492,6 +494,7 @@ export const profile: Record<Lang, LocaleContent> = {
       emailLabel: 'Email',
       linkedinLabel: 'LinkedIn',
       phoneLabel: 'Phone',
+      whatsappLabel: 'WhatsApp',
       locationLabel: 'Location',
     },
   },

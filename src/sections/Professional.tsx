@@ -23,9 +23,6 @@ export function Professional() {
               {content.professional.title}
             </h2>
             </Reveal>
-            {/* <p className="m-0 text-[clamp(15px,1.25vw,18px)] font-light leading-[2.1] text-ink/90">
-              {content.professional.intro}
-            </p> */}
             <Reveal>
               
             <p className="m-0 text-[clamp(11px,1.25vw,14px)] leading-[2.1] font-light mb-12 text-ink/85">
@@ -44,12 +41,7 @@ export function Professional() {
   ))}
 </p>
 </Reveal>
-            {/* {content.professional.intro.map((paragraph, index) => (
-            <p className={`m-0 text-[clamp(15px,1.25vw,18px)]  leading-[2.1] ${
-        index === content.professional.intro.length - 1
-          ? 'text-ink/90 font-bold'
-          : 'text-ink/90 font-light'
-      }`}>{paragraph}</p>))} */}
+
           </div>
 
           <div className="flex flex-col">

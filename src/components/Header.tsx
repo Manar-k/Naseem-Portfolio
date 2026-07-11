@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { useTranslation } from 'react-i18next'
 import { useMotionValueEvent, useScroll } from 'motion/react'
 import { IconMenu2, IconX } from '@tabler/icons-react'
@@ -93,28 +94,31 @@ export function Header() {
         </div>
       </Container>
 
-      {menuOpen ? (
-        <div className="fixed inset-0 z-0 flex flex-col overflow-y-auto bg-bg lg:hidden">
-          <Container className="flex min-h-full flex-col justify-center gap-6 py-24">
-            <nav className="flex flex-col gap-5" aria-label="Mobile">
-              {NAV_ITEMS.map((item) => (
-                <a
-                  key={item.id}
-                  href={`#${item.id}`}
-                  className="font-display text-xl font-bold text-ink transition-colors hover:text-accent"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {t(`nav.${item.key}`)}
-                </a>
-              ))}
-            </nav>
-            <div className="flex flex-wrap items-center gap-3 pt-2">
-              {contactNode}
-              <LanguageSwitcher />
-            </div>
-          </Container>
-        </div>
-      ) : null}
+      {menuOpen
+        ? createPortal(
+            <div className="fixed inset-0 z-header flex flex-col overflow-y-auto bg-bg lg:hidden">
+              <Container className="flex min-h-full flex-col justify-center gap-6 py-24">
+                <nav className="flex flex-col gap-5" aria-label="Mobile">
+                  {NAV_ITEMS.map((item) => (
+                    <a
+                      key={item.id}
+                      href={`#${item.id}`}
+                      className="font-display text-xl font-bold text-ink transition-colors hover:text-accent"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {t(`nav.${item.key}`)}
+                    </a>
+                  ))}
+                </nav>
+                <div className="flex flex-wrap items-center gap-3 pt-2">
+                  {contactNode}
+                  <LanguageSwitcher />
+                </div>
+              </Container>
+            </div>,
+            document.body,
+          )
+        : null}
     </header>
   )
 }

@@ -1,11 +1,11 @@
-import { IconBrandLinkedin, IconMapPin } from '@tabler/icons-react'
+import { IconBrandLinkedin, IconBrandWhatsapp, IconMapPin } from '@tabler/icons-react'
 import { profile } from '../data/profile'
 import { useLang } from '../hooks/useLang'
 import { Reveal } from '../components/Reveal'
 import { RoleCycler } from '../components/RoleCycler'
 // import { WordReveal } from '../components/WordReveal'
 
-const PHONE_HREF = '+966509145682'
+const WHATSAPP_URL = 'https://wa.me/966509145682'
 const EMAIL = 'Naseemfilfilan@gmail.com'
 const LINKEDIN = 'linkedin.com/in/naseem-filfilan'
 
@@ -34,25 +34,6 @@ export function Contact() {
           {content.finale.signature[1]}
         </h2>
         </Reveal>
-        {/* <WordReveal
-          as="h1"
-          text={content.finale.signature}
-          className="m-0 mb-6 block font-display text-[clamp(32px,5.2vw,80px)] font-black leading-[1.35] text-ink"
-          wordClassName="text-ink"
-          highlightWord={(word) => word.replace(/\.$/, '') === lastWord}
-          highlightClassName="text-accent"
-          stagger={0.05}
-        /> */}
-
-
-
-        {/* <Reveal delay={0.06}>
-          <div className="mb-14 flex flex-col gap-1.5 text-[clamp(14px,1.2vw,17px)] font-light leading-[1.9] text-ink/85 sm:mb-16">
-            {content.meta.roles.map((role) => (
-              <span key={role}>{role}</span>
-            ))}
-          </div>
-        </Reveal> */}
 
         <Reveal delay={0.12}>
           <div className="flex flex-wrap gap-4">
@@ -72,11 +53,13 @@ export function Contact() {
               {content.contact.linkedinLabel}
             </a>
             <a
-              href={`tel:${PHONE_HREF}`}
-              dir="ltr"
-              className=" border border-ink/35 px-8 py-4 text-[16px] text-ink transition-colors duration-300 hover:border-accent hover:text-accent"
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-display border border-ink/35 px-8 py-4 text-[16px] text-ink transition-colors duration-300 hover:border-accent hover:text-accent"
             >
-              +966 50 914 5682
+              <IconBrandWhatsapp className="h-4 w-4" stroke={1.75} />
+              {content.contact.whatsappLabel}
             </a>
           </div>
         </Reveal>
