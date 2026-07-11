@@ -100,6 +100,7 @@ export interface LocaleContent {
     linkedinLabel: string
     phoneLabel: string
     whatsappLabel: string
+    instagramLabel: string
     locationLabel: string
   }
 }
@@ -119,7 +120,7 @@ export const profile: Record<Lang, LocaleContent> = {
     },
     hero: {
       kicker: 'نسيم فلفلان',
-      tagline: 'عقل مهـــــــــــــني. نفس تجــــــــاري. ولسان يعرف من أين تُؤكل الفـــــــــــــــــــــــرص.',
+      tagline: 'عقل مهـــــــــــــني. نفس تجــــــــاري. ولسان يعرف من أين تُؤكل الفـــــــــــــرص.',
       lede: ['نسيم مو موظف ممتاز وبس، ومو تاجر شاطر وبس.', 'هو الاثنين.. وهذا هو الفرق.'],
       ctaPrimary: 'تواصل معي',
       ctaSecondary: 'السيرة الذاتية',
@@ -296,6 +297,7 @@ export const profile: Record<Lang, LocaleContent> = {
       linkedinLabel: 'لينكدإن',
       phoneLabel: 'الجوال',
       whatsappLabel: 'واتساب',
+      instagramLabel: 'انستجرام',
       locationLabel: 'الموقع',
     },
   },
@@ -496,6 +498,7 @@ export const profile: Record<Lang, LocaleContent> = {
       linkedinLabel: 'LinkedIn',
       phoneLabel: 'Phone',
       whatsappLabel: 'WhatsApp',
+      instagramLabel: 'Instagram',
       locationLabel: 'Location',
     },
   },

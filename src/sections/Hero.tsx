@@ -33,17 +33,17 @@ export function Hero() {
     width={100}
     height={100}
     loading="eager"
-    className="mb-4 h-30 w-30 rounded-full object-cover sm:h-30 sm:w-30"
+    className="mb-4 h-44 w-44 rounded-full object-cover sm:h-30 sm:w-30"
   />
 </Reveal>
         <Reveal>
-          <p className="text-[15px] font-display text-ink/75 sm:text-lg">{content.meta.roles[0]} </p>
+          <p className="text-[clamp(26px,4.6vw,35px)] font-display text-ink sm:text-lg ">{content.meta.roles[0]}</p>
         </Reveal>
 
         <div className="relative flow-root">
 
 
-          <h1 className="relative z-10 m-0 mt-10 gap-36 font-display text-[clamp(26px,4.6vw,35px)] font-black leading-[1.18] text-ink sm:mt-8">
+          <h1 className="relative z-10 m-0 mt-10 gap-36 font-display text-[clamp(26px,4.6vw,35px)]  leading-[1.18] text-ink sm:mt-8">
             {clauses.map((clause, index) => {
               const delayChildren = 0.3 + wordOffset * 0.07
               const wordCount = clause.split(' ').length
@@ -53,12 +53,12 @@ export function Hero() {
                 <WordReveal
                   key={clause}
                   as="span"
-                  text={`${clause} `}
+                  text={clause}
                   onMount
                   stagger={0.07}
                   delayChildren={delayChildren}
                   className="block"
-                  wordClassName={isLast ? 'text-ink' : 'text-accent'}
+                  wordClassName={isLast ? 'text-ink/90' : 'text-accent/90'}
                 />
               )
             })}
