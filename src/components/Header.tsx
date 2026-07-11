@@ -42,6 +42,7 @@ export function Header() {
   const contactNode = (
     <a
       href="#contact"
+      onClick={() => setMenuOpen(false)}
       className=" border border-ink/30 px-2.5 py-1.5 text-[12px] font-display text-ink transition-colors duration-300 hover:border-accent hover:text-accent"
     >
       {t('header.contactCta')}
