@@ -1,5 +1,5 @@
 import { motion, type Variants } from 'motion/react'
-import type { ElementType } from 'react'
+import { Fragment, type ElementType } from 'react'
 import { useReducedMotion } from '../hooks/useReducedMotion'
 
 interface WordRevealProps {
@@ -30,6 +30,8 @@ const wordVariants: Variants = {
 /**
  * Splits text into words and reveals them with a staggered blur/rotate/
  * translate entrance, matching the source design's headline treatment.
+ * A literal "\n" in the text forces a hard line break instead of relying
+ * on the browser to reflow words at each viewport width.
  * Falls back to a plain instant render under reduced motion.
  */
 export function WordReveal({
@@ -44,11 +46,20 @@ export function WordReveal({
   delayChildren = 0,
 }: WordRevealProps) {
   const reducedMotion = useReducedMotion()
-  const words = text.split(' ')
+  const lines = text.split('\n')
 
   if (reducedMotion) {
     const Static = Tag as ElementType
-    return <Static className={className}>{text}</Static>
+    return (
+      <Static className={className}>
+        {lines.map((line, lineIndex) => (
+          <Fragment key={lineIndex}>
+            {line}
+            {lineIndex < lines.length - 1 ? <br /> : null}
+          </Fragment>
+        ))}
+      </Static>
+    )
   }
 
   const containerVariants: Variants = {
@@ -58,6 +69,8 @@ export function WordReveal({
 
   const MotionTag = motion[Tag as 'span'] ?? motion.span
 
+  let wordIndex = 0
+
   return (
     <MotionTag
       className={className}
@@ -65,16 +78,28 @@ export function WordReveal({
       initial="hidden"
       {...(onMount ? { animate: 'visible' } : { whileInView: 'visible', viewport: { once: true, amount: 0.4 } })}
     >
-      {words.map((word, index) => (
-        <motion.span
-          key={`${word}-${index}`}
-          className={`inline-block ${highlightWord?.(word, index) ? highlightClassName : wordClassName}`}
-          variants={wordVariants}
-        >
-          {word}
-          {index < words.length - 1 ? ' ' : ''}
-        </motion.span>
-      ))}
+      {lines.map((line, lineIndex) => {
+        const words = line.split(' ')
+        return (
+          <Fragment key={lineIndex}>
+            {words.map((word, i) => {
+              const index = wordIndex++
+              return (
+                <Fragment key={`${word}-${index}`}>
+                  <motion.span
+                    className={`inline-block ${highlightWord?.(word, index) ? highlightClassName : wordClassName}`}
+                    variants={wordVariants}
+                  >
+                    {word}
+                  </motion.span>
+                  {i < words.length - 1 ? ' ' : ''}
+                </Fragment>
+              )
+            })}
+            {lineIndex < lines.length - 1 ? <br /> : null}
+          </Fragment>
+        )
+      })}
     </MotionTag>
   )
 }

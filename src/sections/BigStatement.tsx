@@ -44,7 +44,7 @@ const highlighted = highlightedWords(text)
         key={text}
         as="p"
         text={text}
-        className="mx-auto block max-w-[42ch] text-center font-display text-[clamp(16px,4.6vw,55px)] font-black leading-[1.6] text-ink"
+        className="mx-auto block max-w-[64ch] text-center font-display text-[clamp(14px,4.6vw,55px)] font-black leading-[1.6] text-ink"
         wordClassName="text-ink"
         highlightWord={(word) => highlighted.has(word)}
         highlightClassName="text-accent"

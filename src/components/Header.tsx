@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useTranslation } from 'react-i18next'
 import { useMotionValueEvent, useScroll } from 'motion/react'
@@ -8,15 +8,29 @@ import { Container } from './Container'
 import { NAV_ITEMS } from '../utils/nav'
 import { useLang } from '../hooks/useLang'
 
+// The business/commercial section uses a light (ink-colored) background, unlike the
+// rest of the page. The mobile header bar (light text on a transparent background)
+// becomes unreadable over it, so it flips to dark text while that section sits under it.
+const LIGHT_BG_SECTION_ID = 'commercial'
+
 export function Header() {
   const { t } = useTranslation()
   const { lang } = useLang()
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [onLightSection, setOnLightSection] = useState(false)
+  const headerRef = useRef<HTMLElement>(null)
   const { scrollY } = useScroll()
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     setScrolled(latest > 24)
+
+    const headerHeight = headerRef.current?.offsetHeight ?? 0
+    const lightSection = document.getElementById(LIGHT_BG_SECTION_ID)
+    if (lightSection) {
+      const rect = lightSection.getBoundingClientRect()
+      setOnLightSection(rect.top < headerHeight && rect.bottom > 0)
+    }
   })
 
   useEffect(() => {
@@ -30,14 +44,15 @@ export function Header() {
     setMenuOpen(false)
   }, [lang])
 
-  const nameNode = (
+  const renderName = (invert: boolean) => (
     <a href="#top" className="flex items-center gap-2.5" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
       <span className="h-[7px] w-[7px] shrink-0 animate-pulseDot rounded-full bg-accent" aria-hidden />
-      <span className="font-display text-sm font-bold text-ink">
+      <span className={`font-display text-sm font-bold ${invert ? 'text-surface' : 'text-ink'}`}>
         {lang === 'ar' ? 'نســــــيم فلفلان' : 'Naseem Filfilan'}
       </span>
     </a>
   )
+  const nameNode = renderName(false)
 
   const contactNode = (
     <a
@@ -51,6 +66,7 @@ export function Header() {
 
   return (
     <header
+      ref={headerRef}
       className={`sticky top-0 z-header bg-transparent transition-[padding,backdrop-filter] duration-300 ${
   scrolled ? 'bg-bg/60 py-5 backdrop-blur-sm' : 'bg-transparent py-5'
 }`}
@@ -82,10 +98,12 @@ export function Header() {
 </div>
 
         <div className="relative z-10 flex items-center justify-between lg:hidden">
-          {nameNode}
+          {renderName(onLightSection && !menuOpen)}
           <button
             type="button"
-            className="grid h-9 w-9 place-items-center border border-ink/30 text-ink"
+            className={`grid h-9 w-9 place-items-center border transition-colors duration-300 ${
+              onLightSection && !menuOpen ? 'border-surface/30 text-surface' : 'border-ink/30 text-ink'
+            }`}
             onClick={() => setMenuOpen((open) => !open)}
             aria-expanded={menuOpen}
             aria-label={menuOpen ? t('a11y.closeMenu') : t('a11y.toggleMenu')}
