@@ -63,7 +63,7 @@ export function Stats() {
           <Reveal>
         <div
           dir={lang === 'ar' ? 'rtl' : 'ltr'}
-          className="flex flex-wrap items-center justify-center gap-3 sm:gap-5"
+          className="flex flex-col flex-wrap items-center justify-center gap-3 sm:flex-row sm:gap-5  my-5"
         >
           {content.stats.statstext.slice(1).map((word, index, arr) => (
             <Fragment key={word}>
@@ -74,9 +74,11 @@ export function Stats() {
               >
                 {word}
               </span>
-        
               {index < arr.length - 1 && (
-                <span className="text-accent text-2xl sm:text-4xl">━</span>
+                        <span className="text-accent text-2xl sm:hidden">|</span>
+                      )}
+              {index < arr.length - 1 && (
+                <span className=" hidden text-accent sm:inline sm:text-4xl">━</span>
               )}
             </Fragment>
           ))}
@@ -95,7 +97,7 @@ export function Stats() {
         <Reveal>
         <div
           dir={lang === 'ar' ? 'rtl' : 'ltr'}
-          className="flex flex-wrap items-center justify-center gap-3 sm:gap-5"
+          className="flex flex-col flex-wrap items-center justify-center gap-3 sm:flex-row sm:gap-5  my-5"
         >
           {content.stats.statstext2.slice(1).map((word, index, arr) => (
             <Fragment key={word}>
@@ -106,9 +108,11 @@ export function Stats() {
               >
                 {word}
               </span>
-        
+                {index < arr.length - 1 && (
+                        <span className="text-accent text-2xl sm:hidden">|</span>
+                      )}
               {index < arr.length - 1 && (
-                <span className="text-accent text-2xl sm:text-4xl">━</span>
+                <span className="hidden text-accent sm:inline sm:text-4xl">━</span>
               )}
             </Fragment>
           ))}
@@ -116,7 +120,7 @@ export function Stats() {
         </Reveal>
 
     <Reveal>
-            <div className="flex flex-col gap-5 text-[clamp(15px,1.25vw,18px)] font-light leading-[1.9]">
+            <div className="flex flex-col gap-5 text-[clamp(15px,1.25vw,18px)] font-light leading-[1.9] mt-5">
                 <div  className="border-accent rtl:border-r-2 rtl:pr-6 ltr:border-l-2 ltr:pl-6">
                   <p>{content.stats.closing[0]} <br />
                   {content.stats.closing[1]} <br />

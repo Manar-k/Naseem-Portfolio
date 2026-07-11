@@ -64,7 +64,7 @@ export function Projects() {
         <Reveal>
                 <div
                   dir={lang === 'ar' ? 'rtl' : 'ltr'}
-                  className="flex flex-wrap items-center justify-center gap-3 sm:gap-5"
+                  className="flex flex-col flex-wrap items-center justify-center gap-3 sm:flex-row sm:gap-5  my-5"
                 >
                   {content.projects.closing.slice(1).map((word, index, arr) => (
                     <Fragment key={word}>
@@ -75,9 +75,12 @@ export function Projects() {
                       >
                         {word}
                       </span>
-                
+
                       {index < arr.length - 1 && (
-                        <span className="text-accent text-2xl sm:text-4xl">━</span>
+                        <span className="text-accent text-2xl sm:hidden">|</span>
+                      )}
+                      {index < arr.length - 1 && (
+                        <span className="hidden text-accent sm:inline sm:text-4xl">━</span>
                       )}
                     </Fragment>
                   ))}

@@ -60,7 +60,7 @@ export function Business() {
         </div>
 
           <Reveal>
-            <div className="flex flex-col gap-3 text-[clamp(15px,1.25vw,18px)] font-medium text-surface/70 leading-[1.9] my-12">
+            <div className="flex flex-col gap-3 text-[clamp(15px,1.25vw,18px)] font-medium text-surface/70 leading-[1.9] mt-12">
                 <div  className=" border-accent rtl:border-r-2 rtl:pr-6 ltr:border-l-2 ltr:pl-6">
                   <p>{content.business.mytext[0]}</p>
                   <p>{content.business.mytext[1]}</p>
@@ -72,11 +72,11 @@ export function Business() {
   <Reveal>        
           <div
   dir={lang === 'ar' ? 'rtl' : 'ltr'}
-  className="flex flex-nowrap items-start justify-center gap-1.5 overflow-x-auto text-center font-display text-[clamp(1.1rem,5vw,3rem)] font-black sm:gap-5"
+  className="flex flex-col items-center justify-center gap-3 text-center font-display text-[clamp(1.1rem,5vw,3rem)] font-black sm:flex-row sm:flex-nowrap sm:items-start sm:gap-5 sm:overflow-x-auto mb-5"
 >
   {content.business.mywords.map((word, index) => (
     <Fragment key={word}>
-      <span className={`flex w-16 shrink-0 flex-col items-center sm:w-auto ${index === content.business.mywords.length - 1 ? "text-accent mb-5" : "text-surface"}`}>
+      <span className={`flex flex-col items-center sm:w-auto sm:shrink-0 ${index === content.business.mywords.length - 1 ? "text-accent sm:mb-5" : "text-surface"}`}>
         {word}
         {index !== content.business.mywords.length - 1 && (
   <p className="mt-1 max-w-[70px] text-[9px] font-medium leading-[1.4] text-center sm:max-w-none sm:text-[12px] sm:leading-[1.9]">{content.business.mytext2[index + 1] || ''}</p>
@@ -84,7 +84,10 @@ export function Business() {
       </span>
 
       {index < content.business.mywords.length - 1 && (
-        <span className="shrink-0 text-accent text-xl sm:text-4xl">{lang === 'ar' ? '←' : '→'}</span>
+        <>
+          <span className="shrink-0 text-accent text-xl sm:hidden">↓</span>
+          <span className="hidden shrink-0 text-accent sm:inline sm:text-4xl">{lang === 'ar' ? '←' : '→'}</span>
+        </>
       )}
     </Fragment>
   ))}
@@ -121,7 +124,7 @@ export function Business() {
 <Reveal>
 <div
   dir={lang === 'ar' ? 'rtl' : 'ltr'}
-  className="flex flex-wrap items-center justify-center gap-3 sm:gap-5"
+  className="flex flex-col flex-wrap items-center justify-center gap-3 sm:flex-row sm:gap-5  my-5"
 >
   {content.business.mytext3.slice(1).map((word, index, arr) => (
     <Fragment key={word}>
@@ -134,8 +137,11 @@ export function Business() {
       </span>
 
       {index < arr.length - 1 && (
-        <span className="text-accent text-2xl sm:text-4xl">━</span>
-      )}
+                        <span className="text-accent text-2xl sm:hidden">|</span>
+                      )}
+              {index < arr.length - 1 && (
+                <span className="hidden text-accent sm:inline sm:text-4xl">━</span>
+              )}
     </Fragment>
   ))}
 </div>
