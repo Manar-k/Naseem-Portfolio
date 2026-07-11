@@ -7,7 +7,7 @@ import { profile } from '../data/profile'
 import { useLang } from '../hooks/useLang'
 import { IconArrowDownRight } from '@tabler/icons-react'
 
-const PAIR_MARKER = /بين:|Between:/
+const PAIR_MARKER = /بين:|together:/
 
 /** Splits "He's a character that combines discipline and momentum. Mind and tongue. ..."
  * into a lead-in clause and a list of "X and Y" pairs for the 4-cell grid. */
@@ -45,7 +45,7 @@ export function Finale() {
         {lead ? (
           <Reveal>
             <div className="flex flex-col gap-3 mb-5 text-[clamp(15px,1.25vw,18px)] font-light leading-[1.9]">
-                <div  className="border-r-[3px] border-accent pr-6 py-2">
+                <div  className="border-accent rtl:border-r-2 rtl:pr-6 ltr:border-l-2 ltr:pl-6 py-2">
                   <p>{lead}</p>
                 </div>
             </div>
@@ -62,7 +62,7 @@ export function Finale() {
           ))}
         </div>
 
-        <div className="mb-2 border-r-2 border-accent pr-6 grid grid-cols-1 gap-10  leading-[2.1] sm:grid-cols-2 sm:gap-16">
+        <div className="mb-2 border-accent rtl:border-r-2 rtl:pr-6 ltr:border-l-2 ltr:pl-6 grid grid-cols-1 gap-10  leading-[2.1] sm:grid-cols-2 sm:gap-16">
           <Reveal>
             <p className="text-[clamp(15px,1.25vw,18px)] font-light">{content.finale.body[1]} <br />
             <span className="text-[clamp(15px,1.25vw,18px)] font-light">{content.finale.body[2]}<span className="text-[clamp(15px,1.25vw,18px)] font-medium">{content.finale.body[3]}</span></span></p>
@@ -70,7 +70,7 @@ export function Finale() {
         </div>
 
         <Reveal>
-            <div className="flex flex-col gap-3.5 font-display text-[clamp(12px,1.5vw,15px)] font-bold leading-[1.9]">
+            <div className="flex flex-col gap-3.5 font-display text-[clamp(14px,1.5vw,15px)] font-bold leading-[1.9]">
               {content.finale.principles.map((item) => (
                 <div key={item} className="flex items-baseline gap-3.5">
                   <IconArrowDownRight

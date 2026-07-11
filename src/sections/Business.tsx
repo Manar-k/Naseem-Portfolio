@@ -59,16 +59,16 @@ export function Business() {
                   <span className="font-display text-sm font-extrabold text-accent">
                     {sectionNumber(index + 1, lang)}
                   </span>
-                  <span className="font-display mt-2 text-[clamp(8px,1.8vw,15px)] font-bold text-surface/85">{question}</span>
+                  <span className="font-display mt-2 text-[clamp(10px,1.8vw,15px)] font-bold text-surface/85">{question}</span>
                 </div>
               </Reveal>
             ))}
           </div>
         </div>
-{/* ends of professional section */}
+
           <Reveal>
             <div className="flex flex-col gap-3 text-[clamp(15px,1.25vw,18px)] font-medium text-surface/70 leading-[1.9]">
-                <div  className="border-r-[3px] border-accent pr-6 py-2">
+                <div  className=" border-accent rtl:border-r-2 rtl:pr-6 ltr:border-l-2 ltr:pl-6">
                   <p>{content.business.mytext[0]}</p>
                   <p>{content.business.mytext[1]}</p>
                   <p>{content.business.mytext2[0]}</p>
@@ -100,37 +100,11 @@ export function Business() {
 
           <Reveal>
             <div className="flex flex-col gap-4 text-[clamp(15px,1.25vw,18px)] font-medium text-surface/70 leading-[1.9]">
-                <div  className="border-r-[3px] border-accent pr-6 py-3">
+                <div  className="border-accent rtl:border-r-2 rtl:pr-6 ltr:border-l-2 ltr:pl-6">
                   <p>{content.business.mytext2[4]}</p>
                 </div>
             </div>
           </Reveal>
-
-        {/* <Reveal>
-          <p className="m-0 mb-6 max-w-[60ch] text-[clamp(16px,1.4vw,20px)] font-medium leading-[2]">
-            {content.business.intro}
-          </p>
-        </Reveal> */}
-        {/* <Reveal>
-          <h2 className="m-0 mb-10 font-display text-[clamp(34px,5.5vw,84px)] font-black leading-[1.4]">
-            {lastContrast.less}
-            <br />
-            {lastContrast.more.split(' ').slice(0, -1).join(' ')}{' '}
-            <span className="inline-block rounded-[0.15em] bg-bg px-[0.25em] text-ink">
-              {lastContrast.more.split(' ').slice(-1)}
-            </span>
-          </h2>
-        </Reveal> */}
-
-        {/* <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {quoteCards.map((text, index) => (
-            <Reveal key={text} delay={index * 0.12}>
-              <TiltShineCard className="h-full rounded-xl border border-white/30 bg-accent p-7 text-[16px] font-medium leading-[1.9]">
-                {text}
-              </TiltShineCard>
-            </Reveal>
-          ))}
-        </div> */}
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 m-4">
           {content.business.contrasts.map((pair) => (
@@ -146,7 +120,7 @@ export function Business() {
 
         <Reveal>
             <div className="flex flex-col gap-4 text-[clamp(15px,1.25vw,18px)] font-medium text-surface/70 leading-[1.9]">
-                <div  className="border-r-[3px] border-accent pr-6 py-3">
+                <div  className="border-accent rtl:border-r-2 rtl:pr-6 ltr:border-l-2 ltr:pl-6">
                   <p>{content.business.mytext3[0]}</p>
                 </div>
             </div>
@@ -174,24 +148,9 @@ export function Business() {
 </div>
 </Reveal>
 
-          {/* <Reveal>
-            <div className="flex flex-col gap-3.5 font-display text-[clamp(12px,1.5vw,15px)] font-bold leading-[1.9]">
-              {content.business.mytext3.slice(1).map((item) => (
-                <div key={item} className="flex items-baseline gap-3.5">
-                  <IconArrowDownRight
-                    className="h-4 w-4 shrink-0 -translate-y-0.5 text-accent rtl:-scale-x-100"
-                    stroke={2.25}
-                  />
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
-          </Reveal> */}
-
-
           <Reveal>
             <div className="flex flex-col gap-4 text-[clamp(15px,1.25vw,18px)] font-medium text-surface/70 leading-[1.9]">
-                <div  className="border-r-[3px] border-accent pr-6 py-3">
+                <div  className="border-accent rtl:border-r-2 rtl:pr-6 ltr:border-l-2 ltr:pl-6">
                   <p>{content.business.closing[0]}</p>
                   <p>{content.business.closing[1]}</p>
                   <p>{content.business.closing[2]}</p>
@@ -211,39 +170,6 @@ export function Business() {
         <span className="h-px w-8 shrink-0 bg-accent/30 sm:w-12" aria-hidden />
       </div>
     </Reveal>
-
-        {/* <div className="mt-14 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:gap-16">
-          <Reveal>
-            <div>
-              <div className="flex flex-col text-[16.5px] font-medium leading-[1.9]">
-                {content.business.askList.map((item, index) => (
-                  <div
-                    key={item}
-                    className={`flex gap-3 py-3 ${
-                      index < content.business.askList.length - 1 ? 'border-b border-white/40' : ''
-                    }`}
-                  >
-                    <span className="font-extrabold">{sectionNumber(index + 1, lang)}</span>
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-              <p className="m-0 mt-6 text-[16px] font-medium leading-[2]">{content.business.closing[1]}</p>
-            </div>
-          </Reveal>
-
-          <Reveal>
-            <div className="flex flex-col gap-5 text-[16.5px] font-medium leading-[1.9]">
-              {content.business.contrasts.slice(0, -1).map((pair) => (
-                <div key={pair.more} className="border-e-[3px] border-white pe-4.5">
-                  {pair.less}
-                  <br />
-                  <strong className="font-extrabold">{pair.more}</strong>
-                </div>
-              ))}
-            </div>
-          </Reveal> */}
-        {/* </div> */}
       </Container>
     </section>
   )

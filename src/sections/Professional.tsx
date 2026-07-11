@@ -59,7 +59,7 @@ export function Professional() {
                   <span className="font-display text-sm font-extrabold text-accent">
                     {sectionNumber(index + 1, lang)}
                   </span>
-                  <span className="font-display mt-2 text-[clamp(8px,1.8vw,15px)] font-bold text-ink">{question}</span>
+                  <span className="font-display mt-2 text-[clamp(10px,1.8vw,15px)] font-bold text-ink">{question}</span>
                 </div>
               </Reveal>
             ))}
@@ -68,18 +68,11 @@ export function Professional() {
 
         <div className="mx-auto mt-14 grid max-w-[1280px] grid-cols-1 gap-10 lg:mt-20 lg:grid-cols-[7fr_5fr] lg:gap-20">
           <div className="flex flex-col gap-7 text-[clamp(15px,1.25vw,18px)] font-light leading-[2.1]">
-            {/* {content.professional.body.map((paragraph, index) => (
-              <Reveal key={paragraph} delay={index * 0.04}>
-                <div className="border-r-2 border-accent pr-6">
-                  
-                <p className="m-0">{paragraph}</p>
-                </div>
-              </Reveal>
-            ))} */}
+
             {content.professional.body.map((paragraph, index) => {
   const isLast = index === content.professional.body.length - 1;
   const isbeforeLast = index === content.professional.body.length - 2;
-  // const [firstWord, ...rest] = paragraph.split(' ');
+
   const words = paragraph.split(' ');
   const firstThreeWords = words.slice(0, 3).join(' ');
   const rest2 = words.slice(3).join(' ');
@@ -89,7 +82,7 @@ export function Professional() {
 
   return (
     <Reveal key={index} delay={index * 0.04}>
-      <div className="border-r-2 border-accent pr-6">
+      <div className="border-accent rtl:border-r-2 rtl:pr-6 ltr:border-l-2 ltr:pl-6">
         <p className="m-0">
           {isLast ? (
             <>
@@ -131,12 +124,6 @@ export function Professional() {
           </Reveal>
         </div>
 
-        {/* <Reveal>
-          <p className="mx-auto mt-16 max-w-[26ch] text-center font-display text-2xl font-black text-accent sm:mt-20 sm:text-3xl">
-            {t('common.inShort')}
-          </p>
-        </Reveal> */}
-
     <Reveal>
       <div className={`flex items-center justify-center gap-4 sm:gap-6 mt-16`}>
         <span className="h-px w-8 shrink-0 bg-accent/30 sm:w-12" aria-hidden />
@@ -147,17 +134,6 @@ export function Professional() {
         <span className="h-px w-8 shrink-0 bg-accent/30 sm:w-12" aria-hidden />
       </div>
     </Reveal>
-
-        {/* <Reveal>
-          <div className="mx-auto mt-8 max-w-[64ch] border border-ink/20 bg-transparent p-7 text-center sm:p-10">
-            <p className="m-0 font-display text-lg leading-[1.9] text-ink sm:text-xl">
-              {content.professional.closing[0]}
-            </p>
-            <p className="m-0 font-display text-lg leading-[1.9] text-ink sm:text-xl">
-              {content.professional.closing[1]}
-            </p>
-          </div>
-        </Reveal> */}
       </Container>
     </section>
   )

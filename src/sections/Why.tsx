@@ -29,7 +29,7 @@ export function Why() {
         </Reveal>
 
         <Reveal>
-          <div className="border-r-2 border-accent pr-6">
+          <div className="border-accent rtl:border-r-2 rtl:pr-6 ltr:border-l-2 ltr:pl-6">
             <p className="m-0 text-[clamp(15px,1.25vw,18px)] font-light">
               {content.why.intro}
             </p>
@@ -78,7 +78,7 @@ export function Why() {
           </Reveal>
         </div>
         <Reveal>
-          <div className="border-r-2 border-accent pr-6 mt-12">
+          <div className="border-accent rtl:border-r-2 rtl:pr-6 ltr:border-l-2 ltr:pl-6 pr-6 mt-12">
             <p className="m-0 text-[clamp(15px,1.25vw,18px)] font-light">
               {content.why.explain[0]} <br />
               {content.why.explain[1]}
@@ -105,7 +105,7 @@ export function Why() {
         </Reveal>
 
           <Reveal>
-          <div className="border-r-2 border-accent pr-6">
+          <div className="border-accent rtl:border-r-2 rtl:pr-6 ltr:border-l-2 ltr:pl-6">
             <p className="mt-12 mb-5 text-[clamp(15px,1.25vw,18px)] font-light">
               {content.why.closing[0]}
             </p>

@@ -38,7 +38,7 @@ export function About() {
           ))}
 
           <Reveal>
-            <div className="border-r-2 border-accent pr-6">
+            <div className="border-accent rtl:border-r-2 rtl:pr-6 ltr:border-l-2 ltr:pl-6">
               <div className="mb-2 mt-6 font-display text-xl font-extrabold text-accent">
                 {content.about.dual.insideTitle}
               </div>
@@ -47,7 +47,7 @@ export function About() {
           </Reveal>
 
           <Reveal>
-            <div className="border-r-2 border-accent pr-6">
+            <div className="border-accent rtl:border-r-2 rtl:pr-6 ltr:border-l-2 ltr:pl-6">
               <div className="mb-2 font-display text-xl font-extrabold text-accent">
                 {content.about.dual.outsideTitle}
               </div>
@@ -74,12 +74,6 @@ export function About() {
           </Reveal>
         </div>
       </div>
-
-      {/* <Reveal>
-        <p className="mx-auto mt-16 max-w-[26ch] text-center font-display text-2xl font-black text-accent sm:mt-20 sm:text-3xl">
-          {t('common.inShort')}
-        </p>
-      </Reveal> */}
       <Reveal>
       <div className={`flex items-center justify-center gap-4 sm:gap-6 mt-16`}>
         <span className="h-px w-8 shrink-0 bg-accent/30 sm:w-12" aria-hidden />

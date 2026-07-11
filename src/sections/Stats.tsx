@@ -54,7 +54,7 @@ export function Stats() {
 
         <Reveal>
             <div className="flex flex-col gap-5 text-[clamp(15px,1.25vw,18px)] font-light leading-[1.9] mt-10">
-                <div  className="border-r-[3px] border-accent pr-6 py-3">
+                <div  className="border-accent rtl:border-r-2 rtl:pr-6 ltr:border-l-2 ltr:pl-6">
                   <p>{content.stats.statstext[0]}</p>
                 </div>
             </div>
@@ -85,7 +85,7 @@ export function Stats() {
 
           <Reveal>
             <div className="flex flex-col gap-5 text-[clamp(15px,1.25vw,18px)] font-light leading-[1.9] mt-10">
-                <div  className="border-r-[3px] border-accent pr-6 py-3">
+                <div  className="border-accent rtl:border-r-2 rtl:pr-6 ltr:border-l-2 ltr:pl-6">
                   <p>{content.stats.statstext2[0]}</p>
                 </div>
             </div>
@@ -117,7 +117,7 @@ export function Stats() {
 
     <Reveal>
             <div className="flex flex-col gap-5 text-[clamp(15px,1.25vw,18px)] font-light leading-[1.9]">
-                <div  className="border-r-[3px] border-accent pr-6 py-3">
+                <div  className="border-accent rtl:border-r-2 rtl:pr-6 ltr:border-l-2 ltr:pl-6">
                   <p>{content.stats.closing[0]} <br />
                   {content.stats.closing[1]} <br />
                   {content.stats.closing[2]} <br />
