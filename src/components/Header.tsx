@@ -79,7 +79,7 @@ export function Header() {
   </div>
 </div>
 
-        <div className="flex items-center justify-between lg:hidden">
+        <div className="relative z-10 flex items-center justify-between lg:hidden">
           {nameNode}
           <button
             type="button"
@@ -94,8 +94,8 @@ export function Header() {
       </Container>
 
       {menuOpen ? (
-        <div className="border-t border-ink/10 bg-bg lg:hidden">
-          <Container className="flex flex-col gap-6 py-8">
+        <div className="fixed inset-0 z-0 flex flex-col overflow-y-auto bg-bg lg:hidden">
+          <Container className="flex min-h-full flex-col justify-center gap-6 py-24">
             <nav className="flex flex-col gap-5" aria-label="Mobile">
               {NAV_ITEMS.map((item) => (
                 <a

@@ -72,19 +72,19 @@ export function Business() {
   <Reveal>        
           <div
   dir={lang === 'ar' ? 'rtl' : 'ltr'}
-  className="flex flex-wrap items-center justify-center text-center gap-5 font-display text-[clamp(2rem,5vw,3rem)] font-black"
+  className="flex flex-nowrap items-start justify-center gap-1.5 overflow-x-auto text-center font-display text-[clamp(1.1rem,5vw,3rem)] font-black sm:gap-5"
 >
   {content.business.mywords.map((word, index) => (
     <Fragment key={word}>
-      <span className={index === content.business.mywords.length - 1 ? "text-accent text-center mb-5" : "text-surface"}>
-        {word} 
+      <span className={`flex w-16 shrink-0 flex-col items-center sm:w-auto ${index === content.business.mywords.length - 1 ? "text-accent mb-5" : "text-surface"}`}>
+        {word}
         {index !== content.business.mywords.length - 1 && (
-  <p className="text-[12px] font-medium leading-[1.9] text-center justify-center">{content.business.mytext2[index + 1] || ''}</p>
+  <p className="mt-1 max-w-[70px] text-[9px] font-medium leading-[1.4] text-center sm:max-w-none sm:text-[12px] sm:leading-[1.9]">{content.business.mytext2[index + 1] || ''}</p>
 )}
       </span>
 
       {index < content.business.mywords.length - 1 && (
-        <span className="text-accent text-4xl">{lang === 'ar' ? '←' : '→'}</span>
+        <span className="shrink-0 text-accent text-xl sm:text-4xl">{lang === 'ar' ? '←' : '→'}</span>
       )}
     </Fragment>
   ))}
@@ -154,13 +154,13 @@ export function Business() {
 
 
     <Reveal>
-      <div className={`flex items-center justify-center gap-4 sm:gap-6`}>
-        <span className="h-px w-8 shrink-0 bg-accent/30 sm:w-12" aria-hidden />
-          <h2 className="m-0 shrink-0 text-[15px] font-black leading-[1.3] text-accent sm:text-lg">
+      <div className="flex flex-col items-center justify-center gap-4 text-center sm:flex-row sm:gap-6">
+        <span className="hidden h-px w-8 shrink-0 bg-accent/30 sm:block sm:w-12" aria-hidden />
+          <h2 className="m-0 text-[15px] font-black leading-[1.3] text-accent sm:text-lg">
             {content.business.pullQuote[0]} <br />
             {content.business.pullQuote[1]}
           </h2>
-        <span className="h-px w-8 shrink-0 bg-accent/30 sm:w-12" aria-hidden />
+        <span className="hidden h-px w-8 shrink-0 bg-accent/30 sm:block sm:w-12" aria-hidden />
       </div>
     </Reveal>
       </Container>

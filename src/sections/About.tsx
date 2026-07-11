@@ -20,9 +20,11 @@ export function About() {
       <SectionTitle title={content.about.title} className="mb-14 sm:mb-20"/>
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-[5fr_7fr] lg:gap-20">
         <div className="lg:sticky lg:top-12 lg:self-start">
+          <Reveal>
           <p className="m-0 pt-12 font-display text-[clamp(16px,3.2vw,26px)] font-black leading-[1.5] text-ink">
             {content.about.pullQuote}
           </p>
+          </Reveal>
         </div>
 
         <div className="flex flex-col gap-0 text-[clamp(12px,1.25vw,15px)] font-light leading-[2.1]">
@@ -75,12 +77,12 @@ export function About() {
         </div>
       </div>
       <Reveal>
-      <div className={`flex items-center justify-center gap-4 sm:gap-6 mt-16`}>
-        <span className="h-px w-8 shrink-0 bg-accent/30 sm:w-12" aria-hidden />
-          <h2 className="m-0 shrink-0 text-[15px] font-black leading-[1.3] text-accent sm:text-lg">
+      <div className="flex flex-col items-center justify-center gap-4 text-center sm:flex-row sm:gap-6 mt-16">
+        <span className="hidden h-px w-8 shrink-0 bg-accent/30 sm:block sm:w-12" aria-hidden />
+          <h2 className="m-0 text-[15px] font-black leading-[1.3] text-accent sm:text-lg">
             {t('common.inShort')}
           </h2>
-        <span className="h-px w-8 shrink-0 bg-accent/30 sm:w-12" aria-hidden />
+        <span className="hidden h-px w-8 shrink-0 bg-accent/30 sm:block sm:w-12" aria-hidden />
       </div>
     </Reveal>
     </section>

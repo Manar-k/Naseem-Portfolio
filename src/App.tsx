@@ -10,13 +10,8 @@ import { Why } from './sections/Why'
 import { Finale } from './sections/Finale'
 import { Certificates } from './sections/Certificates'
 import { Contact } from './sections/Contact'
-// import { useLang } from './hooks/useLang'
-// import { profile } from './data/profile'
 
 function App() {
-  // const { lang } = useLang()
-  // const content = profile[lang]
-
   return (
     <div className="min-h-screen bg-bg text-ink">
       <Header />
@@ -24,12 +19,12 @@ function App() {
         <Hero />
         <About />
         <BigStatement />
+        <Certificates />
+        <Stats />
         <Professional />
         <Business />
-        <Stats />
         <Projects />
         <Why />
-        <Certificates />
         <Finale />
         <Contact />
       </main>

@@ -76,23 +76,15 @@ export function Hero() {
           ))}
         </div>
 
-        <Reveal>
-          <div className="mt-8 flex flex-wrap gap-3">
-            {content.meta.roles.map((text, index) => {
-              const isEmphasized = index >= content.meta.roles.length - 3
-              return (
-                <span
-                  key={text}
-                  className={` border px-[22px] py-2.5 font-display text-[clamp(15px,1.25vw,18px)] duration-300 hover:border-accent hover:text-accent ${
-                    isEmphasized ? 'border-ink/30 text-ink': 'border-ink/30 text-ink'
-                  }`}
-                >
-                  {text}
-                </span>
-              )
-            })}
-          </div>
-        </Reveal>
+        <div className="mt-8 flex flex-wrap gap-2 sm:gap-3">
+          {content.meta.roles.map((text, index) => (
+            <Reveal key={text} delay={index * 0.08}>
+              <span className="inline-block border border-ink/30 px-4 py-2 font-display text-[clamp(13px,1.25vw,18px)] text-ink duration-300 hover:border-accent hover:text-accent sm:px-[22px] sm:py-2.5">
+                {text}
+              </span>
+            </Reveal>
+          ))}
+        </div>
  
       </div>
     </section>

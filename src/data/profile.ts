@@ -204,6 +204,7 @@ export const profile: Record<Lang, LocaleContent> = {
       intro:['الكلام جميل، لكن السوق لا يحترم الكلام وحده. ','الأرقام هنا تقول إن نسيـم ما يبيع صورة عن نفسه، بل يملك تجارب فعلية خلف هذه الصورة.',' من أبرز ما حققه واشتغل عليه:'],
       items: [
         { value: '+300', label: 'مكينة حلاقة (الجزازة) تم بيعها' },
+        { value: '+200', label: 'عطر تم بيعه' },
         { value: '+300', label: 'خدمة كتابة سيرة ذاتية' },
         { value: '+500', label: 'منتج رقمي تم بيعه' },
         { value: '+20', label: 'لوحة مؤشرات NPS صممها وتابعها' },
@@ -402,6 +403,7 @@ export const profile: Record<Lang, LocaleContent> = {
       intro:['Words matter, but the market is ultimately measured by results. ','These numbers show that Naseem is not simply presenting an image of himself—they reflect real experience, proven performance, and tangible achievements.',' Some of his key accomplishments include:'],
       items: [
         { value: '+300', label: '(Al-Jazazah) Hair Clippers Sold' },
+        { value: '+200', label: 'Perfumes Sold' },
         { value: '+300', label: 'Professional Résumés Delivered' },
         { value: '+500', label: 'Digital Products Sold' },
         { value: '+20', label: 'NPS Dashboards Designed & Managed' },

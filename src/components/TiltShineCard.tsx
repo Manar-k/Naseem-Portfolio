@@ -22,7 +22,7 @@ export function TiltShineCard({ children, className = '' }: TiltShineCardProps) 
 
   const springRotateX = useSpring(rotateX, { stiffness: 200, damping: 20 })
   const springRotateY = useSpring(rotateY, { stiffness: 200, damping: 20 })
-  const glareBackground = useMotionTemplate`radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255,255,255,0.16), transparent 55%)`
+  const glareBackground = useMotionTemplate`radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255,255,255,0.08), transparent 55%)`
 
   if (reducedMotion) {
     return <div className={className}>{children}</div>

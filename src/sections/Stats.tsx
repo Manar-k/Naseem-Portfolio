@@ -135,13 +135,13 @@ export function Stats() {
         
 
     <Reveal>
-      <div className={`flex items-center justify-center gap-4 sm:gap-6 mt-16`}>
-        <span className="h-px w-8 shrink-0 bg-accent/30 sm:w-12" aria-hidden />
-          <h2 className=" shrink-0 text-[15px] leading-[1.3] text-accent sm:text-lg font-display">
+      <div className="flex flex-col items-center justify-center gap-4 text-center sm:flex-row sm:gap-6 mt-16">
+        <span className="hidden h-px w-8 shrink-0 bg-accent/30 sm:block sm:w-12" aria-hidden />
+          <h2 className="text-[15px] leading-[1.3] text-accent sm:text-lg font-display">
             {content.stats.pullQuote[0]} <br />
             {content.stats.pullQuote[1]}
           </h2>
-        <span className="h-px w-8 shrink-0 bg-accent/30 sm:w-12" aria-hidden />
+        <span className="hidden h-px w-8 shrink-0 bg-accent/30 sm:block sm:w-12" aria-hidden />
       </div>
     </Reveal>
       </Container>
