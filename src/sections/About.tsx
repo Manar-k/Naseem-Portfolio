@@ -15,14 +15,13 @@ export function About() {
 
   return (
     <>
-    <span id="about"></span>
-    <section  className="px-6 py-12 sm:px-10 sm:py-10 lg:px-[72px]">
-      <SectionTitle title={content.about.title} className="mb-14 sm:mb-20"/>
+    <section  id="about" className="px-6 py-12 sm:px-10 sm:py-10 lg:px-[72px]">
+      <SectionTitle title={content.about.title} className=" sm:mb-20"/>
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-[5fr_7fr] lg:gap-20">
         <div className="lg:sticky lg:top-12 lg:self-start">
           <Reveal>
           <p className="m-0 pt-12 font-display text-[clamp(16px,3.2vw,26px)] font-black leading-[1.5] text-ink">
-            {content.about.pullQuote}
+            {content.about.pullQuote[0]} <br/> {content.about.pullQuote[1]} 
           </p>
           </Reveal>
         </div>

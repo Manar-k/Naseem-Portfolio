@@ -29,7 +29,7 @@ export interface LocaleContent {
   about: {
     title: string
     intro: string[]
-    pullQuote: string
+    pullQuote: string[]
     dual: {
       insideTitle: string
       insideText: string
@@ -131,7 +131,7 @@ export const profile: Record<Lang, LocaleContent> = {
         'وفيه ناس يعرفون السوق، لكن إذا دخلوا بيئة مهنية كبيرة ارتبكوا بين الأنظمة والاجتماعات والتقارير.',
         'نسيم فلفلان مو من هؤلاء ولا هؤلاء.',
       ],
-      pullQuote: 'هو من النوع النادر الذي يعرف كيف يتحرك في الجهتـــــــــــــــــــين.',
+      pullQuote: ['هو من النوع النادر الذي يعرف كيف يتحرك  ','في الجهتـــــــــــــــــــين.'],
       dual: {
         insideTitle: 'داخل المؤسســــــــــة',
         insideText:
@@ -327,7 +327,7 @@ export const profile: Record<Lang, LocaleContent> = {
         'Others understand the market well but find it difficult to navigate large professional environments with their systems, processes, and structure.',
         'Naseem Filfilan belongs to neither group.',
       ],
-      pullQuote: 'He is one of the few professionals who move confidently between both worlds.',
+      pullQuote: ['He is one of the few professionals who move confidently',' between both worlds.'],
       dual: {
         insideTitle: 'Within an Organization',
         insideText:
