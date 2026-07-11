@@ -25,7 +25,7 @@ export function Professional() {
             </Reveal>
             <Reveal>
               
-            <p className="m-0 text-[clamp(11px,1.25vw,14px)] leading-[2.1] font-light mb-12 text-ink/85">
+            <p className="m-0 text-[clamp(11px,1.25vw,14px)] leading-[2.1] font-light text-ink/85">
   {content.professional.intro.map((paragraph, index) => (
     <span
       key={index}

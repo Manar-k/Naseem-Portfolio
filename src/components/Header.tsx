@@ -52,17 +52,18 @@ export function Header() {
       </span>
     </a>
   )
-  const nameNode = renderName(false)
-
-  const contactNode = (
+  const renderContact = (invert: boolean) => (
     <a
       href="#contact"
       onClick={() => setMenuOpen(false)}
-      className=" border border-ink/30 px-2.5 py-1.5 text-[12px] font-display text-ink transition-colors duration-300 hover:border-accent hover:text-accent"
+      className={`border px-2.5 py-1.5 text-[12px] font-display transition-colors duration-300 hover:border-accent hover:text-accent ${
+        invert ? 'border-surface/30 text-surface' : 'border-ink/30 text-ink'
+      }`}
     >
       {t('header.contactCta')}
     </a>
   )
+  const contactNode = renderContact(false)
 
   return (
     <header
@@ -75,7 +76,7 @@ export function Header() {
         {/* Slot order (contact / nav+lang / name) is fixed left-to-right regardless of
             page language; only the text runs inside each slot follow the active dir. */}
         <div className="hidden grid-cols-[1fr_auto_1fr] items-center gap-4 lg:grid" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
-  <div className="justify-self-start">{nameNode}</div>
+  <div className="justify-self-start">{renderName(onLightSection)}</div>
 
   <div className="flex items-center justify-center gap-x-5 gap-y-2">
     <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2" aria-label="Primary">
@@ -83,17 +84,19 @@ export function Header() {
         <a
           key={item.id}
           href={`#${item.id}`}
-          className="text-[12.5px] text-ink/75 transition-colors duration-300 hover:text-accent font-display"
+          className={`text-[12.5px] transition-colors duration-300 hover:text-accent font-display ${
+            onLightSection ? 'text-surface/75' : 'text-ink/75'
+          }`}
         >
           {t(`nav.${item.key}`)}
         </a>
       ))}
     </nav>
-    {contactNode}
+    {renderContact(onLightSection)}
   </div>
 
   <div className="justify-self-end">
-    <LanguageSwitcher />
+    <LanguageSwitcher invert={onLightSection} />
   </div>
 </div>
 

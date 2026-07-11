@@ -27,7 +27,7 @@ export function Business() {
             
             <Reveal>
               
-            <p className="m-0 text-[clamp(11px,1.25vw,14px)] leading-[2.1] mb-12">
+            <p className="m-0 text-[clamp(11px,1.25vw,14px)] leading-[2.1] ">
   {content.business.intro.map((paragraph, index) => (
     <span
       key={index}
@@ -60,7 +60,7 @@ export function Business() {
         </div>
 
           <Reveal>
-            <div className="flex flex-col gap-3 text-[clamp(15px,1.25vw,18px)] font-medium text-surface/70 leading-[1.9]">
+            <div className="flex flex-col gap-3 text-[clamp(15px,1.25vw,18px)] font-medium text-surface/70 leading-[1.9] my-12">
                 <div  className=" border-accent rtl:border-r-2 rtl:pr-6 ltr:border-l-2 ltr:pl-6">
                   <p>{content.business.mytext[0]}</p>
                   <p>{content.business.mytext[1]}</p>
