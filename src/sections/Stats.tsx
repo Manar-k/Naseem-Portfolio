@@ -18,9 +18,9 @@ export function Stats() {
       <Container className="p-0">
         <SectionTitle title={t('nav.numbers')} className="mb-14 sm:mb-20" />
 
-        <div className="mb-14 sm:mb-6">
+        <div className="sm:mb-6">
           <Reveal> 
-          <h2 className="m-0 font-display text-[clamp(26px,3.6vw,54px)] leading-[1.5] text-ink">
+          <h2 className="mb-6 font-display text-[clamp(26px,3.6vw,54px)] leading-[1.5] text-ink">
             {content.stats.title}
           </h2>
           </Reveal> 
