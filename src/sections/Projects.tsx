@@ -63,7 +63,7 @@ export function Projects() {
           </Reveal>
         <Reveal>
                 <div
-                  dir="rtl"
+                  dir={lang === 'ar' ? 'rtl' : 'ltr'}
                   className="flex flex-wrap items-center justify-center gap-3 sm:gap-5"
                 >
                   {content.projects.closing.slice(1).map((word, index, arr) => (

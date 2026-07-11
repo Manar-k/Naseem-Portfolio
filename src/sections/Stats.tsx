@@ -62,7 +62,7 @@ export function Stats() {
 
           <Reveal>
         <div
-          dir="rtl"
+          dir={lang === 'ar' ? 'rtl' : 'ltr'}
           className="flex flex-wrap items-center justify-center gap-3 sm:gap-5"
         >
           {content.stats.statstext.slice(1).map((word, index, arr) => (
@@ -94,7 +94,7 @@ export function Stats() {
 
         <Reveal>
         <div
-          dir="rtl"
+          dir={lang === 'ar' ? 'rtl' : 'ltr'}
           className="flex flex-wrap items-center justify-center gap-3 sm:gap-5"
         >
           {content.stats.statstext2.slice(1).map((word, index, arr) => (
@@ -144,23 +144,6 @@ export function Stats() {
         <span className="h-px w-8 shrink-0 bg-accent/30 sm:w-12" aria-hidden />
       </div>
     </Reveal>
-
-        {/* <div className="mx-auto mt-16 max-w-[70ch] text-center sm:mt-20">
-          <Reveal>
-            <p className="m-0 font-display text-[clamp(22px,2.2vw,32px)] font-black leading-[1.8] text-accent">
-              {content.stats.pullQuote}
-            </p>
-          </Reveal>
-          <Reveal>
-            <div className="mt-6 flex flex-col gap-3 text-[clamp(15px,1.25vw,17.5px)] font-light leading-[2.1]">
-              {content.stats.closing.map((paragraph) => (
-                <p key={paragraph} className="m-0">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-          </Reveal>
-        </div> */}
       </Container>
     </section>
   )

@@ -12,13 +12,6 @@ export function Business() {
   const { lang } = useLang()
   const { t } = useTranslation()
   const content = profile[lang]
-  // const lastContrast = content.business.contrasts[content.business.contrasts.length - 1]
-
-  // const quoteCards = [
-  //   `${content.business.chain[0]} ${content.business.chain.slice(1).join(' ')}.`,
-  //   content.business.closing[0],
-  //   content.business.pullQuote,
-  // ]
 
   return (
     <section id="commercial" className="bg-muted px-6 py-12 text-surface sm:px-10 sm:py-10 lg:px-[72px]">
@@ -78,12 +71,12 @@ export function Business() {
 
   <Reveal>        
           <div
-  dir="rtl"
+  dir={lang === 'ar' ? 'rtl' : 'ltr'}
   className="flex flex-wrap items-center justify-center text-center gap-5 font-display text-[clamp(2rem,5vw,3rem)] font-black"
 >
   {content.business.mywords.map((word, index) => (
     <Fragment key={word}>
-      <span className={index === content.business.mywords.length - 1 ? "text-accent text-center mb-10" : "text-surface"}>
+      <span className={index === content.business.mywords.length - 1 ? "text-accent text-center mb-5" : "text-surface"}>
         {word} 
         {index !== content.business.mywords.length - 1 && (
   <p className="text-[12px] font-medium leading-[1.9] text-center justify-center">{content.business.mytext2[index + 1] || ''}</p>
@@ -91,7 +84,7 @@ export function Business() {
       </span>
 
       {index < content.business.mywords.length - 1 && (
-        <span className="text-accent text-4xl">←</span>
+        <span className="text-accent text-4xl">{lang === 'ar' ? '←' : '→'}</span>
       )}
     </Fragment>
   ))}
@@ -127,7 +120,7 @@ export function Business() {
           </Reveal>
 <Reveal>
 <div
-  dir="rtl"
+  dir={lang === 'ar' ? 'rtl' : 'ltr'}
   className="flex flex-wrap items-center justify-center gap-3 sm:gap-5"
 >
   {content.business.mytext3.slice(1).map((word, index, arr) => (
