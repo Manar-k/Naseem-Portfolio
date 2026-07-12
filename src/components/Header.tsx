@@ -34,9 +34,13 @@ export function Header() {
   })
 
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    // Lock scroll on the actual scrolling element (html, since our CSS already sets
+    // overflow-x on it). Locking body instead would make it its own scroll container
+    // -- disconnected from html's current scroll offset -- which breaks the sticky
+    // header's positioning while the page is scrolled.
+    document.documentElement.style.overflow = menuOpen ? 'hidden' : ''
     return () => {
-      document.body.style.overflow = ''
+      document.documentElement.style.overflow = ''
     }
   }, [menuOpen])
 
@@ -69,7 +73,7 @@ export function Header() {
     <header
       ref={headerRef}
       className={`sticky top-0 z-header bg-transparent transition-[padding,backdrop-filter] duration-300 ${
-  scrolled ? 'bg-bg/60 py-5 backdrop-blur-sm' : 'bg-transparent py-5'
+  scrolled && !menuOpen ? 'bg-bg/60 py-5 backdrop-blur-sm' : 'bg-transparent py-5'
 }`}
     >
       <Container>
