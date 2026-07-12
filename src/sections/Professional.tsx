@@ -6,6 +6,22 @@ import { profile } from '../data/profile'
 import { useLang } from '../hooks/useLang'
 import { sectionNumber } from '../utils/numerals'
 
+function boldPrefixByCommaCount(text: string, commaCount: number): [string, string] {
+  const commaRegex = /[,،]\s*/g
+  let match: RegExpExecArray | null
+  let count = 0
+  let cutIndex = -1
+  while ((match = commaRegex.exec(text))) {
+    count++
+    if (count === commaCount) {
+      cutIndex = match.index + match[0].length
+      break
+    }
+  }
+  if (cutIndex === -1) return [text, '']
+  return [text.slice(0, cutIndex).trimEnd(), text.slice(cutIndex).trimStart()]
+}
+
 export function Professional() {
   const { lang } = useLang()
   const { t } = useTranslation()
@@ -65,12 +81,8 @@ export function Professional() {
   const isLast = index === content.professional.body.length - 1;
   const isbeforeLast = index === content.professional.body.length - 2;
 
-  const words = paragraph.split(' ');
-  const firstThreeWords = words.slice(0, 3).join(' ');
-  const rest2 = words.slice(3).join(' ');
-
-  const lastThreeWords = words.slice(0, 11).join(' ');
-  const lastrest = words.slice(11).join(' ');
+  const [firstThreeWords, rest2] = boldPrefixByCommaCount(paragraph, 1);
+  const [lastThreeWords, lastrest] = boldPrefixByCommaCount(paragraph, 2);
 
   return (
     <Reveal key={index} delay={index * 0.04}>

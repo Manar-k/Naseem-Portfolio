@@ -118,7 +118,7 @@ export function Header() {
 
       {menuOpen
         ? createPortal(
-            <div className="fixed inset-0 z-header flex flex-col overflow-y-auto bg-bg lg:hidden">
+            <div className="fixed inset-0 z-30 flex flex-col overflow-y-auto bg-bg lg:hidden">
               <Container className="flex min-h-full flex-col justify-center gap-6 py-24">
                 <nav className="flex flex-col gap-5" aria-label="Mobile">
                   {NAV_ITEMS.map((item) => (

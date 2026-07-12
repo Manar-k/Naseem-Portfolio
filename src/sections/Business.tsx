@@ -148,7 +148,7 @@ export function Business() {
 </Reveal>
 
           <Reveal>
-            <div className="flex flex-col gap-4 text-[clamp(15px,1.25vw,18px)] font-medium text-surface/70 leading-[1.9]">
+            <div className="flex flex-col gap-4 text-[clamp(15px,1.25vw,18px)] font-medium text-surface/70 leading-[1.9] sm: mb-8">
                 <div  className="border-accent rtl:border-r-2 rtl:pr-6 ltr:border-l-2 ltr:pl-6">
                   <p>{content.business.closing[0]}</p>
                   <p>{content.business.closing[1]}</p>
