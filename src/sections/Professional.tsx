@@ -75,17 +75,24 @@ export function Professional() {
           </div>
         </div>
 
-        <HorizontalScrollCards
-          className="mt-14 sm:mt-20"
-          items={content.professional.body.map((body, index) => ({
-            image: `${import.meta.env.BASE_URL}images/Naseem${index + 1}.jpeg`,
-            alt: content.meta.name,
-            text: body,
-          }))}
-        />
+       <HorizontalScrollCards
+  className="mt-7 sm:mt-10"
+  items={content.professional.body.map((body, index) => {
+    const isLast = index === content.professional.body.length - 1
+    const isBeforeLast = index === content.professional.body.length - 2
+    const commaCount = isLast ? 2 : isBeforeLast ? 1 : 0
+    const [boldPrefix, rest] = commaCount > 0 ? boldPrefixByCommaCount(body, commaCount) : ['', body]
+    return {
+      image: `${import.meta.env.BASE_URL}images/Naseem${index + 1}.jpeg`,
+      alt: content.meta.name,
+      text: rest,
+      boldPrefix: boldPrefix || undefined,
+    }
+  })}
+/>
 
-        <div className="mx-auto mt-14 grid max-w-[1280px] grid-cols-1 gap-10 lg:mt-20 lg:grid-cols-[7fr_5fr] lg:gap-20">
-          <div className="flex flex-col gap-7 text-[clamp(15px,1.25vw,18px)] font-light leading-[2.1]">
+        {/* <div className="mx-auto mt-14 grid max-w-[1280px] grid-cols-1 gap-10 lg:mt-20 lg:grid-cols-[7fr_5fr] lg:gap-20"> */}
+          {/* <div className="flex flex-col gap-7 text-[clamp(15px,1.25vw,18px)] font-light leading-[2.1]">
 
             {content.professional.body.map((paragraph, index) => {
   const isLast = index === content.professional.body.length - 1;
@@ -114,10 +121,10 @@ export function Professional() {
     </Reveal>
   );
 })}
-          </div>
+          </div> */}
 
           <Reveal>
-            <div className="border border-ink/20 p-6 sm:p-9">
+            <div className="mx-auto w-full max-w-[520px] border border-ink/20 p-6 sm:p-9">
               <div className="mb-5 font-display text-xl font-extrabold text-accent">
                 {t('common.whatSetsHimApart')}
               </div>
@@ -136,7 +143,7 @@ export function Professional() {
               </div>
             </div>
           </Reveal>
-        </div>
+        {/* </div> */}
 
     <Reveal>
       <div className="flex flex-col items-center justify-center gap-4 text-center sm:flex-row sm:gap-6 mt-16">
