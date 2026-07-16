@@ -77,10 +77,10 @@ export function Professional() {
 
         <HorizontalScrollCards
           className="mt-14 sm:mt-20"
-          items={content.professional.traits.map((trait, index) => ({
-            image: `${import.meta.env.BASE_URL}images/Naseem${index + 2}.jpeg`,
+          items={content.professional.body.map((body, index) => ({
+            image: `${import.meta.env.BASE_URL}images/Naseem${index + 1}.jpeg`,
             alt: content.meta.name,
-            text: trait,
+            text: body,
           }))}
         />
 

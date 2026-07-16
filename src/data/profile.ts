@@ -162,7 +162,7 @@ export const profile: Record<Lang, LocaleContent> = {
         'خلفيته في الهندسة الصناعية كوّنت فيه عقلية عملية؛ لا يرى العمل كمجموعة مهام، بل كنظام كامل. والنظام، في نظره، إما أن يكون واضحًا.. أو يحتاج إلى إعادة ترتيب.',
         'خلال مسيرته، عمل في بيئات تشغيلية وتحليلية، وراكم خبرة في تجربة العملاء، تحليل البيانات، بناء لوحات المؤشرات، أتمتة التقارير، وقيادة مبادرات التحسين المستمر.',
         'في بوبا العربية، كان جزءًا من بيئة تعتمد على الأرقام ومؤشرات الرضا، وتحسين تجربة العميل. صمم وتابع لوحات NPS، تعامل مع مئات الآلاف من استجابات العملاء،  وساهم في تحويل البيانات إلى قرارات ومبادرات تطويرية.',
-        'واليوم، يعمل مهندس جودة لدى شركة من شركات وزارة الموارد البشرية، في خطوة مهنية تعكس انتقاله الطبيعي إلى مساحة الجودة المؤسسية؛ حيث لا يكفي أن تعمل، بل يجب أن تعرف كيف تقيس العمل، تضبطه، وتطوره.',
+        'واليوم، يعمل مهندس جودة لدى شركة إدراك للاستشارات الإدارية بوزارة الموارد البشرية، في خطوة مهنية تعكس انتقاله الطبيعي إلى مساحة الجودة المؤسسية؛ حيث لا يكفي أن تعمل، بل يجب أن تعرف كيف تقيس العمل، تضبطه، وتطوره.',
       ],
       traitsTitle: 'ما الذي يميّزه مهنيًا؟',
       traits: [
@@ -360,7 +360,7 @@ export const profile: Record<Lang, LocaleContent> = {
         'His background in Industrial Engineering has shaped a systems-thinking mindset. He doesn’t see work as a collection of tasks but as an interconnected system where every process influences the overall outcome. To him, every system should either operate with clarity and efficiency—or be redesigned to do so.',
         'Throughout his career, he has worked across operational and analytical environments, building expertise in customer experience, data analysis, dashboard development, reporting automation, and continuous improvement initiatives.',
         'At Bupa Arabia, he worked in a data-driven environment focused on customer satisfaction and service excellence. He designed and maintained Net Promoter Score (NPS) dashboards, analyzed hundreds of thousands of customer responses, and transformed insights into actionable improvement initiatives.',
-        'Today, he serves as a Quality Engineer at the Ministry of Human Resources, where he focuses on measuring, improving, and sustaining organizational quality. His role reflects a natural progression toward institutional excellence—where success is measured not only by getting work done, but by continuously improving how it is done.',
+        'Today, he serves as a Quality Engineer at Edrak Management Consulting Company, Ministry of Human Resources, where he focuses on measuring, improving, and sustaining organizational quality. His role reflects a natural progression toward institutional excellence—where success is measured not only by getting work done, but by continuously improving how it is done.',
       ],
       traitsTitle: 'What distinguishes him professionally?',
       traits: [
