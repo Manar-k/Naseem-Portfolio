@@ -110,7 +110,7 @@ export const profile: Record<Lang, LocaleContent> = {
     meta: {
       name: 'نســــــيم فلفلان',
       roles: [
-        'مهندس جودة لدى شركة من شركات وزارة الموارد البشرية',
+        'مهندس جودة لدى شركة إدراك للاستشارات الإدارية بوزارة الموارد البشرية',
         'مدير تطوير أعمال في يونيك مارك للتسويق',
         'رائد أعمال',
         'مؤسس متجر أبو ميس للحلول المتكاملة',
@@ -305,7 +305,7 @@ export const profile: Record<Lang, LocaleContent> = {
     meta: {
       name: 'Naseem Filfilan',
       roles: [
-        'Quality Engineer at the Ministry of Human Resources',
+        'Quality Engineer at Edrak Management Consulting Company, Ministry of Human Resources',
         'Business Development Manager at Unique Mark Marketing',
         'Entrepreneur',
         'Founder, Abu Mais Integrated Solutions Store',
