@@ -45,7 +45,7 @@ function Card({ image, alt, text, boldPrefix, index, total, scrollYProgress }: C
         ~2 fit fully on screen with a peek of the next -- a visual cue that
         the row keeps going.
       */}
-      <div className="group relative h-[50vh] aspect-[4/5] overflow-hidden border-2 border-ink/20 bg-surface-2 shadow-2xl transition-shadow duration-300 hover:border-ink/50 hover:shadow-[0_0_35px_rgba(237,230,214,0.55)] sm:h-[64vh] lg:h-[70vh]">
+      <div className="group relative h-[50vh] aspect-[4/5] overflow-hidden border-2 border-ink/20 bg-surface-2 shadow-2xl transition-shadow duration-300 hover:border-ink/50 hover:shadow-[0_0_35px_rgba(237,230,214,0.35)] sm:h-[64vh] lg:h-[70vh]">
         <img src={image} alt={alt} className="block h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
         <motion.div
           style={{ opacity: scrimOpacity }}
@@ -143,7 +143,7 @@ export function HorizontalScrollCards({ items, className = '' }: HorizontalScrol
       style={{ height: `${total * 100}vh` }}
     >
       <div className="sticky top-0 h-screen w-full overflow-hidden">
-        <motion.div ref={trackRef} className="flex h-full items-center gap-4 px-6 sm:gap-6 sm:px-10" style={{ x: trackX }}>
+        <motion.div ref={trackRef} className="flex h-full items-center gap-4 px-0 sm:gap-6 sm:px-10" style={{ x: trackX }}>
           {items.map((item, i) => (
             <Card key={i} {...item} index={i} total={total} scrollYProgress={scrollYProgress} />
           ))}

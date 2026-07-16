@@ -76,7 +76,7 @@ export function Professional() {
         </div>
 
        <HorizontalScrollCards
-  className="mt-7 sm:mt-10"
+  className="mt-7 sm:mt-10 -mx-6 sm:mx-0"
   items={content.professional.body.map((body, index) => {
     const isLast = index === content.professional.body.length - 1
     const isBeforeLast = index === content.professional.body.length - 2
