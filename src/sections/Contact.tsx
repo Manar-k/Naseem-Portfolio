@@ -26,7 +26,7 @@ export function Contact() {
         <Reveal>
   <RoleCycler
     roles={content.meta.roles}
-    className="mb-5 text-[15px] font-light font-display text-ink sm:text-lg"
+    className="mb-5 min-h-[3.2em] text-[15px] font-light font-display text-ink sm:min-h-0 sm:text-lg"
   />
 </Reveal>
         <Reveal>

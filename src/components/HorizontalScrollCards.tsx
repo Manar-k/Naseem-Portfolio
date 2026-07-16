@@ -45,7 +45,7 @@ function Card({ image, alt, text, boldPrefix, index, total, scrollYProgress }: C
         ~2 fit fully on screen with a peek of the next -- a visual cue that
         the row keeps going.
       */}
-      <div className="group relative h-[50vh] aspect-[4/5] overflow-hidden border-2 border-ink/20 bg-surface-2 shadow-2xl transition-shadow duration-300 hover:border-accent-bright hover:shadow-[0_0_35px_rgba(37,99,235,0.55)] sm:h-[64vh] lg:h-[70vh]">
+      <div className="group relative h-[50vh] aspect-[4/5] overflow-hidden border-2 border-ink/20 bg-surface-2 shadow-2xl transition-shadow duration-300 hover:border-ink/50 hover:shadow-[0_0_35px_rgba(237,230,214,0.55)] sm:h-[64vh] lg:h-[70vh]">
         <img src={image} alt={alt} className="block h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
         <motion.div
           style={{ opacity: scrimOpacity }}
@@ -53,7 +53,7 @@ function Card({ image, alt, text, boldPrefix, index, total, scrollYProgress }: C
         />
         <motion.p
   style={{ opacity: textOpacity, y: textY }}
-  className="absolute bottom-4 rtl:right-4 ltr:left-4 max-w-[38ch] rtl:text-right ltr:text-left font-display text-[clamp(11px,1.4vw,16px)] leading-[1.7] text-surfase group-hover:!opacity-100 sm:bottom-8 sm:right-8"
+  className="absolute bottom-4 rtl:right-4 ltr:left-4 max-w-[38ch] rtl:text-right ltr:text-left font-display text-[clamp(11px,1.4vw,16px)] leading-[1.7] text-surfase group-hover:!opacity-100 !translate-y-0 transition-transform duration-300 sm:bottom-8 sm:right-8"
 >
   {boldPrefix && <span className="text-white font-extrabold">{boldPrefix} </span>}
   <span className="font-medium">{text}</span>

@@ -3,10 +3,10 @@ import { SectionTitle } from '../components/SectionTitle'
 import { useTranslation } from 'react-i18next'
 import { Reveal } from '../components/Reveal'
 
-const CERT_COUNT = 12
+const CERT_COUNT = 13
 const certificates = Array.from(
   { length: CERT_COUNT },
-  (_, i) => `${import.meta.env.BASE_URL}images/certificates/cert-${String(i + 1).padStart(2, '0')}.jpg`,
+  (_, i) => `${import.meta.env.BASE_URL}images/certificates/cert-${String(i).padStart(2, '0')}.jpg`,
 )
 
 // Same technique as codyhouse.co/demo-tutorials/stacking-cards: every card
