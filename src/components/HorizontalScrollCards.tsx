@@ -79,6 +79,7 @@ export function HorizontalScrollCards({ items, className = '' }: HorizontalScrol
   const reducedMotion = useReducedMotion()
   const total = items.length
   const [step, setStep] = useState(0)
+  const { lang } = useLang()
 
   useEffect(() => {
     if (reducedMotion) return
@@ -92,12 +93,14 @@ export function HorizontalScrollCards({ items, className = '' }: HorizontalScrol
       const firstLeft = first.getBoundingClientRect().left
       setStep(second ? second.getBoundingClientRect().left - firstLeft : first.getBoundingClientRect().width)
     }
-
-    measure()
-    const resizeObserver = new ResizeObserver(measure)
-    resizeObserver.observe(track)
-    return () => resizeObserver.disconnect()
-  }, [reducedMotion])
+    const raf = requestAnimationFrame(measure)
+  const resizeObserver = new ResizeObserver(measure)
+  resizeObserver.observe(track)
+  return () => {
+    cancelAnimationFrame(raf)
+    resizeObserver.disconnect()
+  }
+  }, [reducedMotion, lang])
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -141,6 +144,7 @@ export function HorizontalScrollCards({ items, className = '' }: HorizontalScrol
       data-horizontal-scroll
       className={`relative ${className}`}
       style={{ height: `${total * 100}vh` }}
+      dir={lang === 'ar' ? 'rtl' : 'ltr'}
     >
       <div className="sticky top-0 h-screen w-full overflow-hidden">
         <motion.div ref={trackRef} className="flex h-full items-center gap-4 px-0 sm:gap-6 sm:px-10" style={{ x: trackX }}>
