@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { Container } from '../components/Container'
 import { Reveal } from '../components/Reveal'
+import { HorizontalScrollCards } from '../components/HorizontalScrollCards'
 import { SectionTitle } from '../components/SectionTitle'
 import { profile } from '../data/profile'
 import { useLang } from '../hooks/useLang'
@@ -73,6 +74,15 @@ export function Professional() {
             ))}
           </div>
         </div>
+
+        <HorizontalScrollCards
+          className="mt-14 sm:mt-20"
+          items={content.professional.traits.map((trait, index) => ({
+            image: `${import.meta.env.BASE_URL}images/Naseem${index + 2}.jpeg`,
+            alt: content.meta.name,
+            text: trait,
+          }))}
+        />
 
         <div className="mx-auto mt-14 grid max-w-[1280px] grid-cols-1 gap-10 lg:mt-20 lg:grid-cols-[7fr_5fr] lg:gap-20">
           <div className="flex flex-col gap-7 text-[clamp(15px,1.25vw,18px)] font-light leading-[2.1]">
