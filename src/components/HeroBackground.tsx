@@ -20,7 +20,9 @@ export function HeroBackground() {
       />
 
       <motion.div
-        className="absolute -top-40 start-[-10%] h-[32rem] w-[32rem] rounded-full bg-accent/25 blur-[120px]"
+        // className="absolute -top-40 start-[-10%] h-[32rem] w-[32rem] rounded-full bg-accent/25 blur-[120px]"
+className="absolute -top-40 start-[-10%] h-[32rem] w-[32rem] rounded-full"
+style={{ background: 'radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%)' }}
         animate={
           reducedMotion
             ? undefined
@@ -29,7 +31,9 @@ export function HeroBackground() {
         transition={{ duration: 22, repeat: Infinity, ease: 'easeInOut' }}
       />
       <motion.div
-        className="absolute top-1/3 end-[-15%] h-[26rem] w-[26rem] rounded-full bg-accent/20 blur-[110px]"
+        // className="absolute top-1/3 end-[-15%] h-[26rem] w-[26rem] rounded-full bg-accent/20 blur-[110px]"
+        className="absolute -top-40 start-[-10%] h-[32rem] w-[32rem] rounded-full"
+style={{ background: 'radial-gradient(circle, rgba(37,99,235,0.10) 0%, transparent 70%)' }}
         animate={
           reducedMotion
             ? undefined
@@ -38,10 +42,19 @@ export function HeroBackground() {
         transition={{ duration: 26, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
       />
       <motion.div
-        className="absolute bottom-[-10%] start-1/3 h-[22rem] w-[22rem] rounded-full bg-accent/15 blur-[100px]"
+        // className="absolute bottom-[-10%] start-1/3 h-[22rem] w-[22rem] rounded-full bg-accent/15 blur-[100px]"
+        className="absolute -top-40 start-[-10%] h-[32rem] w-[32rem] rounded-full"
+style={{ background: 'radial-gradient(circle, rgba(37,99,235,0.05) 0%, transparent 70%)' }}
         animate={reducedMotion ? undefined : { x: [0, 40, -40, 0], y: [0, -20, 20, 0] }}
         transition={{ duration: 30, repeat: Infinity, ease: 'easeInOut', delay: 4 }}
       />
+
+      <motion.div
+  className="absolute bottom-[-15%] left-[-10%] h-[28rem] w-[28rem] rounded-full"
+  style={{ background: 'radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%)' }}
+  animate={reducedMotion ? undefined : { x: [0, 30, -30, 0], y: [0, -25, 15, 0] }}
+  transition={{ duration: 24, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+/>
     </div>
   )
 }

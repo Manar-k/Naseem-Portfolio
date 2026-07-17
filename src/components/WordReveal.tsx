@@ -16,15 +16,19 @@ interface WordRevealProps {
   delayChildren?: number
 }
 
+// const wordVariants: Variants = {
+//   hidden: { opacity: 0, y: '0.6em', rotate: 1.5, filter: 'blur(6px)' },
+//   visible: {
+//     opacity: 1,
+//     y: 0,
+//     rotate: 0,
+//     filter: 'blur(0px)',
+//     transition: { duration: 0.7, ease: [0.2, 0.7, 0.2, 1] },
+//   },
+// }
 const wordVariants: Variants = {
-  hidden: { opacity: 0, y: '0.6em', rotate: 1.5, filter: 'blur(6px)' },
-  visible: {
-    opacity: 1,
-    y: 0,
-    rotate: 0,
-    filter: 'blur(0px)',
-    transition: { duration: 0.7, ease: [0.2, 0.7, 0.2, 1] },
-  },
+  hidden: { opacity: 0, y: '0.6em', rotate: 1.5 },
+  visible: { opacity: 1, y: 0, rotate: 0, transition: { duration: 0.7, ease: [0.2, 0.7, 0.2, 1] } },
 }
 
 /**
