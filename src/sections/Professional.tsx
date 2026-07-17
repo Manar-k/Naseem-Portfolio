@@ -1,7 +1,8 @@
 import { useTranslation } from 'react-i18next'
+import { CardGrid } from '../components/CardGrid'
 import { Container } from '../components/Container'
 import { Reveal } from '../components/Reveal'
-import { HorizontalScrollCards } from '../components/HorizontalScrollCards'
+// import { HorizontalScrollCards } from '../components/HorizontalScrollCards'
 import { SectionTitle } from '../components/SectionTitle'
 import { profile } from '../data/profile'
 import { useLang } from '../hooks/useLang'
@@ -74,54 +75,22 @@ export function Professional() {
             ))}
           </div>
         </div>
-
-       <HorizontalScrollCards
-  className="mt-7 sm:mt-10 -mx-6 sm:mx-0"
-  items={content.professional.body.map((body, index) => {
-    const isLast = index === content.professional.body.length - 1
-    const isBeforeLast = index === content.professional.body.length - 2
+        
+        <CardGrid
+  className="mt-10 sm:mt-14 mb-10"
+  items={content.professional.body.slice(0, 4).map((body, index, arr) => {
+    const isLast = index === arr.length - 1
+    const isBeforeLast = index === arr.length - 2
     const commaCount = isLast ? 2 : isBeforeLast ? 1 : 0
     const [boldPrefix, rest] = commaCount > 0 ? boldPrefixByCommaCount(body, commaCount) : ['', body]
     return {
       image: `${import.meta.env.BASE_URL}images/Naseem${index + 1}.jpeg`,
       alt: content.meta.name,
-      text: rest,
+      description: rest,
       boldPrefix: boldPrefix || undefined,
     }
   })}
 />
-
-        {/* <div className="mx-auto mt-14 grid max-w-[1280px] grid-cols-1 gap-10 lg:mt-20 lg:grid-cols-[7fr_5fr] lg:gap-20"> */}
-          {/* <div className="flex flex-col gap-7 text-[clamp(15px,1.25vw,18px)] font-light leading-[2.1]">
-
-            {content.professional.body.map((paragraph, index) => {
-  const isLast = index === content.professional.body.length - 1;
-  const isbeforeLast = index === content.professional.body.length - 2;
-
-  const [firstThreeWords, rest2] = boldPrefixByCommaCount(paragraph, 1);
-  const [lastThreeWords, lastrest] = boldPrefixByCommaCount(paragraph, 2);
-
-  return (
-    <Reveal key={index} delay={index * 0.04}>
-      <div className="border-accent rtl:border-r-2 rtl:pr-6 ltr:border-l-2 ltr:pl-6">
-        <p className="m-0">
-          {isLast ? (
-            <>
-              <span className="m-0 text-ink font-bold">{lastThreeWords}</span> {lastrest}
-            </>
-          ) : isbeforeLast ? (
-            <>
-              <span className="m-0 text-ink font-bold">{firstThreeWords}</span> {rest2}
-            </>
-          ) : (
-            paragraph
-          )}
-        </p>
-      </div>
-    </Reveal>
-  );
-})}
-          </div> */}
 
           <Reveal>
             <div className="mx-auto w-full max-w-[520px] border border-ink/20 p-6 sm:p-9">
