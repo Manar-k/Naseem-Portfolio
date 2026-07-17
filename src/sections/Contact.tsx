@@ -5,7 +5,7 @@ import { Reveal } from '../components/Reveal'
 import { RoleCycler } from '../components/RoleCycler'
 // import { WordReveal } from '../components/WordReveal'
 
-const WHATSAPP_URL = 'https://wa.me/966509145682'
+const WHATSAPP_URL = 'https://wa.me/966549338015'
 const INSTAGRAM_URL = 'https://www.instagram.com/_abumais/'
 const EMAIL = 'Naseemfilfilan@gmail.com'
 const LINKEDIN = 'linkedin.com/in/naseem-filfilan'
