@@ -101,6 +101,7 @@ export interface LocaleContent {
     phoneLabel: string
     whatsappLabel: string
     instagramLabel: string
+    resumeLabel: string
     locationLabel: string
   }
 }
@@ -298,6 +299,7 @@ export const profile: Record<Lang, LocaleContent> = {
       phoneLabel: 'الجوال',
       whatsappLabel: 'واتساب',
       instagramLabel: 'انستجرام',
+      resumeLabel: 'السيرة ذاتية',
       locationLabel: 'الموقع',
     },
   },
@@ -499,6 +501,7 @@ export const profile: Record<Lang, LocaleContent> = {
       phoneLabel: 'Phone',
       whatsappLabel: 'WhatsApp',
       instagramLabel: 'Instagram',
+      resumeLabel: 'Resume',
       locationLabel: 'Location',
     },
   },

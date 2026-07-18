@@ -1,4 +1,4 @@
-import { IconBrandInstagram, IconBrandLinkedin, IconBrandWhatsapp, IconMapPin } from '@tabler/icons-react'
+import { IconBrandInstagram, IconBrandLinkedin, IconBrandWhatsapp, IconFileTypePdf, IconMapPin } from '@tabler/icons-react'
 import { profile } from '../data/profile'
 import { useLang } from '../hooks/useLang'
 import { Reveal } from '../components/Reveal'
@@ -9,6 +9,7 @@ const WHATSAPP_URL = 'https://wa.me/966549338015'
 const INSTAGRAM_URL = 'https://www.instagram.com/_abumais/'
 const EMAIL = 'Naseemfilfilan@gmail.com'
 const LINKEDIN = 'linkedin.com/in/naseem-filfilan'
+const RESUME_URL = `${import.meta.env.BASE_URL}${encodeURIComponent('Naseem Filfilan Resume.pdf')}`
 
 export function Contact() {
   const { lang } = useLang()
@@ -43,6 +44,15 @@ export function Contact() {
               className=" bg-accent px-4 py-2.5 font-display text-[13px] font-extrabold text-white transition-transform duration-300 hover:-translate-y-0.5 sm:px-8 sm:py-4 sm:text-[17px]"
             >
               {content.contact.emailLabel}
+            </a>
+            <a
+              href={RESUME_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-display border border-ink/35 px-4 py-2.5 text-[12px] text-ink transition-colors duration-300 hover:border-accent hover:text-accent sm:gap-2 sm:px-8 sm:py-4 sm:text-[16px]"
+            >
+              <IconFileTypePdf className="h-3.5 w-3.5 sm:h-4 sm:w-4" stroke={1.75} />
+              {content.contact.resumeLabel}
             </a>
             <a
               href={`https://${LINKEDIN}`}
