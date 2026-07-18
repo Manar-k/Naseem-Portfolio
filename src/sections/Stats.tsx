@@ -6,7 +6,7 @@ import { SectionTitle } from '../components/SectionTitle'
 import { TiltShineCard } from '../components/TiltShineCard'
 import { profile } from '../data/profile'
 import { useLang } from '../hooks/useLang'
-import { Fragment } from 'react'
+// import { Fragment } from 'react'
 
 export function Stats() {
   const { t } = useTranslation()
@@ -52,7 +52,7 @@ export function Stats() {
           ))}
         </div>
 
-        <Reveal>
+        {/* <Reveal>
             <div className="flex flex-col gap-5 text-[clamp(15px,1.25vw,18px)] font-light leading-[1.9] mt-10">
                 <div  className="border-accent rtl:border-r-2 rtl:pr-6 ltr:border-l-2 ltr:pl-6">
                   <p>{content.stats.statstext[0]}</p>
@@ -117,9 +117,9 @@ export function Stats() {
             </Fragment>
           ))}
         </div>
-        </Reveal>
+        </Reveal> */}
 
-    <Reveal>
+    {/* <Reveal>
             <div className="flex flex-col gap-5 text-[clamp(15px,1.25vw,18px)] font-light leading-[1.9] mt-5">
                 <div  className="border-accent rtl:border-r-2 rtl:pr-6 ltr:border-l-2 ltr:pl-6">
                   <p>{content.stats.closing[0]} <br />
@@ -130,7 +130,7 @@ export function Stats() {
                   </p>
                 </div>
             </div>
-    </Reveal>
+    </Reveal> */}
           
         
           
