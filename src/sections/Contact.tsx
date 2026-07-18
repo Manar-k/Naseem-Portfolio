@@ -9,7 +9,7 @@ const WHATSAPP_URL = 'https://wa.me/966549338015'
 const INSTAGRAM_URL = 'https://www.instagram.com/_abumais/'
 const EMAIL = 'Naseemfilfilan@gmail.com'
 const LINKEDIN = 'linkedin.com/in/naseem-filfilan'
-const RESUME_URL = `${import.meta.env.BASE_URL}${encodeURIComponent('Naseem Filfilan Resume.pdf')}`
+const RESUME_URL = `${import.meta.env.BASE_URL}${encodeURIComponent('Naseem_Filfilan_Resume.pdf')}`
 
 export function Contact() {
   const { lang } = useLang()

@@ -13,7 +13,7 @@ import { profile } from '../data/profile'
 // rest of the page. The mobile header bar (light text on a transparent background)
 // becomes unreadable over it, so it flips to dark text while that section sits under it.
 const LIGHT_BG_SECTION_ID = 'commercial'
-const RESUME_URL = `${import.meta.env.BASE_URL}${encodeURIComponent('Naseem Filfilan Resume.pdf')}`
+const RESUME_URL = `${import.meta.env.BASE_URL}${encodeURIComponent('Naseem_Filfilan_Resume.pdf')}`
 
 export function Header() {
   const { t } = useTranslation()
