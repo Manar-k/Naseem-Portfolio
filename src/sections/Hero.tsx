@@ -64,8 +64,18 @@ export function Hero() {
             })}
           </h1>
           <br/>
-   
-          {content.hero.lede.map((paragraph, index) => (
+          {/* <Reveal delay={0.1}>
+            <a
+              href={RESUME_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex w-fit items-center gap-1.5 border border-ink/30 px-4 py-2 font-display text-[clamp(13px,1.25vw,18px)] text-ink transition-colors duration-300 hover:border-accent hover:text-accent sm:gap-2 sm:px-[22px] sm:py-2.5"
+            >
+              <IconFileTypePdf className="h-4 w-4" stroke={1.75} />
+              {content.contact.resumeLabel}
+            </a>
+          </Reveal> */}
+          {/* {content.hero.lede.map((paragraph, index) => (
             <Reveal key={paragraph} delay={index * 0.05}>
               <p className={`m-0 ${
         index === content.hero.lede.length - 1
@@ -73,7 +83,7 @@ export function Hero() {
           : 'text-ink/90'
       }`}>{paragraph}</p>
             </Reveal>
-          ))}
+          ))} */}
         </div>
 
         <div className="mt-8 flex flex-wrap gap-2 sm:gap-3">

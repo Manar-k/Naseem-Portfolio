@@ -2,20 +2,23 @@ import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useTranslation } from 'react-i18next'
 import { useMotionValueEvent, useScroll } from 'motion/react'
-import { IconMenu2, IconX } from '@tabler/icons-react'
+import { IconFileTypePdf, IconMenu2, IconX } from '@tabler/icons-react'
 import { LanguageSwitcher } from './LanguageSwitcher'
 import { Container } from './Container'
 import { NAV_ITEMS } from '../utils/nav'
 import { useLang } from '../hooks/useLang'
+import { profile } from '../data/profile'
 
 // The business/commercial section uses a light (ink-colored) background, unlike the
 // rest of the page. The mobile header bar (light text on a transparent background)
 // becomes unreadable over it, so it flips to dark text while that section sits under it.
 const LIGHT_BG_SECTION_ID = 'commercial'
+const RESUME_URL = `${import.meta.env.BASE_URL}${encodeURIComponent('Naseem Filfilan Resume.pdf')}`
 
 export function Header() {
   const { t } = useTranslation()
   const { lang } = useLang()
+  const content = profile[lang]
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [onLightSection, setOnLightSection] = useState(false)
@@ -60,14 +63,28 @@ export function Header() {
     <a
       href="#contact"
       onClick={() => setMenuOpen(false)}
-      className={`border px-2.5 py-1.5 text-[12px] font-display transition-colors duration-300 hover:border-accent hover:text-accent ${
-        invert ? 'border-surface/30 text-surface' : 'border-ink/30 text-ink'
+      className={`text-[12.5px] font-display transition-colors duration-300 hover:text-accent ${
+        invert ? 'text-surface/75' : 'text-ink/75'
       }`}
     >
       {t('header.contactCta')}
     </a>
   )
-  const contactNode = renderContact(false)
+  const renderResume = (invert: boolean) => (
+    <a
+      href={RESUME_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={() => setMenuOpen(false)}
+      className={`flex items-center gap-1.5 border px-2.5 py-1.5 text-[12px] font-display transition-colors duration-300 hover:border-accent hover:text-accent ${
+        invert ? 'border-surface/30 text-surface' : 'border-ink/30 text-ink'
+      }`}
+    >
+      <IconFileTypePdf className="h-3.5 w-3.5" stroke={1.75} />
+      {content.contact.resumeLabel}
+    </a>
+  )
+  const resumeNode = renderResume(false)
 
   return (
     <header
@@ -97,6 +114,7 @@ export function Header() {
       ))}
     </nav>
     {renderContact(onLightSection)}
+    {renderResume(onLightSection)}
   </div>
 
   <div className="justify-self-end">
@@ -135,9 +153,16 @@ export function Header() {
                       {t(`nav.${item.key}`)}
                     </a>
                   ))}
+                  <a
+                    href="#contact"
+                    onClick={() => setMenuOpen(false)}
+                    className="font-display text-xl font-bold text-ink transition-colors hover:text-accent"
+                  >
+                    {t('header.contactCta')}
+                  </a>
                 </nav>
                 <div className="flex flex-wrap items-center gap-3 pt-2">
-                  {contactNode}
+                  {resumeNode}
                   <LanguageSwitcher />
                 </div>
               </Container>
