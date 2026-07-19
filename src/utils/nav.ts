@@ -8,8 +8,8 @@ export const NAV_ITEMS: NavItem[] = [
   { id: 'Certificates', key: 'Certificates' },
   { id: 'numbers', key: 'numbers' },
   { id: 'professional', key: 'professional' },
-  { id: 'commercial', key: 'commercial' },
+  // { id: 'commercial', key: 'commercial' },
   { id: 'projects', key: 'projects' },
   { id: 'why', key: 'why' },
-  { id: 'summary', key: 'summary' },
+  // { id: 'summary', key: 'summary' },
 ]

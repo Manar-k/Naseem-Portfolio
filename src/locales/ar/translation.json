@@ -2,11 +2,9 @@
   "nav": {
     "about": "نبذة عني",
     "professional": "الجانب المهني",
-    "commercial": "الجانب التجاري",
     "numbers": "الأرقام",
     "projects": "المشاريع",
     "why": "لماذا نسيم؟",
-    "summary": "الخلاصة",
     "Certificates": "الشهادات"
   },
   "header": {
@@ -29,7 +27,7 @@
   },
   "common": {
     "inShort": "باختصــــــــــار",
-    "whatSetsHimApart": "ما الذي يميزه مهنيًا؟",
+    "whatSetsHimApart": "ما يميّزه:",
     "mostNotable": "من أبرز ما اشتغل عليه:"
   }
 }

@@ -6,7 +6,7 @@ import { Reveal } from '../components/Reveal'
 import { SectionTitle } from '../components/SectionTitle'
 import { profile } from '../data/profile'
 import { useLang } from '../hooks/useLang'
-import { sectionNumber } from '../utils/numerals'
+// import { sectionNumber } from '../utils/numerals'
 
 function boldPrefixByCommaCount(text: string, commaCount: number): [string, string] {
   const commaRegex = /[,،]\s*/g
@@ -41,7 +41,7 @@ export function Professional() {
               {content.professional.title}
             </h2>
             </Reveal>
-            <Reveal>
+            {/* <Reveal>
               
             <p className="m-0 text-[clamp(11px,1.25vw,14px)] leading-[2.1] font-light text-ink/85">
   {content.professional.intro.map((paragraph, index) => (
@@ -58,11 +58,11 @@ export function Professional() {
     </span>
   ))}
 </p>
-</Reveal>
+</Reveal> */}
 
           </div>
 
-          <div className="flex flex-col">
+          {/* <div className="flex flex-col">
             {content.professional.questions.map((question, index) => (
               <Reveal key={question} delay={index * 0.04}>
                 <div className="flex items-baseline gap-5 border-b border-ink/15 py-6 first:pt-0">
@@ -73,7 +73,7 @@ export function Professional() {
                 </div>
               </Reveal>
             ))}
-          </div>
+          </div> */}
         </div>
         
         <CardGrid
@@ -92,7 +92,7 @@ export function Professional() {
   })}
 />
 
-          <Reveal>
+          {/* <Reveal>
             <div className="mx-auto w-full max-w-[520px] border border-ink/20 p-6 sm:p-9">
               <div className="mb-5 font-display text-xl font-extrabold text-accent">
                 {t('common.whatSetsHimApart')}
@@ -111,13 +111,13 @@ export function Professional() {
                 ))}
               </div>
             </div>
-          </Reveal>
+          </Reveal> */}
         {/* </div> */}
 
     <Reveal>
       <div className="flex flex-col items-center justify-center gap-4 text-center sm:flex-row sm:gap-6 mt-16">
         <span className="hidden h-px w-8 shrink-0 bg-accent/30 sm:block sm:w-12" aria-hidden />
-          <h2 className="m-0 text-[15px] font-black leading-[1.3] text-accent sm:text-lg">
+          <h2 className="m-0 text-[clamp(12px,1.25vw,15px)] font-display leading-[1.3] text-accent sm:text-lg">
             {content.professional.closing[0]} <br />
             {content.professional.closing[1]}
           </h2>

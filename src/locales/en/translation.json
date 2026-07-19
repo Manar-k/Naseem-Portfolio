@@ -2,12 +2,10 @@
   "nav": {
     "about": "About Me",
     "professional": "Professional Side",
-    "commercial": "Business Side",
     "numbers": "Numbers",
     "projects": "Projects",
     "why": "Why Naseem?",
-    "Certificates": "Certificates",
-    "summary": "Summary"
+    "Certificates": "Certificates"
   },
   "header": {
     "resume": "Résumé",
@@ -29,7 +27,7 @@
   },
   "common": {
     "inShort": "In short",
-    "whatSetsHimApart": "What distinguishes him professionally?",
+    "whatSetsHimApart": "What Sets Him Apart:",
     "mostNotable": "Among the most notable of what he's worked on:"
   }
 }

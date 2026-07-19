@@ -30,12 +30,13 @@ export function Contact() {
     className="mb-5 min-h-[3.2em] text-[15px] font-light font-display text-ink sm:min-h-0 sm:text-lg"
   />
 </Reveal>
-        <Reveal>
+<br/> <br/> <br/> <br/> 
+        {/* <Reveal>
         <h2 className="m-0 mb-6  text-[clamp(24px,3vw,44px)] leading-[1.5] text-ink/75">
           {content.finale.signature[0]} <br />
           {content.finale.signature[1]}
         </h2>
-        </Reveal>
+        </Reveal> */}
 
         <Reveal delay={0.12}>
           <div className="flex flex-wrap gap-2.5 sm:gap-4">

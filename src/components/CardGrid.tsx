@@ -1,9 +1,11 @@
 import { Reveal } from './Reveal'
-
+import { ReactNode
+  
+ } from 'react'
 export interface CardGridItem {
   image: string
   alt: string
-  description: string
+  description: ReactNode
   boldPrefix?: string
 }
 

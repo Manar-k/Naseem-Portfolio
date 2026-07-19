@@ -1,4 +1,4 @@
-import { IconArrowDownRight } from '@tabler/icons-react'
+// import { IconArrowDownRight } from '@tabler/icons-react'
 import { useTranslation } from 'react-i18next'
 import { Reveal } from '../components/Reveal'
 import { SectionTitle } from '../components/SectionTitle'
@@ -10,8 +10,8 @@ export function About() {
   const { t } = useTranslation()
   const content = profile[lang]
 
-  const [firstBody, checklistSource] = content.about.body
-  const checklistItems = checklistSource.split('. ').filter(Boolean)
+  const [firstBody] = content.about.body
+  // const checklistItems = checklistSource.split('. ').filter(Boolean)
 
   return (
     <>
@@ -27,16 +27,15 @@ export function About() {
         </div>
 
         <div className="flex flex-col gap-0 text-[clamp(12px,1.25vw,15px)] font-light leading-[2.1]">
-          {content.about.intro.map((paragraph, index) => (
+          {/* {content.about.intro.map((paragraph, index) => (
             <Reveal key={paragraph} delay={index * 0.05}>
-              {/* <p className="m-0 text-ink/90">{paragraph}</p> */}
               <p className={`m-0 ${
         index === content.about.intro.length - 1
           ? 'text-ink/90 font-bold'
           : 'text-ink/90'
       }`}>{paragraph}</p>
             </Reveal>
-          ))}
+          ))} */}
 
           <Reveal>
             <div className="border-accent rtl:border-r-2 rtl:pr-6 ltr:border-l-2 ltr:pl-6">
@@ -46,7 +45,7 @@ export function About() {
               <p className="mb-4">{content.about.dual.insideText}</p>
             </div>
           </Reveal>
-
+<br/>
           <Reveal>
             <div className="border-accent rtl:border-r-2 rtl:pr-6 ltr:border-l-2 ltr:pl-6">
               <div className="mb-2 font-display text-xl font-extrabold text-accent">
@@ -55,12 +54,32 @@ export function About() {
               <p className="mb-4">{content.about.dual.outsideText}</p>
             </div>
           </Reveal>
-
+<br/>
           <Reveal>
             <p className="m-0 font-bold text-accent">{firstBody}</p>
           </Reveal>
-
           <Reveal>
+            <div className="mx-auto my-10 w-full max-w-[420px] border border-ink/20 p-6 sm:p-9">
+              <div className="mb-5 font-display text-xl font-extrabold text-accent">
+                {t('common.whatSetsHimApart')}
+              </div>
+              <div className="flex flex-col text-[15.5px] leading-[1.9]">
+                {content.professional.traits.map((trait, index) => (
+                  <div
+                    key={trait}
+                    className={`flex gap-3 py-3 ${
+                      index < content.professional.traits.length - 1 ? 'border-b border-ink/10' : ''
+                    }`}
+                  >
+                    <span className="text-accent">›</span>
+                    <span>{trait}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+
+          {/* <Reveal>
             <div className="flex flex-col gap-3.5 font-display text-[clamp(12px,1.5vw,15px)] font-bold leading-[1.9]">
               {checklistItems.map((item) => (
                 <div key={item} className="flex items-baseline gap-3.5">
@@ -72,7 +91,7 @@ export function About() {
                 </div>
               ))}
             </div>
-          </Reveal>
+          </Reveal> */}
         </div>
       </div>
       <Reveal>

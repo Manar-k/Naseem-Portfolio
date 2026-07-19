@@ -116,6 +116,7 @@ export const profile: Record<Lang, LocaleContent> = {
         'رائد أعمال',
         'مؤسس متجر أبو ميس للحلول المتكاملة',
         'مؤسس بودكاست سَفر',
+        'مؤسس وكالة مِعيار للتسويق',
       ],
       location: 'الرياض، المملكة العربية السعودية',
     },
@@ -133,17 +134,17 @@ export const profile: Record<Lang, LocaleContent> = {
         'وفيه ناس يعرفون السوق، لكن إذا دخلوا بيئة مهنية كبيرة ارتبكوا بين الأنظمة والاجتماعات والتقارير.',
         'نسيم فلفلان مو من هؤلاء ولا هؤلاء.',
       ],
-      pullQuote: ['هو من النوع النادر الذي يعرف كيف يتحرك  ','في الجهتـــــــــــــــــــين.'],
+      pullQuote: ['يجمع بين عقلية المهندس والتاجر',''],
       dual: {
         insideTitle: 'داخل المؤسســــــــــة',
         insideText:
-          'يشتغل بعقل مهندس: يفهم المنظومة، يقرأ الخلل، يضبط الجودة، ويحوّل الفوضى إلى مسار واضح.',
-        outsideTitle: 'خارج المؤسســــــــــة',
+          'يفهم المنظومة، يكتشف الخلل، ويعيد ترتيبها بمنهجية.',
+        outsideTitle: 'في الســـــــــــــــــــوق ',
         outsideText:
-          'يتحرك بنفس تاجر: يلتقط الفرصة، يفهم حاجة العميل، يعرف كيف يصيغ العرض، ويبيع الفكرة قبل المنتج.',
+          'يفهم العميل، يلتقط الفرصة، ويحوّل الفكرة إلى بيع.',
       },
       body: [
-        'وهنا شخصية نسيم تظهر بوضوح. نسيم ما يتكلم كثيرًا. هو شخص يعرف أي جملة تُقال، ومتى تُقال، ولمن تُقال. ',
+        'يربط بين الجودة والنتيجة، ويحول البيانات والمشكلات إلى فرص تطوير وعروض قابلة للبيع.',
         'يعرف يدخل على العميل من الباب الصحيح. يعرف يقرأ التردد قبل أن يتحول إلى رفض. ويعرف يحوّل الكلام العادي إلى قيمة تُشترى. ',
       ],
       summary:
@@ -165,17 +166,16 @@ export const profile: Record<Lang, LocaleContent> = {
         'في بوبا العربية، كان جزءًا من بيئة تعتمد على الأرقام ومؤشرات الرضا، وتحسين تجربة العميل. صمم وتابع لوحات NPS، تعامل مع مئات الآلاف من استجابات العملاء،  وساهم في تحويل البيانات إلى قرارات ومبادرات تطويرية.',
         'واليوم، يعمل مهندس جودة لدى شركة إدراك للاستشارات الإدارية بوزارة الموارد البشرية، في خطوة مهنية تعكس انتقاله الطبيعي إلى مساحة الجودة المؤسسية؛ حيث لا يكفي أن تعمل، بل يجب أن تعرف كيف تقيس العمل، تضبطه، وتطوره.',
       ],
-      traitsTitle: 'ما الذي يميّزه مهنيًا؟',
+      traitsTitle: 'ما يميّزه :',
       traits: [
-        'عقلية تحليلية لا تنخدع بالكلام العام.',
-        'فهم تشغيلي يعرف أين تختنق المنظومات.',
-        'قدرة على تحويل المشكلة إلى فرصة تحسين.',
-        'انضباط مهني دون برود.',
-        'حضور قيادي يعرف متى يتدخل ومتى يترك الفريق يتحرك.',
-        'قدرة على الربط بين الجودة، العميل والنتيجة النهائية.',
+        'عقلية تحليلية تشغيلية',
+        'تحويل المشكلات إلى فرص تحسين',
+        'القدرة على بناء الثقة من خلال الكلام المصاغ بدقة',
+        'يبيع بالقيمة لا بالسعر',
+        'يجمع بين انضباط المؤسسة وحركة السوق',
       ],
       closing:
-        ['نســــــــــــــــــــــــــــــيم ليس نوع الموظفين الي ينفذون المطلوب فقط.',' هو شخص يدخل المنظومة.. ثم يبدأ بفهم اللعــــــــــــــــــبة من الداخل.'],
+        ['نســـــــــــيم ليس نوع الموظفين الي ينفذون المطلوب فقط.',' هو شخص يدخل المنظومة.. ثم يبدأ بفهم اللعبة من الداخل.'],
     },
     business: {
       title: 'الجانب التجاري',
@@ -206,7 +206,7 @@ export const profile: Record<Lang, LocaleContent> = {
     stats: {
       title: 'أرقام لا تجامل',
       // intro:['الكلام جميل، لكن السوق لا يحترم الكلام وحده. ','الأرقام هنا تقول إن نسيـم ما يبيع صورة عن نفسه، بل يملك تجارب فعلية خلف هذه الصورة.',' من أبرز ما حققه واشتغل عليه:'],
-      intro:['ليس موظفًا ممتازًا فقط، ولا تاجرًا شاطرًا فقط. هو الاثنين.','النتائج تتكلم:'],
+      intro:['ليس موظفًا ممتازًا فقط. ','ولا تاجرًا شاطرًا فقط. هو الاثنين.','النتائج تتكلم:'],
       items: [
         { value: '+300', label: 'مكينة حلاقة (الجزازة) تم بيعها' },
         { value: '+200', label: 'عطر تم بيعه' },
@@ -252,12 +252,11 @@ export const profile: Record<Lang, LocaleContent> = {
     },
     why: {
       title: 'لماذا نسيم؟',
-      intro: 'لأن كثيرًا من الناس يملكون جزءًا واحدًا من المعادلة.',
+      intro: 'لأنه يفهم المنظومات والسوق معًا.',
       contrasts: [
-        'بعضهم مهني جدًا.. لكن بارد.',
-        'بعضهم تجاري جدًا.. لكن فوضوي.',
-        'بعضهم يتكلم جيدًا.. لكن لا يعرف كيف ينفذ.',
-        'وبعضهم ينفذ جيدًا.. لكن لا يعرف كيف يبيع ما يفعله.',
+        'يدخل المؤسسة..  فيقرأ نظامها.',
+        'يدخل السوق..  فيفهم مزاجه.',
+        'يجلس مع العميل..  فيعرف من أين يبدأ.',
       ],
       unifier:
         ['نسيم فلفلان مختلف لأنه جمع أكثر من جهة في شخصية واحدة:',' مهنية تعرف النظام. ','تجارة تعرف السوق. ','لسان يعرف العميل. ','عقل يعرف أن القيمة لا تُقال فقط، بل تُبنى وتُعرض وتُباع.'],
@@ -313,12 +312,13 @@ export const profile: Record<Lang, LocaleContent> = {
         'Entrepreneur',
         'Founder, Abu Mais Integrated Solutions Store',
         'Founder, Safar Podcast',
+        'Founder, Miyar Marketing Agency',
       ],
       location: 'Riyadh, Saudi Arabia',
     },
     hero: {
       kicker: 'Naseem Filfilan',
-      tagline: 'A professional mind. An Entrepreneurial Spirit. A Voice That Knows Where Opportunities Begin.',
+      tagline: 'A Professional Mind. An Entrepreneurial Spirit. A Voice That Knows Where Opportunities Begin.',
       lede: [
         'Naseem is not just an excellent employee. And not just a skilled trader.',
         'He is both—and that is what sets him apart.',
@@ -333,17 +333,17 @@ export const profile: Record<Lang, LocaleContent> = {
         'Others understand the market well but find it difficult to navigate large professional environments with their systems, processes, and structure.',
         'Naseem Filfilan belongs to neither group.',
       ],
-      pullQuote: ['He is one of the few professionals who move confidently',' between both worlds.'],
+      pullQuote: ['Combining the mindsets of an engineer and an entrepreneur'],
       dual: {
-        insideTitle: 'Within an Organization',
+        insideTitle: 'Within An Organization',
         insideText:
-          'He thinks like an engineer. He understands systems, identifies inefficiencies, ensures quality, and transforms complexity into structured, efficient processes.',
-        outsideTitle: 'Outside The Organization',
+          'He understands the system, uncovers what holds it back, and systematically restructures it.',
+        outsideTitle: 'In The Marketplace',
         outsideText:
-          'He thinks like an entrepreneur. He recognizes opportunities, understands customer needs, crafts compelling value propositions, and knows how to sell an idea before selling a product.',
+          'He understands the customer, recognizes opportunity, and turns ideas into sales.',
       },
       body: [
-        'This is where Naseem’s personality stands out. He is not someone who speaks just to be heard. He knows exactly what to say, when to say it, and who needs to hear it.',
+        'He connects quality with results, transforming data and challenges into opportunities for improvement and opportunities into compelling offers.',
         'He knows how to approach clients the right way. Recognize hesitation before it becomes rejection. Turn ordinary conversations into meaningful value.',
       ],
       summary:
@@ -365,17 +365,16 @@ export const profile: Record<Lang, LocaleContent> = {
         'At Bupa Arabia, he worked in a data-driven environment focused on customer satisfaction and service excellence. He designed and maintained Net Promoter Score (NPS) dashboards, analyzed hundreds of thousands of customer responses, and transformed insights into actionable improvement initiatives.',
         'Today, he serves as a Quality Engineer at Edrak Management Consulting Company, Ministry of Human Resources, where he focuses on measuring, improving, and sustaining organizational quality. His role reflects a natural progression toward institutional excellence—where success is measured not only by getting work done, but by continuously improving how it is done.',
       ],
-      traitsTitle: 'What distinguishes him professionally?',
+      traitsTitle: 'What Sets Him Apart?',
       traits: [
-        'Strong analytical thinking backed by data.',
-        'A deep understanding of operational processes and system performance.',
-        'The ability to transform challenges into improvement opportunities.',
-        'Professional discipline balanced with adaptability.',
-        'Leadership that knows when to guide and when to empower the team.',
-        'A practical understanding of how quality, customer experience, and business outcomes are connected.',
+        'An analytical, operational mindset',
+        'The ability to turn problems into opportunities for improvement',
+        'The ability to build trust through carefully chosen words',
+        'He sells value not price',
+        'He brings together the discipline of an organization and the agility of the marketplace',
       ],
       closing:
-        ['Naseem is not someone who simply follows established processes.','He doesn’t just work within systems—he understands them from within.'],
+        ['Naseem is not someone who simply follows established processes.','He doesn’t just work within systems he understands them from within.'],
     },
     business: {
       title: 'The Business Side',
@@ -408,7 +407,8 @@ export const profile: Record<Lang, LocaleContent> = {
     },
     stats: {
       title: 'Achievements That Speak for Themselves',
-      intro:['Words matter, but the market is ultimately measured by results. ','These numbers show that Naseem is not simply presenting an image of himself—they reflect real experience, proven performance, and tangible achievements.',' Some of his key accomplishments include:'],
+      // intro:['Words matter, but the market is ultimately measured by results. ','These numbers show that Naseem is not simply presenting an image of himself—they reflect real experience, proven performance, and tangible achievements.',' Some of his key accomplishments include:'],
+      intro:['He is not just an exceptional professional.',' Nor just a successful entrepreneur. He is both.','The results speak for themselves:'],
       items: [
         { value: '+300', label: '(Al-Jazazah) Hair Clippers Sold' },
         { value: '+200', label: 'Perfumes Sold' },
@@ -454,12 +454,11 @@ export const profile: Record<Lang, LocaleContent> = {
     },
     why: {
       title: 'Why Naseem?',
-      intro: 'Because most people possess only one part of the equation.',
+      intro: 'Because he understands both systems and markets.',
       contrasts: [
-        'Some are highly professional.. But cold.',
-        'Some are highly business minded.. But disorganized.',
-        'Some speak well.. But don’t know how to execute.',
-        'Others execute well.. But don’t know how to sell what they do.',
+        'He steps into an organization.. and understands how it works.',
+        'He steps into the market.. and understands its rhythm.',
+        'He sits with a client.. and knows exactly where the conversation should begin.',
       ],
       unifier:
         ['Naseem Filfilan is different because he brings all of these qualities together in in a single personality:','The professionalism that understands systems','The business instinct that understands the market.','The communication skills that understand the customer.','And the mindset that knows value isn’t simply claimed; it is built, presented, and sold.'],
