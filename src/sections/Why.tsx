@@ -47,7 +47,7 @@ export function Why() {
       description: (
         <div className="flex flex-wrap items-center justify-between gap-4 text-[clamp(12px,1.7vw,15px)] leading-[1.9]">
           <p>{lead}..
-          <span className="font-medium text-accent group-hover:font-bold group-hover:text-white">{answer}</span></p>
+          <span className="font-bold text-accent group-hover:font-bold group-hover:text-white">{answer}</span></p>
         </div>
       ),
     }

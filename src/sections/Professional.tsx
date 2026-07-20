@@ -37,7 +37,7 @@ export function Professional() {
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[5fr_7fr] lg:gap-20">
           <div>
             <Reveal>
-            <h2 className="m-0 mb-6 font-display text-[clamp(26px,3.2vw,46px)] font-black leading-[1.5] text-ink">
+            <h2 className="m-0 mb-6 font-display text-[clamp(24px,3vw,44px)] font-black leading-[1.5] text-ink">
               {content.professional.title}
             </h2>
             </Reveal>
@@ -77,7 +77,7 @@ export function Professional() {
         </div>
         
         <CardGrid
-  className="mt-10 sm:mt-14 mb-10"
+  className="mt-5 mb-10"
   items={content.professional.body.slice(0, 4).map((body, index, arr) => {
     const isLast = index === arr.length - 1
     const isBeforeLast = index === arr.length - 2

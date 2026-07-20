@@ -28,7 +28,7 @@ export function Projects() {
         </p>
 </Reveal> */}
 <br/> 
-        <div className="grid grid-cols-1 gap-6 mt-5 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-6 mt-1 sm:grid-cols-2">
           {content.projects.items.map((project) => (
             <Reveal key={project.name}>
               <div className="group h-full overflow-hidden border border-ink/20 transition-colors duration-300 hover:border-accent hover:bg-accent">

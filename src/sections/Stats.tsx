@@ -20,13 +20,13 @@ export function Stats() {
 
         <div className="sm:mb-6">
           <Reveal> 
-          <h2 className="m-0 mb-6 font-display text-[clamp(26px,3.2vw,46px)] font-black leading-[1.5] text-ink">
+          <h2 className="m-0 mb-6 font-display text-[clamp(24px,3vw,44px)] font-black leading-[1.5] text-ink">
             {content.stats.title}
           </h2>
           </Reveal> 
         </div>
         <Reveal> 
-          <div className="m-0 text-[clamp(12px,1.25vw,15px)] leading-[2.1] font-light text-ink/85 mb-12">
+          <div className="m-0 text-[clamp(12px,1.25vw,15px)] leading-[2.1] font-light text-ink/85 mb-6">
             <p >
               {content.stats.intro[0]} <br /> 
               {content.stats.intro[1]} <br /> 
