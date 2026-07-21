@@ -42,7 +42,7 @@ export function Contact() {
           <div className="flex flex-wrap gap-2.5 sm:gap-4">
             <a
               href={`mailto:${EMAIL}`}
-              className=" bg-accent px-4 py-2.5 font-display text-[13px] font-extrabold text-white transition-transform duration-300 hover:-translate-y-0.5 sm:px-8 sm:py-4 sm:text-[17px]"
+              className=" bg-accent px-4 py-2.5 text-display text-[13px] font-extrabold text-white transition-transform duration-300 hover:-translate-y-0.5 sm:px-8 sm:py-4 sm:text-[17px]"
             >
               {content.contact.emailLabel}
             </a>
